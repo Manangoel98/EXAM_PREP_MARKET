@@ -7,6 +7,7 @@ import { config } from '@/lib/config';
 import { OrganizationStructuredData, WebSiteStructuredData } from '@/lib/schema';
 import ErrorBoundary from '@/components/error/ErrorBoundary';
 import { ClientProviders } from '@/components/layout/ClientProviders';
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -160,6 +161,7 @@ export default function RootLayout({
               {children}
             </ClientProviders>
           </Suspense>
+          <Analytics />
         </ErrorBoundary>
       </body>
     </html>
