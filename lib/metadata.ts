@@ -1,14 +1,82 @@
 import type { Metadata } from 'next'
-import { config } from './config'
+import { config, marketingAbsoluteUrl } from './config'
 
 /**
  * Base metadata configuration for NomoExam
  * Used across all pages for consistent SEO and social media previews
  */
 
-const baseUrl = config.app.url
 const siteName = config.seo.siteName
 const twitterHandle = config.seo.socialHandles.twitter
+
+/** Google-recommended robots defaults for indexable marketing pages */
+export const googleIndexRobots: NonNullable<Metadata['robots']> = {
+  index: true,
+  follow: true,
+  googleBot: {
+    index: true,
+    follow: true,
+    'max-video-preview': -1,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+  },
+}
+
+/**
+ * One canonical shape for public marketing URLs: canonical, OG, Twitter, Googlebot.
+ * Use for new pages; migrate legacy `export const metadata` gradually.
+ */
+export function marketingSeo(opts: {
+  /** Page title (without forced suffix; we add ` | NomoExam` when missing) */
+  title: string
+  description: string
+  /** Path only, e.g. `/pricing` or `/compare/sat-vs-act` */
+  path: string
+  keywords: string[]
+  ogImagePath?: string
+  ogType?: 'website' | 'article'
+  noIndex?: boolean
+}): Metadata {
+  const ogPath = opts.ogImagePath ?? '/og-image.svg'
+  const ogUrl = ogPath.startsWith('http') ? ogPath : marketingAbsoluteUrl(ogPath.startsWith('/') ? ogPath : `/${ogPath}`)
+  const canonical = marketingAbsoluteUrl(opts.path)
+  const fullTitle = opts.title.includes(siteName) ? opts.title : `${opts.title} | ${siteName}`
+
+  return {
+    title: fullTitle,
+    description: opts.description,
+    keywords: [...new Set([...opts.keywords, 'NomoExam', 'exam prep', 'online test prep'])],
+    alternates: { canonical },
+    robots: opts.noIndex
+      ? { index: false, follow: true, googleBot: { index: false, follow: true } }
+      : googleIndexRobots,
+    openGraph: {
+      title: fullTitle,
+      description: opts.description,
+      url: canonical,
+      siteName,
+      type: opts.ogType ?? 'website',
+      locale: 'en_US',
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: `${siteName} — ${opts.title}`,
+          type: 'image/svg+xml',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: twitterHandle,
+      creator: twitterHandle,
+      title: fullTitle,
+      description: opts.description,
+      images: [ogUrl],
+    },
+  }
+}
 
 interface PageMetadataProps {
   title: string
@@ -33,7 +101,7 @@ export function generatePageMetadata({
   keywords = [],
   noIndex = false,
 }: PageMetadataProps): Metadata {
-  const url = baseUrl ? `${baseUrl}${path}` : undefined
+  const url = marketingAbsoluteUrl(path)
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`
   
   // Default keywords that apply to all pages
@@ -64,7 +132,7 @@ export function generatePageMetadata({
       locale: 'en_US',
       images: [
         {
-          url: image.startsWith('http') ? image : baseUrl ? `${baseUrl}${image}` : image,
+          url: image.startsWith('http') ? image : marketingAbsoluteUrl(image.startsWith('/') ? image : `/${image}`),
           width: 1200,
           height: 630,
           alt: `${siteName} - ${title}`,
@@ -80,7 +148,7 @@ export function generatePageMetadata({
       creator: twitterHandle,
       title: fullTitle,
       description,
-      images: [image.startsWith('http') ? image : baseUrl ? `${baseUrl}${image}` : image],
+      images: [image.startsWith('http') ? image : marketingAbsoluteUrl(image.startsWith('/') ? image : `/${image}`)],
     },
     
     // Robots
@@ -89,17 +157,7 @@ export function generatePageMetadata({
           index: false,
           follow: false,
         }
-      : {
-          index: true,
-          follow: true,
-          googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-          },
-        },
+      : googleIndexRobots,
     
     // Canonical URL
     alternates: {

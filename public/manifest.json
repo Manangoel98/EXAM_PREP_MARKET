@@ -1,7 +1,7 @@
 {
-  "name": "nomoexam - Exam Prep Platform",
-  "short_name": "nomoexam",
-  "description": "Smart exam preparation with AI-powered content and practice tests",
+  "name": "NomoExam — Exam Prep & AI Tutor",
+  "short_name": "NomoExam",
+  "description": "SAT, ACT, GRE, and more: practice tests, flashcards, study paths, and unlimited AI tutoring. Per-exam subscriptions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fafafa",

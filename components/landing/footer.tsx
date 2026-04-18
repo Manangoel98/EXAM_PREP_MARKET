@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, MessageCircle } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, MessageCircle, Smartphone } from "lucide-react";
+import { ANDROID_APP } from "@/lib/config";
 
 export const Footer = () => {
   return (
     <footer className="bg-neutral-dark border-t border-white/10 text-white">
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8 mb-8 md:mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 mb-8 md:mb-12">
           {/* Brand */}
           <div className="lg:col-span-2 col-span-2 space-y-2 md:space-y-4">
             <div className="flex items-center gap-2 md:gap-3">
@@ -67,8 +68,83 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/exams" className="transition-colors hover:text-accent-lime">
+                  Exams
+                </Link>
+              </li>
+              <li>
                 <Link href="/features/nomo-ai" className="transition-colors hover:text-accent-lime">
                   Nomo AI Tutor
+                </Link>
+              </li>
+              <li>
+                <Link href="/try-free" className="transition-colors hover:text-accent-lime">
+                  Try sample questions
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Get the App */}
+          <div>
+            <h4 className="mb-2 font-barlow text-sm font-semibold md:mb-4 md:text-lg">Get the App</h4>
+            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
+              <li>
+                <Link href="/download-exam-app" className="transition-colors hover:text-accent-lime">
+                  Download Exam App
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={ANDROID_APP.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 transition-colors hover:text-accent-lime"
+                >
+                  <Smartphone className="h-3.5 w-3.5" />
+                  Android App
+                </a>
+              </li>
+              <li>
+                <Link href="/free-mock-test-app" className="transition-colors hover:text-accent-lime">
+                  Free Mock Tests
+                </Link>
+              </li>
+              <li>
+                <Link href="/study-app-for-students" className="transition-colors hover:text-accent-lime">
+                  Study App
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Resources */}
+          <div>
+            <h4 className="mb-2 font-barlow text-sm font-semibold md:mb-4 md:text-lg">Resources</h4>
+            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
+              <li>
+                <Link href="/how-to-prepare-for-sat" className="transition-colors hover:text-accent-lime">
+                  SAT Prep Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/sat-study-plan" className="transition-colors hover:text-accent-lime">
+                  SAT Study Plan
+                </Link>
+              </li>
+              <li>
+                <Link href="/how-to-prepare-for-jee" className="transition-colors hover:text-accent-lime">
+                  JEE Prep Strategy
+                </Link>
+              </li>
+              <li>
+                <Link href="/neet-preparation-strategy" className="transition-colors hover:text-accent-lime">
+                  NEET Strategy
+                </Link>
+              </li>
+              <li>
+                <Link href="/mock-test-strategy" className="transition-colors hover:text-accent-lime">
+                  Mock Test Strategy
                 </Link>
               </li>
             </ul>

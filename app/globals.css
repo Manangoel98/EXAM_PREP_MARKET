@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  /*
+   * Fixed glass header (~5.5–7rem): anchors + scroll-smooth must clear the bar.
+   * Used by scroll-mt-* on sections and in-page #hash links.
+   */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+  }
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 9.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   :root {
     --background: 0 0% 100%; /* neutral-white */
     --foreground: 240 10% 3.9%; /* neutral-dark approximation */

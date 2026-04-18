@@ -8,6 +8,7 @@ import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent }
 import { ArrowUpRight, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAppUrl } from "@/lib/config";
+import { MARKETING_EXAMS } from "@/lib/exams-marketing-data";
 
 /**
  * Marketing Site Header - Links to student app for auth/dashboard
@@ -93,48 +94,68 @@ export function SiteHeader() {
               </motion.button>
               {examsOpen && (
                 <div
-                  className={`absolute left-0 top-full z-50 mt-2 min-w-[220px] overflow-hidden rounded-xl border py-1 shadow-xl ${
+                  className={`absolute left-0 top-full z-50 mt-2 w-[min(100vw-1.5rem,28rem)] overflow-hidden rounded-xl border shadow-xl ${
                     lightChrome ? "border-black/10 bg-white" : "border-white/20 bg-black/90 backdrop-blur-xl"
                   }`}
                 >
                   <Link
-                    href={getAppUrl("/exams")}
-                    className={`block px-4 py-2.5 text-sm transition-colors duration-200 ${
+                    href="/exams"
+                    className={`block border-b px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
                       lightChrome
-                        ? "text-neutral-800 hover:bg-black/[0.04]"
-                        : "text-white/90 hover:bg-white/10"
+                        ? "border-black/[0.06] text-neutral-900 hover:bg-black/[0.04]"
+                        : "border-white/10 text-white hover:bg-white/10"
                     }`}
                   >
-                    All exams
+                    All exams overview
                   </Link>
-                  <Link
-                    href={getAppUrl("/exams/sat")}
-                    className={`block px-4 py-2.5 text-sm transition-colors duration-200 ${
-                      lightChrome
-                        ? "text-neutral-800 hover:bg-black/[0.04]"
-                        : "text-white/90 hover:bg-white/10"
+                  <div
+                    className={`scrollbar-hide max-h-[min(70vh,22rem)] overflow-y-auto px-2 py-2 ${
+                      lightChrome ? "" : ""
                     }`}
                   >
-                    SAT
-                  </Link>
+                    <div className="grid grid-cols-2 gap-0.5">
+                      {MARKETING_EXAMS.map((exam) => (
+                        <Link
+                          key={exam.slug}
+                          href={`/exams/${exam.slug}`}
+                          className={`flex min-h-10 items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm transition-colors duration-200 ${
+                            lightChrome
+                              ? "text-neutral-800 hover:bg-black/[0.04]"
+                              : "text-white/90 hover:bg-white/10"
+                          }`}
+                        >
+                          <span className="min-w-0 truncate font-medium">{exam.shortName}</span>
+                          {exam.availability === "soon" && (
+                            <span
+                              className={`shrink-0 text-[10px] font-semibold uppercase tracking-wide ${
+                                lightChrome ? "text-neutral-400" : "text-white/45"
+                              }`}
+                            >
+                              Soon
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                   <Link
-                    href="/pricing"
-                    className={`block px-4 py-2.5 text-sm transition-colors duration-200 ${
+                    href="/compare"
+                    className={`block border-t px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
                       lightChrome
-                        ? "text-neutral-800 hover:bg-black/[0.04]"
-                        : "text-white/90 hover:bg-white/10"
+                        ? "border-black/[0.06] text-neutral-900 hover:bg-black/[0.04]"
+                        : "border-white/10 text-white hover:bg-white/10"
                     }`}
                   >
-                    ACT
+                    Compare tests &amp; global prep platforms
                   </Link>
                 </div>
               )}
             </div>
             <motion.div style={{ color: labelColor }}>
               <Link
-                href="/#capabilities"
+                href="/#product-tour"
                 className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                  pathname === '/' && typeof window !== 'undefined' && window.location.hash === '#capabilities'
+                  pathname === '/' && typeof window !== 'undefined' && window.location.hash === '#product-tour'
                     ? lightChrome ? 'bg-black/[0.08]' : 'bg-white/15'
                     : linkHoverBg
                 }`}
@@ -242,15 +263,40 @@ export function SiteHeader() {
             className="fixed inset-x-3 top-[4.75rem] z-[99] max-h-[min(70vh,calc(100dvh-6rem))] overflow-y-auto rounded-2xl border border-black/10 bg-white/95 p-4 shadow-xl backdrop-blur-xl sm:inset-x-4 sm:top-[5.25rem] lg:hidden"
           >
             <div className="flex flex-col gap-1 font-barlow">
-              <a
-                href={getAppUrl("/exams")}
+              <Link
+                href="/exams"
                 className="rounded-lg px-3 py-3 text-base font-medium text-neutral-900"
                 onClick={() => setOpen(false)}
               >
-                All exams
-              </a>
+                All exams overview
+              </Link>
+              <div className="rounded-xl border border-black/[0.06] bg-zinc-50/80 px-2 py-2">
+                <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">Exam guides</p>
+                <div className="scrollbar-hide grid max-h-52 grid-cols-2 gap-1 overflow-y-auto">
+                  {MARKETING_EXAMS.map((exam) => (
+                    <Link
+                      key={exam.slug}
+                      href={`/exams/${exam.slug}`}
+                      className="rounded-lg px-2.5 py-2 text-sm font-medium text-neutral-800 hover:bg-white"
+                      onClick={() => setOpen(false)}
+                    >
+                      {exam.shortName}
+                      {exam.availability === "soon" ? (
+                        <span className="ml-1 text-[10px] font-semibold uppercase text-neutral-400">Soon</span>
+                      ) : null}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <Link
-                href="/#capabilities"
+                href="/compare"
+                className="rounded-lg px-3 py-3 text-base font-semibold text-neutral-900"
+                onClick={() => setOpen(false)}
+              >
+                Compare tests &amp; platforms
+              </Link>
+              <Link
+                href="/#product-tour"
                 className="rounded-lg px-3 py-3 text-base text-neutral-800"
                 onClick={() => setOpen(false)}
               >
@@ -262,13 +308,6 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
               >
                 How it works
-              </Link>
-              <Link
-                href="/compare"
-                className="rounded-lg px-3 py-3 text-base text-neutral-800"
-                onClick={() => setOpen(false)}
-              >
-                Compare
               </Link>
               <Link
                 href="/pricing"

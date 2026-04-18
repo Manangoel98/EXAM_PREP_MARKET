@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ClipboardCheck, Brain, Target, Trophy, Clock } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { getAppUrl } from "@/lib/config";
 
 const steps = [
   {
@@ -117,14 +118,13 @@ export function HowItWorks() {
                 View pricing
               </Button>
             </Link>
-            <Link href="/auth">
-              <Button
-                size="lg"
-                className="min-h-11 rounded-full bg-white font-barlow font-semibold text-neutral-900 hover:bg-white/90"
-              >
-                Sign in / Get started
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="min-h-11 rounded-full bg-white font-barlow font-semibold text-neutral-900 hover:bg-white/90"
+              asChild
+            >
+              <a href={getAppUrl("/auth")}>Sign in / Get started</a>
+            </Button>
           </div>
           <p className="mt-4 font-barlow text-sm text-white/55 md:text-base">Per-exam subscription · Cancel anytime</p>
         </motion.div>

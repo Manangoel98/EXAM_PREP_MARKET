@@ -30,4 +30,14 @@ export const MKT = {
   sectionZinc: "border-t border-black/[0.06] bg-zinc-50 py-10 md:py-14",
   /** Tables: outer chrome */
   tableShell: "overflow-x-auto rounded-2xl border border-black/[0.08] shadow-sm",
+  /**
+   * Lucide icon container — border + zinc fill (no gradient “logo tiles”).
+   * Pair with iconTileSm or iconTileMd for size.
+   */
+  iconTile:
+    "inline-flex shrink-0 items-center justify-center border border-black/[0.08] bg-zinc-50 text-neutral-900",
+  iconTileSm: "h-12 w-12 rounded-xl",
+  iconTileMd: "h-14 w-14 rounded-2xl",
+  /** Main content area under MarketingPageShell — flat, no bg-gradient fades */
+  pageSection: "bg-zinc-50",
 } as const;

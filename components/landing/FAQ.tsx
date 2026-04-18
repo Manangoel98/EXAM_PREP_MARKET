@@ -11,7 +11,7 @@ import { LANDING_DURATION, LANDING_EASE, LANDING_VIEWPORT } from "@/lib/landing-
 
 export function FAQ() {
   return (
-    <section id="faq" className="scroll-mt-28 bg-zinc-50 py-20 font-barlow md:py-28">
+    <section id="faq" className="scroll-mt-44 bg-zinc-50 py-20 font-barlow md:scroll-mt-52 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mb-14 text-center"

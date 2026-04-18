@@ -2,11 +2,16 @@ import { MarketingPageShell } from "@/components/layout/MarketingPageShell";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { MKT } from "@/lib/marketing-ui";
 import type { Metadata } from "next";
+import { marketingAbsoluteUrl } from "@/lib/config";
+import { BreadcrumbStructuredData } from "@/lib/schema";
+
+const canonical = marketingAbsoluteUrl("/how-it-works");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "How NomoExam Works: AI-Powered Test Prep in 4 Simple Steps",
   description: "Learn how NomoExam's AI-powered platform helps you ace your exams. Take assessment, get personalized study plan, practice daily, and track improvement. Start in 5 minutes.",
-  alternates: { canonical: "https://nomoexam.com/how-it-works" },
+  alternates: { canonical },
   keywords: [
     "how NomoExam works",
     "AI study plan",
@@ -18,15 +23,28 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How NomoExam Works: From Sign-Up to Success in 4 Steps",
     description: "AI-powered test prep that adapts to your learning style. Personalized plans, adaptive practice, real-time analytics.",
-    url: "https://nomoexam.com/how-it-works",
+    url: canonical,
     siteName: "NomoExam",
     type: "website",
+    images: [{ url: og, width: 1200, height: 630, alt: "NomoExam — How it works" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How NomoExam Works",
+    description: "Personalized plans, adaptive practice, real-time analytics.",
+    images: [og],
   },
 };
 
 export default function HowItWorksPage() {
   return (
     <MarketingPageShell>
+      <BreadcrumbStructuredData
+        items={[
+          { name: "Home", url: marketingAbsoluteUrl("/") },
+          { name: "How it works", url: marketingAbsoluteUrl("/how-it-works") },
+        ]}
+      />
       <main>
         <HowItWorks />
 

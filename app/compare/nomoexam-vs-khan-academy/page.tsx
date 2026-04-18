@@ -21,11 +21,15 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { BreadcrumbStructuredData, FAQStructuredData } from "@/lib/schema";
+import { marketingAbsoluteUrl } from "@/lib/config";
+
+const canonical = marketingAbsoluteUrl("/compare/nomoexam-vs-khan-academy");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "NomoExam vs Khan Academy: Which Test Prep Platform is Better? (2025)",
   description: "Honest comparison of NomoExam vs Khan Academy for SAT, ACT, and other exam prep. Compare AI features, question banks, pricing, and which platform is best for your needs.",
-  alternates: { canonical: "https://nomoexam.com/compare/nomoexam-vs-khan-academy" },
+  alternates: { canonical },
   keywords: [
     "NomoExam vs Khan Academy",
     "Khan Academy alternative",
@@ -37,14 +41,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NomoExam vs Khan Academy: Complete Test Prep Comparison (2025)",
     description: "Side-by-side comparison of NomoExam and Khan Academy. Features, pricing, and which is best for your exam prep goals.",
-    url: "https://nomoexam.com/compare/nomoexam-vs-khan-academy",
+    url: canonical,
     siteName: "NomoExam",
     type: "article",
+    locale: "en_US",
+    images: [{ url: og, width: 1200, height: 630, alt: "NomoExam vs Khan Academy" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NomoExam vs Khan Academy",
+    description: "Feature and pricing comparison for test prep.",
+    images: [og],
   },
 };
 
 const comparisonData = [
-  { feature: "Price", option1: "From $9/month per exam (USD), cancel anytime", option2: "100% Free" },
+  { feature: "Price", option1: "Affordable subscription per exam, cancel anytime", option2: "100% Free" },
   { feature: "Exams Covered", option1: "SAT, ACT, GRE, GMAT, MCAT, LSAT, JEE, Reasoning", option2: "SAT only" },
   { feature: "Question Bank Size", option1: "10,000+ questions across all exams", option2: "~1,000 SAT questions" },
   { feature: "AI Study Coach", option1: true, option2: false },
@@ -77,7 +89,7 @@ export default function NomoExamVsKhanAcademyPage() {
           { question: "Can I use both NomoExam and Khan Academy?", answer: "Yes, many students use both platforms strategically. Use Khan Academy for initial concept learning and foundational skills (it's free), and NomoExam for adaptive practice, analytics, and exam-day simulation. Alternate between Khan's 8 official practice tests and NomoExam's unlimited generated tests." },
           { question: "Does NomoExam cover exams other than SAT?", answer: "Yes! NomoExam covers SAT, ACT, GRE, GMAT, MCAT, LSAT, JEE, and Reasoning exams. Khan Academy focuses exclusively on SAT prep." },
           { question: "What is NomoExam's AI Study Coach?", answer: "NomoExam's AI Study Coach analyzes your performance in real-time, identifies weak topics, suggests practice questions, and predicts your score based on current performance. It creates personalized study plans automatically and adjusts recommendations as you improve." },
-          { question: "How much does Nomoexam cost?", answer: "Nomoexam is $9/month per exam when billed monthly (USD). One subscription covers full access for that exam—practice, flashcards, paths, and unlimited AI. There is no free trial; you can cancel anytime so you are not billed again." },
+          { question: "How much does Nomoexam cost?", answer: "Nomoexam offers affordable per-exam subscriptions when billed monthly. One subscription covers full access for that exam—practice, flashcards, paths, and unlimited AI. You can cancel anytime so you are not billed again. Visit our pricing page for current rates." },
           { question: "Does Khan Academy have official SAT questions?", answer: "Yes! Khan Academy has an exclusive partnership with College Board, giving it access to official SAT questions. This ensures questions match the real test format exactly." },
           { question: "What is the ROI of NomoExam?", answer: "If NomoExam helps you improve your SAT score by 100-150 points, you could qualify for merit scholarships worth $10,000-$100,000+. With a 3-month subscription costing only $60, the potential return on investment is massive—often 166x to 1,666x your investment." }
         ]}
@@ -202,7 +214,7 @@ export default function NomoExamVsKhanAcademyPage() {
               Return on Investment Analysis
             </h2>
             <p className="text-center text-lg text-muted-foreground mb-12">
-              Is Nomoexam worth $9/month per exam? Let&apos;s talk ROI honestly.
+              Is Nomoexam worth the investment? Let&apos;s talk ROI honestly.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -228,7 +240,7 @@ export default function NomoExamVsKhanAcademyPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-neutral-900/12 rounded-xl p-8">
+            <div className="rounded-xl border-2 border-neutral-900/12 bg-zinc-50 p-8">
               <h3 className="text-2xl font-bold mb-4 text-center">The Math:</h3>
               
               <div className="space-y-6">
@@ -667,7 +679,7 @@ export default function NomoExamVsKhanAcademyPage() {
               <div className="space-y-4">
                 <div className="border-l-4 border-accent pl-4">
                   <h3 className="font-semibold mb-2">1. It's Completely Free</h3>
-                  <p className="text-sm text-muted-foreground">Khan Academy costs $0. Forever. No trials, no subscriptions, no hidden fees. This is unbeatable for students on a tight budget. Nomoexam is paid—<strong className="text-foreground">$9/month per exam (USD)</strong>, cancel anytime, no free trial.</p>
+                  <p className="text-sm text-muted-foreground">Khan Academy costs $0. Forever. No trials, no subscriptions, no hidden fees. This is unbeatable for students on a tight budget. Nomoexam is paid—<strong className="text-foreground">affordable subscription per exam</strong>, cancel anytime.</p>
                 </div>
 
                 <div className="border-l-4 border-accent pl-4">
@@ -693,9 +705,8 @@ export default function NomoExamVsKhanAcademyPage() {
                 <div className="border-2 border-neutral-900/12 p-6 bg-zinc-50">
                   <h3 className="text-xl font-semibold mb-3 text-neutral-900">NomoExam Pricing</h3>
                   <ul className="space-y-2 text-sm">
-                    <li>• <strong>Billing:</strong> $9/month per exam (USD), cancel anytime</li>
+                    <li>• <strong>Billing:</strong> Affordable per exam, cancel anytime</li>
                     <li>• <strong>Trial:</strong> No free trial</li>
-                    <li>• <strong>Annual:</strong> $149/year (~$12.50/month)</li>
                     <li>• <strong>Includes:</strong> All exams, AI coach, unlimited tests</li>
                     <li>• <strong>Refund Policy:</strong> 7-day money-back guarantee</li>
                   </ul>
@@ -774,7 +785,7 @@ export default function NomoExamVsKhanAcademyPage() {
                 Ready for paid, AI-heavy prep?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                <strong className="text-foreground">$9/month per exam (USD)</strong>—full product for that test. Cancel anytime. No free trial.
+                <strong className="text-foreground">Affordable subscription per exam</strong>—full product for that test. Cancel anytime.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -842,7 +853,7 @@ export default function NomoExamVsKhanAcademyPage() {
 
               <ExpandableSection title="How much does Nomoexam cost?" icon="dollar">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">$9/month per exam (USD)</strong> when billed monthly. Each subscription is for one exam and includes practice, flashcards, paths, and unlimited AI. There is no free trial; cancel anytime from your account.
+                  <strong className="text-foreground">Affordable subscription per exam</strong> when billed monthly. Each subscription is for one exam and includes practice, flashcards, paths, and unlimited AI. Cancel anytime from your account. Visit our pricing page for current rates.
                 </p>
               </ExpandableSection>
 
@@ -854,7 +865,7 @@ export default function NomoExamVsKhanAcademyPage() {
 
               <ExpandableSection title="What is the ROI of Nomoexam?" icon="chart">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Score lifts can unlock aid—individual results vary. At <strong className="text-foreground">$9/month per exam</strong>, even a few months of focused prep is modest relative to many scholarship and admissions outcomes. Treat prep spend as part of a broader plan, not a guarantee.
+                  Score lifts can unlock aid—individual results vary. Even a few months of focused prep at an affordable rate is modest relative to many scholarship and admissions outcomes. Treat prep spend as part of a broader plan, not a guarantee.
                 </p>
               </ExpandableSection>
             </div>

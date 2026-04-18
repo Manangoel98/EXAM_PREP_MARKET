@@ -14,11 +14,16 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import { marketingAbsoluteUrl } from "@/lib/config";
+import { BreadcrumbStructuredData } from "@/lib/schema";
+
+const canonical = marketingAbsoluteUrl("/features/nomo-ai");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "Nomo AI: Your Personal AI Study Coach | NomoExam",
   description: "Meet Nomo AI, your intelligent study companion with real-time access to your complete performance data. Get instant personalized insights, recommendations, and 24/7 study assistance powered by advanced AI.",
-  alternates: { canonical: "https://nomoexam.com/features/nomo-ai" },
+  alternates: { canonical },
   keywords: [
     "Nomo AI",
     "AI study coach",
@@ -32,9 +37,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nomo AI: AI-Powered Study Coach with Real-Time Performance Data",
     description: "Unlike generic AI assistants, Nomo AI understands YOUR learning journey. Personalized recommendations, instant answers, strategic guidance.",
-    url: "https://nomoexam.com/features/nomo-ai",
+    url: canonical,
     siteName: "NomoExam",
     type: "website",
+    images: [{ url: og, width: 1200, height: 630, alt: "Nomo AI — NomoExam" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nomo AI — NomoExam",
+    description: "Personalized AI study coach with real-time performance context.",
+    images: [og],
   },
 };
 
@@ -75,6 +87,13 @@ const capabilities = [
 export default function NomoAIPage() {
   return (
     <MarketingPageShell>
+      <BreadcrumbStructuredData
+        items={[
+          { name: "Home", url: marketingAbsoluteUrl("/") },
+          { name: "Features", url: marketingAbsoluteUrl("/features") },
+          { name: "Nomo AI", url: marketingAbsoluteUrl("/features/nomo-ai") },
+        ]}
+      />
       <main>
         <section className={`${MKT.darkHero} pt-20 md:pt-28 py-16 md:py-24`}>
           <div className={MKT.container}>
@@ -89,7 +108,7 @@ export default function NomoAIPage() {
               <p className={`${MKT.leadOnDark} mx-auto mb-8 max-w-3xl`}>
                 Nomo AI isn&apos;t a generic chatbot—it reads your attempts, timing, and weak topics so answers match{" "}
                 <strong className="text-white">your</strong> trajectory. Included in your per-exam subscription (
-                <strong className="text-white">$9/month per exam (USD)</strong>, cancel anytime).
+                <strong className="text-white">affordable subscription per exam</strong>, cancel anytime).
               </p>
 
               <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">

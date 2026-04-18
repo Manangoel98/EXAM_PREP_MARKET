@@ -1,37 +1,11 @@
 import type { MetadataRoute } from 'next';
-
-// Helper function to fetch exams from API
-async function fetchExams(): Promise<{ slug: string }[]> {
-  try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-    const response = await fetch(`${apiUrl}/api/exams`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 3600 }, // Cache for 1 hour
-    });
-
-    if (!response.ok) {
-      // Silently fail for sitemap generation - use static fallback
-      return [];
-    }
-    
-    const exams = await response.json();
-    // Ensure exams is an array and has slug
-    return exams.filter((exam: any) => exam && exam.slug);
-
-  } catch (error) {
-    // Silently fail for sitemap generation - use static fallback
-    return []; // Return empty array on error
-  }
-}
+import { getMarketingSiteOrigin } from '@/lib/config';
+import { MARKETING_EXAMS } from '@/lib/exams-marketing-data';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nomoexam.com';
+  const baseUrl = getMarketingSiteOrigin();
 
-  // All exam slugs
-  const examSlugs = ['sat', 'act', 'gre', 'gmat', 'lsat', 'mcat', 'jee', 'reasoning'];
-  
   // Comparison pages
   const comparisonPages = [
     '/compare',
@@ -40,30 +14,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/compare/nomoexam-vs-khan-academy',
   ];
 
-  // Feature pages
-  const featurePages = [
-    '/flashcards',
-    '/how-it-works',
-    '/features/nomo-ai',
-    '/nomoai',
-    '/try-free',
-    '/practice-papers',
+  // App-intent pages (for Android discovery)
+  const appPages = [
+    '/exam-preparation-app',
+    '/study-app-for-students',
+    '/mock-test-app',
   ];
 
-  // Static pages with their priorities and change frequencies
+  // Download intent pages (high conversion)
+  const downloadPages = [
+    '/download-exam-app',
+    '/free-mock-test-app',
+  ];
+
+  // Informational/guide pages (traffic layer)
+  const guidePages = [
+    '/how-to-prepare-for-sat',
+    '/how-to-prepare-for-jee',
+    '/neet-preparation-strategy',
+    '/sat-study-plan',
+    '/mock-test-strategy',
+  ];
+
+  // Static marketing pages with their priorities and change frequencies
   const staticPages = [
     { url: '/', changeFrequency: 'weekly', priority: 1.0 },
-    { url: '/exams', changeFrequency: 'weekly', priority: 0.9 },
     { url: '/pricing', changeFrequency: 'monthly', priority: 0.9 },
+    { url: '/features', changeFrequency: 'monthly', priority: 0.9 },
+    { url: '/exams', changeFrequency: 'monthly', priority: 0.95 },
+    { url: '/how-it-works', changeFrequency: 'monthly', priority: 0.85 },
+    { url: '/features/nomo-ai', changeFrequency: 'monthly', priority: 0.85 },
     { url: '/try-free', changeFrequency: 'monthly', priority: 0.85 },
-    { url: '/auth', changeFrequency: 'yearly', priority: 0.5 },
-    { url: '/dashboard', changeFrequency: 'daily', priority: 0.7 },
-    { url: '/study-plan', changeFrequency: 'daily', priority: 0.7 },
-    { url: '/practice-papers', changeFrequency: 'weekly', priority: 0.85 },
-    { url: '/nomoai', changeFrequency: 'monthly', priority: 0.85 },
-    { url: '/activity', changeFrequency: 'daily', priority: 0.6 },
-    { url: '/profile', changeFrequency: 'monthly', priority: 0.5 },
-    { url: '/onboarding', changeFrequency: 'yearly', priority: 0.5 },
     { url: '/contact', changeFrequency: 'yearly', priority: 0.7 },
     { url: '/terms-of-service', changeFrequency: 'yearly', priority: 0.4 },
     { url: '/privacy-policy', changeFrequency: 'yearly', priority: 0.4 },
@@ -75,12 +56,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page.priority,
   }));
 
-  // Generate exam pages dynamically
-  const staticExamPages = examSlugs.map(slug => ({
-    url: `${baseUrl}/exams/${slug}`,
+  const examLandingPages = MARKETING_EXAMS.map((exam) => ({
+    url: `${baseUrl}/exams/${exam.slug}`,
     lastModified,
     changeFrequency: 'monthly' as const,
-    priority: 0.85,
+    priority: exam.popular ? 0.9 : 0.82,
+  }));
+
+  // Programmatic exam-specific app pages (e.g., /sat-prep-app, /jee-prep-app)
+  const examAppPages = MARKETING_EXAMS.map((exam) => ({
+    url: `${baseUrl}/${exam.slug}-prep-app`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: exam.popular ? 0.91 : 0.85,
   }));
 
   // Generate comparison pages
@@ -91,31 +79,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Generate feature pages
-  const featurePageUrls = featurePages.map(page => ({
+  // Generate app-intent pages
+  const appPageUrls = appPages.map(page => ({
     url: `${baseUrl}${page}`,
     lastModified,
     changeFrequency: 'monthly' as const,
-    priority: 0.75,
+    priority: 0.88,
   }));
 
-  // Fetch exams for dynamic routes
-  const exams = await fetchExams();
-  const examPages = exams.flatMap(exam => [
-    {
-      url: `${baseUrl}/exams/${exam.slug}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/practice/${exam.slug}`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-  ]);
+  // Generate download intent pages
+  const downloadPageUrls = downloadPages.map(page => ({
+    url: `${baseUrl}${page}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.89,
+  }));
 
-  // Combine all pages
-  return [...staticPages, ...staticExamPages, ...comparisonPageUrls, ...featurePageUrls, ...examPages];
+  // Generate guide/informational pages
+  const guidePageUrls = guidePages.map(page => ({
+    url: `${baseUrl}${page}`,
+    lastModified,
+    changeFrequency: 'weekly' as const,
+    priority: 0.87,
+  }));
+
+  return [
+    ...staticPages,
+    ...examLandingPages,
+    ...examAppPages,
+    ...comparisonPageUrls,
+    ...appPageUrls,
+    ...downloadPageUrls,
+    ...guidePageUrls,
+  ];
 }

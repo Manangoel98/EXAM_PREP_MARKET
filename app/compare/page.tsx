@@ -3,11 +3,16 @@ import { MKT } from "@/lib/marketing-ui";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Scale } from "lucide-react";
+import { marketingAbsoluteUrl } from "@/lib/config";
+import { BreadcrumbStructuredData } from "@/lib/schema";
+
+const canonical = marketingAbsoluteUrl("/compare");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "Compare Exams & Test Prep Platforms | NomoExam",
   description: "Compare SAT vs ACT, GRE vs GMAT, and other standardized tests. Find the right exam for your goals and compare NomoExam with other test prep platforms.",
-  alternates: { canonical: "https://nomoexam.com/compare" },
+  alternates: { canonical },
   keywords: [
     "compare exams",
     "SAT vs ACT",
@@ -20,17 +25,17 @@ export const metadata: Metadata = {
     title: "Compare Exams & Test Prep Platforms | NomoExam",
     description:
       "Side-by-side guides for SAT vs ACT, GRE vs GMAT, and how NomoExam compares to other prep platforms.",
-    url: "https://nomoexam.com/compare",
+    url: canonical,
     siteName: "NomoExam",
     type: "website",
-    images: [{ url: "https://nomoexam.com/og-image.svg", width: 1200, height: 630, alt: "NomoExam" }],
+    images: [{ url: og, width: 1200, height: 630, alt: "NomoExam" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Compare Exams & Test Prep Platforms | NomoExam",
     description:
       "Choose the right test and prep stack with NomoExam comparison guides.",
-    images: ["https://nomoexam.com/og-image.svg"],
+    images: [og],
   },
 };
 
@@ -96,6 +101,12 @@ const platformComparisons: PlatformComparisonCard[] = [
 export default function ComparePage() {
   return (
     <MarketingPageShell>
+      <BreadcrumbStructuredData
+        items={[
+          { name: "Home", url: marketingAbsoluteUrl("/") },
+          { name: "Compare exams & platforms", url: marketingAbsoluteUrl("/compare") },
+        ]}
+      />
       <main>
         {/* Hero Section */}
         <section className={MKT.darkHero}>
@@ -231,12 +242,98 @@ export default function ComparePage() {
           </div>
         </section>
 
+        {/* Helpful Resources Section */}
+        <section className={`${MKT.container} py-12 md:py-16`}>
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-10 text-center">
+              <h2 className={`${MKT.h2Section} mb-3`}>Helpful Resources</h2>
+              <p className={MKT.leadOnLight}>
+                Expert guides and strategies to help you prepare for your exam
+              </p>
+            </div>
+            
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Link
+                href="/how-to-prepare-for-sat"
+                className={`group ${MKT.card} ${MKT.cardHover} block hover:border-primary/30`}
+              >
+                <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-primary">
+                  How to Prepare for SAT
+                </h3>
+                <p className="text-sm font-medium text-neutral-600">
+                  Complete 2026 guide with 3-month study plan, proven strategies, and common mistakes to avoid
+                </p>
+              </Link>
+
+              <Link
+                href="/sat-study-plan"
+                className={`group ${MKT.card} ${MKT.cardHover} block hover:border-primary/30`}
+              >
+                <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-primary">
+                  SAT Study Plan
+                </h3>
+                <p className="text-sm font-medium text-neutral-600">
+                  Week-by-week 3-month schedule with daily routines and practice test timeline
+                </p>
+              </Link>
+
+              <Link
+                href="/mock-test-strategy"
+                className={`group ${MKT.card} ${MKT.cardHover} block hover:border-primary/30`}
+              >
+                <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-primary">
+                  Mock Test Strategy
+                </h3>
+                <p className="text-sm font-medium text-neutral-600">
+                  Master mock tests for SAT, ACT, JEE, NEET with expert analysis tactics
+                </p>
+              </Link>
+
+              <Link
+                href="/how-to-prepare-for-jee"
+                className={`group ${MKT.card} ${MKT.cardHover} block hover:border-primary/30`}
+              >
+                <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-primary">
+                  How to Prepare for JEE
+                </h3>
+                <p className="text-sm font-medium text-neutral-600">
+                  Complete 2026 strategy for JEE Main & Advanced with 2-year preparation plan
+                </p>
+              </Link>
+
+              <Link
+                href="/neet-preparation-strategy"
+                className={`group ${MKT.card} ${MKT.cardHover} block hover:border-primary/30`}
+              >
+                <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-primary">
+                  NEET Preparation Strategy
+                </h3>
+                <p className="text-sm font-medium text-neutral-600">
+                  Complete guide for medical aspirants with 18-month strategy and NCERT focus
+                </p>
+              </Link>
+
+              <Link
+                href="/exam-preparation-app"
+                className={`group ${MKT.card} ${MKT.cardHover} block hover:border-primary/30`}
+              >
+                <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900 transition-colors group-hover:text-primary">
+                  Exam Preparation App
+                </h3>
+                <p className="text-sm font-medium text-neutral-600">
+                  Download NomoExam app for Android with practice tests, AI tutor, and study plans
+                </p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className={`${MKT.container} py-12 md:py-16`}>
           <div className={`mx-auto max-w-3xl rounded-2xl border border-black/[0.08] bg-white/90 p-8 text-center shadow-sm md:p-12`}>
             <h2 className={`${MKT.h2Section} mb-4`}>Ready to start?</h2>
             <p className={`${MKT.leadOnLight} mb-8`}>
-              <strong className="text-neutral-900">$9/month per exam (USD)</strong>, full access for that test. Cancel anytime.
+              <strong className="text-neutral-900">Affordable subscription per exam</strong>, full access for that test. Cancel anytime.
             </p>
             <Link href="/pricing" className={MKT.btnPrimary}>
               View pricing

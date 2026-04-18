@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from "next"
 import { Suspense } from "react"
 import { Inter, JetBrains_Mono, Barlow, Instrument_Serif } from "next/font/google"
 import "./globals.css"
-import { config } from '@/lib/config';
-import { OrganizationStructuredData, WebSiteStructuredData } from '@/lib/schema';
+import { config, marketingAbsoluteUrl, getMarketingSiteOrigin } from '@/lib/config';
+import { OrganizationStructuredData, WebSiteStructuredData, SiteNavigationStructuredData } from '@/lib/schema';
 import ErrorBoundary from '@/components/error/ErrorBoundary';
 import { ClientProviders } from '@/components/layout/ClientProviders';
 import { Analytics } from "@vercel/analytics/next";
@@ -42,14 +42,17 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 })
 
+const siteOrigin = getMarketingSiteOrigin();
+const defaultOgImage = marketingAbsoluteUrl('/og-image.svg');
+
 export const metadata: Metadata = {
   title: "Nomoexam — Exam Prep | SAT, ACT, GRE, MCAT & More",
   description:
     "Practice tests, flashcards, learning paths, and AI tutor for major exams. Per-exam subscriptions in USD. SAT & ACT available now.",
   manifest: "manifest.json",
-  metadataBase: new URL('https://nomoexam.com'),
+  metadataBase: new URL(siteOrigin),
   alternates: {
-    canonical: 'https://nomoexam.com',
+    canonical: siteOrigin,
   },
   icons: {
     icon: [
@@ -66,7 +69,11 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: config.app.name,
   },
-  generator: 'M0xlr',
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
   keywords: [
     'SAT prep',
     'ACT prep',
@@ -87,14 +94,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nomoexam — SAT & ACT Prep | Practice, Flashcards, AI Tutor',
     description:
-      'Structured exam prep with practice tests, flashcards, paths, and unlimited AI help. Per exam from $9/mo USD.',
-    url: 'https://nomoexam.com',
+      'Structured exam prep with practice tests, flashcards, paths, and unlimited AI help. Available per exam.',
+    url: siteOrigin,
     siteName: 'NomoExam',
     type: 'website',
     locale: 'en_US',
     images: [
       {
-        url: 'https://nomoexam.com/og-image.svg',
+        url: defaultOgImage,
         width: 1200,
         height: 630,
         alt: 'Nomoexam — exam preparation platform',
@@ -108,8 +115,8 @@ export const metadata: Metadata = {
     site: '@nomoexam',
     creator: '@nomoexam',
     title: 'Nomoexam — SAT & ACT Prep | Practice, Flashcards, AI Tutor',
-    description: 'Exam prep with practice tests, flashcards, learning paths, and AI tutor. From $9/mo per exam.',
-    images: ['https://nomoexam.com/og-image.svg'],
+    description: 'Exam prep with practice tests, flashcards, learning paths, and AI tutor. Available per exam.',
+    images: [defaultOgImage],
   },
   
   robots: {
@@ -150,9 +157,11 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${barlow.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="googlebot" content="max-image-preview:large" />
         <link rel="alternate" type="application/rss+xml" title={`${config.seo.siteName} RSS Feed`} href="/rss.xml" />
         <OrganizationStructuredData />
         <WebSiteStructuredData />
+        <SiteNavigationStructuredData />
       </head>
       <body className="bg-zinc-50" suppressHydrationWarning>
         <ErrorBoundary>

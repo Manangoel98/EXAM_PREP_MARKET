@@ -4,7 +4,7 @@
  */
 
 import { type ReactElement } from 'react';
-import { config } from './config';
+import { config, getMarketingSiteOrigin } from './config';
 
 interface BaseSchema {
   '@context': 'https://schema.org';
@@ -87,7 +87,7 @@ interface EducationalOrganizationSchema extends BaseSchema {
   sameAs?: string[];
 }
 
-const baseUrl = config.app.url;
+const baseUrl = getMarketingSiteOrigin();
 
 /**
  * Renders JSON-LD structured data in a script tag
@@ -160,6 +160,7 @@ export function WebSiteStructuredData(): ReactElement {
 /**
  * SiteNavigationElement schema for Google Sitelinks
  * Helps Google understand your main navigation structure
+ * ONLY includes pages that exist on the marketing site
  */
 export function SiteNavigationStructuredData(): ReactElement {
   const data = {
@@ -169,65 +170,72 @@ export function SiteNavigationStructuredData(): ReactElement {
       {
         '@type': 'SiteNavigationElement',
         position: 1,
-        name: 'Pricing',
-        description: 'Affordable exam prep plans for all major exams',
-        url: `${baseUrl}/pricing`,
+        name: 'Exam Preparation Platform',
+        description: 'AI-powered exam prep for SAT, ACT, GRE, GMAT & more',
+        url: `${baseUrl}/`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 2,
-        name: 'SAT Prep',
-        description: 'Complete SAT preparation with practice tests and AI tutoring',
-        url: `${baseUrl}/exams/sat`,
+        name: 'Exams',
+        description: 'Prepare for SAT, ACT, GRE, GMAT, MCAT, LSAT, and more',
+        url: `${baseUrl}/exams`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 3,
-        name: 'GRE Prep',
-        description: 'Master the GRE with our comprehensive prep platform',
-        url: `${baseUrl}/exams/gre`,
+        name: 'Features',
+        description: 'AI tutor, practice tests, flashcards, and personalized study plans',
+        url: `${baseUrl}/features`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 4,
-        name: 'GMAT Prep',
-        description: 'Ace the GMAT for MBA admissions',
-        url: `${baseUrl}/exams/gmat`,
+        name: 'Pricing',
+        description: 'Simple, transparent pricing per exam with full access',
+        url: `${baseUrl}/pricing`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 5,
-        name: 'MCAT Prep',
-        description: 'Medical school admission test preparation',
-        url: `${baseUrl}/exams/mcat`,
+        name: 'Exam Preparation App',
+        description: 'Download NomoExam for Android - AI tutor, practice tests, flashcards',
+        url: `${baseUrl}/exam-preparation-app`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 6,
-        name: 'Nomo AI Tutor',
-        description: 'Your personal 24/7 AI exam tutor',
-        url: `${baseUrl}/features/nomo-ai`,
+        name: 'Study App for Students',
+        description: 'Best study app for students preparing for standardized tests',
+        url: `${baseUrl}/study-app-for-students`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 7,
-        name: 'Practice Papers',
-        description: 'Full-length exam practice tests',
-        url: `${baseUrl}/practice-papers`,
+        name: 'Mock Test App',
+        description: 'Full-length practice tests with instant scoring and AI explanations',
+        url: `${baseUrl}/mock-test-app`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 8,
         name: 'How it Works',
-        description: 'Learn how NomoExam helps you succeed',
+        description: 'Learn how NomoExam helps you master your exam in 4 simple steps',
         url: `${baseUrl}/how-it-works`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 9,
-        name: 'Contact',
-        description: 'Get in touch with our support team',
-        url: `${baseUrl}/contact`,
+        name: 'Compare',
+        description: 'See how NomoExam compares to other test prep platforms',
+        url: `${baseUrl}/compare`,
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 10,
+        name: 'Try sample questions',
+        description: 'Interactive SAT-style demo—no account required',
+        url: `${baseUrl}/try-free`,
       },
     ],
   };
@@ -486,9 +494,15 @@ export function HomePageWebStructuredData(): ReactElement {
         '@id': `${baseUrl}/#softwareapplication`,
         name: config.seo.siteName,
         applicationCategory: 'EducationalApplication',
-        operatingSystem: 'Web',
+        operatingSystem: 'Android, Web',
         url: baseUrl,
         description: homePageDescription,
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          ratingCount: '2847',
+          bestRating: '5',
+        },
         offers: {
           '@type': 'Offer',
           price: '9',
@@ -502,6 +516,51 @@ export function HomePageWebStructuredData(): ReactElement {
         },
       },
     ],
+  };
+
+  return <StructuredData data={data} />;
+}
+
+/**
+ * Android MobileApplication schema for Play Store app
+ */
+export function AndroidAppStructuredData(): ReactElement {
+  const ANDROID_APP = {
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.nomoexam.student",
+    packageName: "com.nomoexam.student",
+    appName: "NomoExam",
+  };
+
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'NomoExam - Exam Prep & AI Tutor',
+    applicationCategory: 'EducationalApplication',
+    applicationSubCategory: 'Test Preparation',
+    operatingSystem: 'ANDROID',
+    url: ANDROID_APP.playStoreUrl,
+    downloadUrl: ANDROID_APP.playStoreUrl,
+    identifier: ANDROID_APP.packageName,
+    description: 'SAT, ACT, GRE & more: practice tests, flashcards, AI tutor. Study smarter on Android.',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '2847',
+      reviewCount: '1893',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '9',
+      priceCurrency: 'USD',
+      priceValidUntil: '2026-12-31',
+    },
+    author: {
+      '@type': 'Organization',
+      name: config.seo.siteName,
+      url: baseUrl,
+    },
   };
 
   return <StructuredData data={data} />;

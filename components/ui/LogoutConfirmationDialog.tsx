@@ -2,7 +2,7 @@
 import { logger } from '@/lib/logger';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { getAppUrl } from '@/lib/config';
 import {
   AlertDialog,
   AlertDialogContent,
@@ -29,7 +29,6 @@ export function LogoutConfirmationDialog({
   isLoading = false,
 }: LogoutConfirmationDialogProps) {
   const [isProcessing, setIsProcessing] = useState(false);
-  const router = useRouter();
 
   const handleConfirm = async () => {
     setIsProcessing(true);
@@ -42,7 +41,7 @@ export function LogoutConfirmationDialog({
 
       // Navigate to auth page using window.location for clean slate
       // This ensures no React state artifacts remain and forces a full page reload
-      window.location.href = '/auth';
+      window.location.href = getAppUrl('/auth');
     } catch (error) {
       logger.error('Logout error:', error);
       setIsProcessing(false);

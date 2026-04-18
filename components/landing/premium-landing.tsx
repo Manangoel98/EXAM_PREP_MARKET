@@ -27,16 +27,17 @@ const chipItemVariants = {
   },
 };
 
+/** Marketing routes for SEO; app entry remains getAppUrl("/auth") and hero CTAs. */
 const examChips = [
-  { label: "SAT", href: getAppUrl("/exams/sat"), status: "live" as const, external: true },
-  { label: "ACT", href: "/pricing", status: "live" as const, external: false },
-  { label: "AP", href: "/exams", status: "soon" as const, external: false },
-  { label: "GRE", href: getAppUrl("/exams/gre"), status: "soon" as const, external: true },
-  { label: "MCAT", href: getAppUrl("/exams/mcat"), status: "soon" as const, external: true },
-  { label: "NEET", href: "/exams", status: "soon" as const, external: false },
-  { label: "JEE", href: getAppUrl("/exams/jee"), status: "soon" as const, external: true },
-  { label: "CAT", href: "/exams", status: "soon" as const, external: false },
-  { label: "CA (India)", href: "/exams", status: "soon" as const, external: false },
+  { label: "SAT", href: "/exams/sat", status: "live" as const },
+  { label: "ACT", href: "/exams/act", status: "live" as const },
+  { label: "AP", href: "/exams/ap", status: "soon" as const },
+  { label: "GRE", href: "/exams/gre", status: "soon" as const },
+  { label: "MCAT", href: "/exams/mcat", status: "soon" as const },
+  { label: "NEET", href: "/exams/neet", status: "soon" as const },
+  { label: "JEE", href: "/exams/jee", status: "soon" as const },
+  { label: "CAT", href: "/exams/cat", status: "soon" as const },
+  { label: "CA (India)", href: "/exams", status: "soon" as const },
 ];
 
 export function PremiumHero() {
@@ -114,31 +115,23 @@ export function PremiumHero() {
             {examChips.map((chip) =>
               chip.status === "live" ? (
                 <motion.div key={chip.label} variants={chipItemVariants}>
-                  {chip.external ? (
-                    <a
-                      href={chip.href}
-                      className="inline-block rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/15"
-                    >
-                      {chip.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={chip.href}
-                      className="inline-block rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/15"
-                    >
-                      {chip.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={chip.href}
+                    className="inline-block rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/15"
+                  >
+                    {chip.label}
+                  </Link>
                 </motion.div>
               ) : (
-                <motion.span
-                  key={chip.label}
-                  variants={chipItemVariants}
-                  className="inline-block rounded-full border border-white/15 bg-black/20 px-4 py-2 text-sm text-white/55"
-                >
-                  {chip.label}
-                  <span className="ml-1.5 text-[10px] font-semibold uppercase tracking-wider text-white/40">Soon</span>
-                </motion.span>
+                <motion.div key={chip.label} variants={chipItemVariants}>
+                  <Link
+                    href={chip.href}
+                    className="inline-flex items-center rounded-full border border-white/15 bg-black/20 px-4 py-2 text-sm text-white/75 backdrop-blur-sm transition-colors hover:border-white/25 hover:bg-black/30 hover:text-white"
+                  >
+                    {chip.label}
+                    <span className="ml-1.5 text-[10px] font-semibold uppercase tracking-wider text-white/45">Soon</span>
+                  </Link>
+                </motion.div>
               ),
             )}
           </motion.div>
@@ -154,11 +147,11 @@ export function PremiumHero() {
                 size="lg"
                 className="h-14 rounded-full bg-[#f8f8f8] px-8 font-barlow text-base font-semibold text-[#171717] shadow-lg transition-colors hover:bg-white"
               >
-                Start at $9/mo per exam
+                Affordable per exam
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href={getAppUrl("/exams/sat")}>
+            <Link href="/exams/sat">
               <Button
                 size="lg"
                 variant="outline"
@@ -167,7 +160,7 @@ export function PremiumHero() {
                 <Play className="mr-2 h-4 w-4 fill-current" />
                 Explore SAT prep
               </Button>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.p
@@ -176,7 +169,7 @@ export function PremiumHero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.42, ease: LANDING_EASE }}
           >
-            $9/month per exam (USD) · Cancel anytime · For students and parents
+            Affordable subscription per exam · Cancel anytime · For students and parents
           </motion.p>
 
           <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-white/45">
@@ -215,22 +208,28 @@ const examMarqueeItem = {
   },
 };
 
+/** Order matches marketing exam guides; every label links to `/exams/{slug}`. */
+const MARQUEE_EXAMS: { label: string; slug: string }[] = [
+  { label: "SAT", slug: "sat" },
+  { label: "ACT", slug: "act" },
+  { label: "AP", slug: "ap" },
+  { label: "GRE", slug: "gre" },
+  { label: "GMAT", slug: "gmat" },
+  { label: "MCAT", slug: "mcat" },
+  { label: "LSAT", slug: "lsat" },
+  { label: "NEET", slug: "neet" },
+  { label: "JEE", slug: "jee" },
+  { label: "CAT", slug: "cat" },
+  { label: "TOEFL", slug: "toefl" },
+  { label: "Reasoning", slug: "reasoning" },
+];
+
 export function ExamsMarqueeStrip() {
-  const names = [
-    "SAT",
-    "ACT",
-    "AP",
-    "GRE",
-    "MCAT",
-    "NEET",
-    "JEE",
-    "CAT",
-    "CA Foundation",
-    "GMAT",
-    "LSAT",
-  ];
   return (
-    <section className="border-y border-black/[0.06] bg-zinc-50 py-14 font-barlow md:py-16">
+    <section
+      id="exams-we-cover"
+      className="scroll-mt-44 border-y border-black/[0.06] bg-zinc-50 pb-16 pt-24 font-barlow md:scroll-mt-52 md:pb-20 md:pt-32"
+    >
       <div className="container mx-auto px-4 text-center md:px-6">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -246,25 +245,36 @@ export function ExamsMarqueeStrip() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={LANDING_VIEWPORT}
           transition={{ duration: LANDING_DURATION, delay: 0.05, ease: LANDING_EASE }}
-          className="font-heading mb-10 text-3xl italic tracking-tight text-neutral-900 md:text-4xl"
+          className="font-heading mb-4 text-3xl italic tracking-tight text-neutral-900 md:text-4xl"
         >
           The tests we&apos;re built for
         </motion.h2>
+        <p className="mx-auto mb-10 max-w-2xl text-sm font-medium text-neutral-600 md:text-base">
+          Tap an exam for a full guide—format, prep tips, and how NomoExam fits.{" "}
+          <Link href="/exams" className="font-semibold text-neutral-900 underline decoration-accent-lime/70 underline-offset-4 hover:decoration-accent-lime">
+            Browse all exams
+          </Link>
+          {" · "}
+          <Link href="/compare" className="font-semibold text-neutral-900 underline decoration-accent-lime/70 underline-offset-4 hover:decoration-accent-lime">
+            Compare platforms
+          </Link>
+        </p>
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:gap-x-14"
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:gap-x-10 md:gap-y-4"
           variants={examMarqueeContainer}
           initial="hidden"
           whileInView="show"
           viewport={LANDING_VIEWPORT}
         >
-          {names.map((name) => (
-            <motion.span
-              key={name}
-              variants={examMarqueeItem}
-              className="font-heading text-2xl italic text-neutral-800 md:text-3xl"
-            >
-              {name}
-            </motion.span>
+          {MARQUEE_EXAMS.map((exam) => (
+            <motion.div key={exam.slug} variants={examMarqueeItem}>
+              <Link
+                href={`/exams/${exam.slug}`}
+                className="font-heading text-xl italic text-neutral-800 underline-offset-4 transition-colors hover:text-neutral-950 hover:underline md:text-2xl"
+              >
+                {exam.label}
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
       </div>
@@ -297,7 +307,7 @@ export function CapabilitiesSection() {
   return (
     <section
       id="capabilities"
-      className="scroll-mt-28 border-t border-black/[0.06] bg-gradient-to-b from-white to-zinc-50 py-20 font-barlow md:py-28"
+      className="scroll-mt-44 border-t border-black/[0.06] bg-gradient-to-b from-white to-zinc-50 py-20 font-barlow md:scroll-mt-52 md:py-28"
     >
       <div className="mx-auto max-w-5xl px-4 md:px-6">
         <motion.div
@@ -322,9 +332,35 @@ export function CapabilitiesSection() {
             <span className="text-neutral-600">The whole product—not a stripped tier.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
-            Practice, flashcards, paths, and unlimited AI. <strong className="text-neutral-900">$9/month per exam (USD)</strong>, cancel
+            Practice, flashcards, paths, and unlimited AI. <strong className="text-neutral-900">Affordable subscription per exam</strong>, cancel
             anytime.
           </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 md:gap-3">
+            <Link
+              href="/compare"
+              className="rounded-full border border-black/[0.08] bg-white/90 px-4 py-2 text-xs font-semibold text-neutral-800 shadow-sm transition hover:border-accent-lime/40 hover:bg-accent-lime/10 md:text-sm"
+            >
+              Compare global prep platforms
+            </Link>
+            <Link
+              href="/compare/sat-vs-act"
+              className="rounded-full border border-black/[0.08] bg-white/90 px-4 py-2 text-xs font-semibold text-neutral-700 shadow-sm transition hover:border-accent-lime/40 md:text-sm"
+            >
+              SAT vs ACT
+            </Link>
+            <Link
+              href="/compare/gre-vs-gmat"
+              className="rounded-full border border-black/[0.08] bg-white/90 px-4 py-2 text-xs font-semibold text-neutral-700 shadow-sm transition hover:border-accent-lime/40 md:text-sm"
+            >
+              GRE vs GMAT
+            </Link>
+            <Link
+              href="/compare/nomoexam-vs-khan-academy"
+              className="rounded-full border border-black/[0.08] bg-white/90 px-4 py-2 text-xs font-semibold text-neutral-700 shadow-sm transition hover:border-accent-lime/40 md:text-sm"
+            >
+              NomoExam vs Khan Academy
+            </Link>
+          </div>
         </motion.div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
@@ -358,8 +394,12 @@ export function CapabilitiesSection() {
           <p className="text-sm font-medium leading-relaxed text-neutral-600 md:text-base">
             Live for <strong className="text-neutral-900">SAT</strong> and <strong className="text-neutral-900">ACT</strong> today. More
             exams are on the roadmap.{" "}
+            <Link href="/exams" className={linkUnderline}>
+              All exam guides
+            </Link>
+            {" · "}
             <Link href="/compare" className={linkUnderline}>
-              Compare tests
+              Compare tests &amp; platforms
             </Link>
             {" · "}
             <Link href="/how-it-works" className={linkUnderline}>

@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MKT } from "@/lib/marketing-ui";
+import { getAppUrl } from "@/lib/config";
 
 const flashcardStats = [
   {
@@ -100,9 +101,9 @@ export function FlashcardsShowcase() {
               View pricing
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
-            <Link href="/dashboard" className={MKT.btnOutlineLight}>
+            <a href={getAppUrl("/dashboard")} className={MKT.btnOutlineLight}>
               Go to dashboard
-            </Link>
+            </a>
           </div>
         </motion.div>
 
@@ -158,13 +159,13 @@ export function FlashcardsShowcase() {
                   </span>
                 </div>
                 <p className="mb-4 text-sm font-medium text-neutral-600">{exam.topics}</p>
-                <Link
-                  href="/practice"
+                <a
+                  href={getAppUrl("/practice")}
                   className="inline-flex items-center text-sm font-semibold text-neutral-900 underline decoration-accent-lime/70 underline-offset-4 hover:decoration-accent-lime"
                 >
                   Start in practice
                   <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
-                </Link>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -275,9 +276,9 @@ export function FlashcardsShowcase() {
               See plans
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
-            <Link href="/dashboard" className={MKT.btnSecondary}>
+            <a href={getAppUrl("/dashboard")} className={MKT.btnSecondary}>
               Dashboard
-            </Link>
+            </a>
           </div>
         </motion.div>
 

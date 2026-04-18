@@ -1,24 +1,28 @@
 import { MarketingPageShell } from "@/components/layout/MarketingPageShell";
 import { MKT } from "@/lib/marketing-ui";
 import type { Metadata } from "next";
+import { marketingAbsoluteUrl } from "@/lib/config";
+
+const canonical = marketingAbsoluteUrl("/terms-of-service");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "Terms of Service | NomoExam",
   description: "Read the terms of service for NomoExam, an AI-powered exam preparation platform for SAT, ACT, GRE, GMAT, MCAT, LSAT, and JEE.",
-  alternates: { canonical: "https://nomoexam.com/terms-of-service" },
+  alternates: { canonical },
   openGraph: {
     title: "Terms of Service | NomoExam",
     description: "Terms and conditions for using NomoExam exam preparation platform.",
-    url: "https://nomoexam.com/terms-of-service",
+    url: canonical,
     siteName: "NomoExam",
     type: "website",
-    images: [{ url: "https://nomoexam.com/og-image.svg", width: 1200, height: 630, alt: "NomoExam Terms" }],
+    images: [{ url: og, width: 1200, height: 630, alt: "NomoExam Terms" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service | NomoExam",
     description: "Terms and conditions for using NomoExam exam preparation platform.",
-    images: ["https://nomoexam.com/og-image.svg"],
+    images: [og],
   },
   keywords: ["terms of service", "terms and conditions", "user agreement", "NomoExam terms"],
 };

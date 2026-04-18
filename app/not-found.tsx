@@ -1,5 +1,13 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page not found | NomoExam',
+  description:
+    'The page you are looking for does not exist or has moved. Explore NomoExam exam prep, pricing, features, and free sample questions.',
+  robots: { index: false, follow: true },
+};
 
 export default function Custom404() {
   return (

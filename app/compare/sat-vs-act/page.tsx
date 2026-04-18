@@ -25,11 +25,15 @@ import {
   XCircle,
 } from "lucide-react";
 import { BreadcrumbStructuredData, FAQStructuredData } from "@/lib/schema";
+import { marketingAbsoluteUrl } from "@/lib/config";
+
+const canonical = marketingAbsoluteUrl("/compare/sat-vs-act");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "SAT vs ACT: Which Test Should You Take? (2025 Comparison)",
   description: "Detailed comparison of SAT vs ACT for college admissions. Compare test format, duration, scoring, difficulty, and which test is best for you. Updated for 2025 digital SAT.",
-  alternates: { canonical: "https://nomoexam.com/compare/sat-vs-act" },
+  alternates: { canonical },
   keywords: [
     "SAT vs ACT",
     "difference between SAT and ACT",
@@ -41,9 +45,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SAT vs ACT: Complete Comparison for College Admissions (2025)",
     description: "Compare SAT and ACT side-by-side. Test format, scoring, difficulty, and expert recommendations.",
-    url: "https://nomoexam.com/compare/sat-vs-act",
+    url: canonical,
     siteName: "NomoExam",
     type: "article",
+    locale: "en_US",
+    images: [{ url: og, width: 1200, height: 630, alt: "SAT vs ACT — NomoExam" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SAT vs ACT — NomoExam",
+    description: "Side-by-side comparison for college admissions.",
+    images: [og],
   },
 };
 

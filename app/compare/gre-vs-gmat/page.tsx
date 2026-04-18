@@ -25,11 +25,15 @@ import {
   XCircle,
 } from "lucide-react";
 import { BreadcrumbStructuredData, FAQStructuredData } from "@/lib/schema";
+import { marketingAbsoluteUrl } from "@/lib/config";
+
+const canonical = marketingAbsoluteUrl("/compare/gre-vs-gmat");
+const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
   title: "GRE vs GMAT: Which Test for MBA & Graduate School? (2025 Guide)",
   description: "Complete comparison of GRE vs GMAT for MBA and graduate programs. Compare test format, scoring, difficulty, and which business schools accept each test. Expert recommendations included.",
-  alternates: { canonical: "https://nomoexam.com/compare/gre-vs-gmat" },
+  alternates: { canonical },
   keywords: [
     "GRE vs GMAT",
     "GRE or GMAT for MBA",
@@ -41,9 +45,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "GRE vs GMAT: Which Test Should You Take for MBA? (2025)",
     description: "Expert comparison of GRE and GMAT for business school admissions. Test format, difficulty, and acceptance.",
-    url: "https://nomoexam.com/compare/gre-vs-gmat",
+    url: canonical,
     siteName: "NomoExam",
     type: "article",
+    locale: "en_US",
+    images: [{ url: og, width: 1200, height: 630, alt: "GRE vs GMAT — NomoExam" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GRE vs GMAT — NomoExam",
+    description: "MBA and graduate school test comparison.",
+    images: [og],
   },
 };
 
