@@ -1,198 +1,264 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, MessageCircle, Smartphone } from "lucide-react";
+import { Smartphone } from "lucide-react";
 import { ANDROID_APP } from "@/lib/config";
+
+const footerLinks = {
+  exams: {
+    title: "Exams",
+    links: [
+      { label: "All Exams", href: "/exams" },
+      { label: "SAT Prep", href: "/exams/sat" },
+      { label: "ACT Prep", href: "/exams/act" },
+      { label: "GRE Prep", href: "/exams/gre" },
+      { label: "GMAT Prep", href: "/exams/gmat" },
+      { label: "MCAT Prep", href: "/exams/mcat" },
+      { label: "LSAT Prep", href: "/exams/lsat" },
+      { label: "JEE Prep", href: "/exams/jee" },
+      { label: "NEET Prep", href: "/exams/neet" },
+    ],
+  },
+  product: {
+    title: "Product",
+    links: [
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Features", href: "/features" },
+      { label: "Nomo AI Tutor", href: "/features/nomo-ai" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Try Free", href: "/try-free" },
+    ],
+  },
+  apps: {
+    title: "Apps",
+    links: [
+      { label: "Download Exam App", href: "/download-exam-app" },
+      { label: "Android App", href: ANDROID_APP.playStoreUrl, external: true },
+      { label: "Mock Test App", href: "/mock-test-app" },
+      { label: "Free Mock Tests", href: "/free-mock-test-app" },
+      { label: "Study App", href: "/study-app-for-students" },
+    ],
+  },
+  resources: {
+    title: "Resources",
+    links: [
+      { label: "How to Prepare for SAT", href: "/how-to-prepare-for-sat" },
+      { label: "SAT Study Plan", href: "/sat-study-plan" },
+      { label: "How to Prepare for JEE", href: "/how-to-prepare-for-jee" },
+      { label: "NEET Preparation Strategy", href: "/neet-preparation-strategy" },
+      { label: "Mock Test Strategy", href: "/mock-test-strategy" },
+      { label: "Exam Preparation App", href: "/exam-preparation-app" },
+    ],
+  },
+  compare: {
+    title: "Compare",
+    links: [
+      { label: "Compare Tests", href: "/compare" },
+      { label: "SAT vs ACT", href: "/compare/sat-vs-act" },
+      { label: "GRE vs GMAT", href: "/compare/gre-vs-gmat" },
+      { label: "Nomoexam vs Khan Academy", href: "/compare/nomoexam-vs-khan-academy" },
+    ],
+  },
+  company: {
+    title: "Company",
+    links: [
+      { label: "Contact Us", href: "/contact" },
+      { label: "Support", href: "mailto:support@nomoexam.com", external: true },
+    ],
+  },
+};
 
 export const Footer = () => {
   return (
-    <footer className="bg-neutral-dark border-t border-white/10 text-white">
-      <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 mb-8 md:mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2 col-span-2 space-y-2 md:space-y-4">
-            <div className="flex items-center gap-2 md:gap-3">
+    <footer className="border-t border-neutral-200 bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+          {/* Brand Column - Takes 2 columns on lg screens */}
+          <div className="col-span-2 lg:col-span-2">
+            <Link href="/" className="mb-4 flex items-center gap-2.5">
               <Image
                 src="/logo-icon.png"
                 alt="Nomoexam"
-                width={36}
-                height={36}
-                className="h-8 w-8 rounded-lg object-cover md:h-9 md:w-9"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-xl object-cover"
                 unoptimized
               />
-              <span className="font-barlow text-base font-semibold tracking-tight md:text-xl">Nomoexam</span>
-            </div>
-            <p className="max-w-sm font-barlow text-xs leading-relaxed text-white/70 md:text-sm">
-              Serious prep for SAT, ACT, and more—practice, flashcards, paths, and unlimited AI help.
+              <span className="font-barlow text-xl font-bold text-neutral-900">
+                Nomoexam
+              </span>
+            </Link>
+            <p className="mb-6 max-w-sm text-sm leading-relaxed text-neutral-600">
+              AI-powered exam preparation platform. Practice tests, flashcards, learning paths, and unlimited AI tutoring for SAT, ACT, GRE, GMAT, and more.
             </p>
-            <div className="flex gap-4 mt-4">
+            
+            {/* Social Links */}
+            <div className="flex gap-4">
               <a
                 href="https://discord.gg/shDzKd2TTN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-accent-lime transition-colors"
-                aria-label="Join our Discord community"
+                className="text-neutral-500 transition-colors hover:text-blue-600"
+                aria-label="Join our Discord"
               >
-                <svg className="w-6 h-6" viewBox="0 0 127.14 96.36" fill="currentColor">
-                  <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
                 </svg>
               </a>
               <a
                 href="https://www.instagram.com/nomoexam/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-accent-lime transition-colors"
+                className="text-neutral-500 transition-colors hover:text-pink-600"
                 aria-label="Follow us on Instagram"
               >
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
               </a>
             </div>
           </div>
-          
+
+          {/* Exams */}
+          <div>
+            <h3 className="mb-4 font-barlow text-sm font-semibold uppercase tracking-wider text-neutral-900">
+              {footerLinks.exams.title}
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.exams.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Product */}
           <div>
-            <h4 className="mb-2 font-barlow text-sm font-semibold md:mb-4 md:text-lg">Product</h4>
-            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
-              <li>
-                <a href="/#capabilities" className="transition-colors hover:text-accent-lime">
-                  What&apos;s included
-                </a>
-              </li>
-              <li>
-                <Link href="/pricing" className="transition-colors hover:text-accent-lime">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/exams" className="transition-colors hover:text-accent-lime">
-                  Exams
-                </Link>
-              </li>
-              <li>
-                <Link href="/features/nomo-ai" className="transition-colors hover:text-accent-lime">
-                  Nomo AI Tutor
-                </Link>
-              </li>
-              <li>
-                <Link href="/try-free" className="transition-colors hover:text-accent-lime">
-                  Try sample questions
-                </Link>
-              </li>
+            <h3 className="mb-4 font-barlow text-sm font-semibold uppercase tracking-wider text-neutral-900">
+              {footerLinks.product.title}
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.product.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          
-          {/* Get the App */}
+
+          {/* Apps */}
           <div>
-            <h4 className="mb-2 font-barlow text-sm font-semibold md:mb-4 md:text-lg">Get the App</h4>
-            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
-              <li>
-                <Link href="/download-exam-app" className="transition-colors hover:text-accent-lime">
-                  Download Exam App
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={ANDROID_APP.playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 transition-colors hover:text-accent-lime"
-                >
-                  <Smartphone className="h-3.5 w-3.5" />
-                  Android App
-                </a>
-              </li>
-              <li>
-                <Link href="/free-mock-test-app" className="transition-colors hover:text-accent-lime">
-                  Free Mock Tests
-                </Link>
-              </li>
-              <li>
-                <Link href="/study-app-for-students" className="transition-colors hover:text-accent-lime">
-                  Study App
-                </Link>
-              </li>
+            <h3 className="mb-4 font-barlow text-sm font-semibold uppercase tracking-wider text-neutral-900">
+              {footerLinks.apps.title}
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.apps.links.map((link) => (
+                <li key={link.href}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
-          
-          {/* Resources */}
+
+          {/* Resources & Compare Combined */}
           <div>
-            <h4 className="mb-2 font-barlow text-sm font-semibold md:mb-4 md:text-lg">Resources</h4>
-            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
-              <li>
-                <Link href="/how-to-prepare-for-sat" className="transition-colors hover:text-accent-lime">
-                  SAT Prep Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="/sat-study-plan" className="transition-colors hover:text-accent-lime">
-                  SAT Study Plan
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-to-prepare-for-jee" className="transition-colors hover:text-accent-lime">
-                  JEE Prep Strategy
-                </Link>
-              </li>
-              <li>
-                <Link href="/neet-preparation-strategy" className="transition-colors hover:text-accent-lime">
-                  NEET Strategy
-                </Link>
-              </li>
-              <li>
-                <Link href="/mock-test-strategy" className="transition-colors hover:text-accent-lime">
-                  Mock Test Strategy
-                </Link>
-              </li>
+            <h3 className="mb-4 font-barlow text-sm font-semibold uppercase tracking-wider text-neutral-900">
+              {footerLinks.resources.title}
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.resources.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
-          
-          {/* Company */}
-          <div>
-            <h4 className="text-sm md:text-lg mb-2 md:mb-4 font-semibold">Company</h4>
-            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
-              <li>
-                <Link href="/how-it-works" className="hover:text-accent-lime transition-colors">How it Works</Link>
-              </li>
-              <li>
-                <Link href="/compare" className="hover:text-accent-lime transition-colors">Compare</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-accent-lime transition-colors">Contact</Link>
-              </li>
-              <li>
-                <a href="mailto:support@nomoexam.com" className="hover:text-accent-lime transition-colors">
-                  support@nomoexam.com
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Legal */}
-          <div>
-            <h4 className="text-sm md:text-lg mb-2 md:mb-4 font-semibold">Legal</h4>
-            <ul className="space-y-2 font-barlow text-xs text-white/70 md:space-y-3 md:text-sm">
-              <li>
-                <Link href="/privacy-policy" className="hover:text-accent-lime transition-colors">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service" className="hover:text-accent-lime transition-colors">Terms of Service</Link>
-              </li>
-              <li>
-                <Link href="/cookie-policy" className="hover:text-accent-lime transition-colors">Cookie Policy</Link>
-              </li>
+            
+            <h3 className="mb-4 mt-6 font-barlow text-sm font-semibold uppercase tracking-wider text-neutral-900">
+              {footerLinks.compare.title}
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.compare.links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-        
-        {/* Bottom bar */}
-        <div className="pt-6 md:pt-8 border-t border-white/10 text-center">
-          <p className="text-white/60 text-xs md:text-sm">
-            © 2026 Nomoexam. All rights reserved.
-          </p>
+
+        {/* Bottom Section */}
+        <div className="mt-12 border-t border-neutral-200 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-sm text-neutral-500">
+              © {new Date().getFullYear()} Nomoexam. All rights reserved.
+            </p>
+            
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <Link
+                href="/privacy-policy"
+                className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/cookie-policy"
+                className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+              >
+                Cookie Policy
+              </Link>
+              <a
+                href="mailto:support@nomoexam.com"
+                className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+              >
+                Contact Support
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

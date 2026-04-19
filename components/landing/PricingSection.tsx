@@ -330,7 +330,7 @@ export default function PricingSection({ embedded = false }: { embedded?: boolea
                           </div>
                         </div>
 
-                        <a href={getAppUrl("/auth")}>
+                        <a href={getAppUrl("/auth?redirect=/pricing")}>
                           <Button
                             size="lg"
                             className="w-full bg-primary hover:bg-primary/90"

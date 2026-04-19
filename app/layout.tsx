@@ -43,7 +43,6 @@ const instrumentSerif = Instrument_Serif({
 })
 
 const siteOrigin = getMarketingSiteOrigin();
-const defaultOgImage = marketingAbsoluteUrl('/og-image.svg');
 
 export const metadata: Metadata = {
   title: "Nomoexam — Exam Prep | SAT, ACT, GRE, MCAT & More",
@@ -99,15 +98,6 @@ export const metadata: Metadata = {
     siteName: 'NomoExam',
     type: 'website',
     locale: 'en_US',
-    images: [
-      {
-        url: defaultOgImage,
-        width: 1200,
-        height: 630,
-        alt: 'Nomoexam — exam preparation platform',
-        type: 'image/svg+xml',
-      }
-    ],
   },
 
   twitter: {
@@ -116,7 +106,6 @@ export const metadata: Metadata = {
     creator: '@nomoexam',
     title: 'Nomoexam — SAT & ACT Prep | Practice, Flashcards, AI Tutor',
     description: 'Exam prep with practice tests, flashcards, learning paths, and AI tutor. Available per exam.',
-    images: [defaultOgImage],
   },
   
   robots: {
