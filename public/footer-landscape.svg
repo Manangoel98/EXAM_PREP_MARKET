@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E0F4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF9E6;stop-opacity:1" />
+    </linearGradient>
+    <!-- Hill gradients -->
+    <linearGradient id="hillBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7CB342;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#558B2F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8BC34A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#689F38;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hillFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9CCC65;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7CB342;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#AED581;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8BC34A;stop-opacity:1" />
+    </linearGradient>
+    <!-- Sun glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#FFF9C4;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#FFF59D;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FFF59D;stop-opacity:0" />
+    </radialGradient>
+    <!-- Path/road gradient -->
+    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D7CCC8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BCAAA4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1440" height="400" fill="url(#skyGradient)"/>
+
+  <!-- Sun and glow -->
+  <circle cx="720" cy="80" r="120" fill="url(#sunGlow)"/>
+  <circle cx="720" cy="80" r="35" fill="#FFF9C4"/>
+
+  <!-- Distant clouds -->
+  <g opacity="0.6">
+    <ellipse cx="200" cy="60" rx="60" ry="25" fill="white"/>
+    <ellipse cx="240" cy="55" rx="45" ry="20" fill="white"/>
+    <ellipse cx="170" cy="65" rx="35" ry="18" fill="white"/>
+
+    <ellipse cx="1100" cy="80" rx="55" ry="22" fill="white"/>
+    <ellipse cx="1140" cy="75" rx="40" ry="18" fill="white"/>
+    <ellipse cx="1070" cy="85" rx="30" ry="15" fill="white"/>
+
+    <ellipse cx="600" cy="45" rx="40" ry="16" fill="white"/>
+    <ellipse cx="630" cy="42" rx="30" ry="14" fill="white"/>
+  </g>
+
+  <!-- Back hills (distant) -->
+  <path d="M0,280 Q200,200 400,250 Q600,180 800,230 Q1000,170 1200,220 Q1350,190 1440,240 L1440,400 L0,400 Z" fill="url(#hillBack)" opacity="0.7"/>
+
+  <!-- Middle hills -->
+  <path d="M0,300 Q150,250 350,280 Q550,220 720,260 Q900,210 1100,270 Q1300,230 1440,280 L1440,400 L0,400 Z" fill="url(#hillMid)" opacity="0.85"/>
+
+  <!-- Trees on middle hills (simple shapes) -->
+  <g fill="#558B2F" opacity="0.6">
+    <!-- Left cluster -->
+    <ellipse cx="150" cy="280" rx="25" ry="35"/>
+    <ellipse cx="180" cy="275" rx="20" ry="30"/>
+    <ellipse cx="120" cy="285" rx="18" ry="28"/>
+    <!-- Right cluster -->
+    <ellipse cx="1280" cy="270" rx="22" ry="32"/>
+    <ellipse cx="1310" cy="265" rx="18" ry="28"/>
+    <ellipse cx="1250" cy="275" rx="15" ry="25"/>
+    <!-- Center distant -->
+    <ellipse cx="700" cy="260" rx="15" ry="22"/>
+    <ellipse cx="730" cy="255" rx="12" ry="18"/>
+    <ellipse cx="760" cy="258" rx="14" ry="20"/>
+  </g>
+
+  <!-- Front hills (closer) -->
+  <path d="M0,340 Q180,300 400,330 Q600,290 800,320 Q1050,280 1250,315 Q1380,295 1440,330 L1440,400 L0,400 Z" fill="url(#hillFront)"/>
+
+  <!-- Winding path -->
+  <path d="M680,400 Q700,380 720,365 Q750,340 780,330 Q820,315 850,320 Q900,330 920,350 Q950,370 960,400"
+        fill="none" stroke="url(#pathGradient)" stroke-width="25" stroke-linecap="round" opacity="0.7"/>
+  <path d="M680,400 Q700,380 720,365 Q750,340 780,330 Q820,315 850,320 Q900,330 920,350 Q950,370 960,400"
+        fill="none" stroke="#E8DDD5" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,12" opacity="0.5"/>
+
+  <!-- Foreground grass -->
+  <path d="M0,370 Q200,355 400,365 Q600,350 800,360 Q1000,345 1200,358 Q1350,350 1440,365 L1440,400 L0,400 Z" fill="url(#grassGradient)"/>
+
+  <!-- Wildflowers/grass details -->
+  <g opacity="0.7">
+    <!-- Yellow flowers -->
+    <circle cx="100" cy="375" r="3" fill="#FDD835"/>
+    <circle cx="130" cy="380" r="2.5" fill="#FDD835"/>
+    <circle cx="200" cy="372" r="3" fill="#FDD835"/>
+    <circle cx="350" cy="378" r="2.5" fill="#FDD835"/>
+    <circle cx="500" cy="368" r="3" fill="#FDD835"/>
+    <circle cx="1100" cy="370" r="3" fill="#FDD835"/>
+    <circle cx="1200" cy="375" r="2.5" fill="#FDD835"/>
+    <circle cx="1300" cy="365" r="3" fill="#FDD835"/>
+    <!-- White flowers -->
+    <circle cx="80" cy="382" r="2" fill="white"/>
+    <circle cx="250" cy="376" r="2.5" fill="white"/>
+    <circle cx="420" cy="370" r="2" fill="white"/>
+    <circle cx="580" cy="374" r="2.5" fill="white"/>
+    <circle cx="1050" cy="372" r="2" fill="white"/>
+    <circle cx="1350" cy="370" r="2.5" fill="white"/>
+    <!-- Purple/pink flowers -->
+    <circle cx="160" cy="378" r="2" fill="#CE93D8"/>
+    <circle cx="300" cy="374" r="2.5" fill="#CE93D8"/>
+    <circle cx="650" cy="365" r="2" fill="#CE93D8"/>
+    <circle cx="1150" cy="368" r="2.5" fill="#CE93D8"/>
+  </g>
+
+  <!-- Small birds in distance -->
+  <g stroke="#555" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M300,120 Q305,115 310,120 Q315,115 320,120"/>
+    <path d="M330,130 Q334,126 338,130 Q342,126 346,130"/>
+    <path d="M1100,100 Q1104,96 1108,100 Q1112,96 1116,100"/>
+    <path d="M1130,115 Q1133,112 1136,115 Q1139,112 1142,115"/>
+  </g>
+</svg>
