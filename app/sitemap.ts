@@ -27,13 +27,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/free-mock-test-app',
   ];
 
-  // Informational/guide pages (traffic layer)
+  // Informational/guide pages (traffic layer) - comprehensive list
   const guidePages = [
+    // SAT-focused guides
     '/how-to-prepare-for-sat',
+    '/best-sat-study-schedule',
+    '/sat-study-plan',
+    '/best-apps-for-sat-prep',
+    '/how-to-improve-sat-score-200-points',
+    '/act-vs-sat-which-test-should-you-take',
+    // Other exam guides
+    '/how-to-prepare-for-gre',
     '/how-to-prepare-for-jee',
     '/neet-preparation-strategy',
-    '/sat-study-plan',
+    // Strategy & feature pages
     '/mock-test-strategy',
+    '/ai-tutor-for-exam-prep',
   ];
 
   // Static marketing pages with their priorities and change frequencies

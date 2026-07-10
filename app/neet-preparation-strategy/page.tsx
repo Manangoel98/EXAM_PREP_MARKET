@@ -181,7 +181,7 @@ export default function NEETPreparationStrategyPage() {
                       Get NEET Study Plan on Your Phone
                     </h3>
                     <p className="mb-3 text-sm font-medium leading-relaxed text-neutral-700">
-                      NomoExam's <Link href="/neet-prep-app" className="font-semibold text-primary hover:underline">NEET prep app</Link> provides personalized study schedules, 5000+ NCERT-based practice questions, and unlimited AI doubt solving. Designed specifically for Indian medical students.
+                      NomoExam's <Link href="/exams/neet" className="font-semibold text-primary hover:underline">NEET prep app</Link> provides personalized study schedules, 5000+ NCERT-based practice questions, and unlimited AI doubt solving. Designed specifically for Indian medical students.
                     </p>
                     <Link href="/download-exam-app" className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-neutral-800">
                       Download Free NEET App
@@ -334,7 +334,7 @@ export default function NEETPreparationStrategyPage() {
                 <li><strong>Physics:</strong> DC Pandey, Pradeep's Fundamental Physics</li>
                 <li><strong>Chemistry:</strong> OP Tandon, MS Chauhan</li>
                 <li><strong>Biology:</strong> NCERT is enough. Trueman's Biology for extra practice.</li>
-                <li><strong>NomoExam NEET App:</strong> Personalized plans, 5000+ NCERT-based questions, unlimited AI tutoring. <Link href="/neet-prep-app" className="font-semibold text-primary hover:underline">Download for free</Link>.</li>
+                <li><strong>NomoExam NEET App:</strong> Personalized plans, 5000+ NCERT-based questions, unlimited AI tutoring. <Link href="/exams/neet" className="font-semibold text-primary hover:underline">Download for free</Link>.</li>
               </ul>
 
               <h2 className="font-barlow mt-12 text-2xl font-bold text-neutral-900">
@@ -367,7 +367,7 @@ export default function NEETPreparationStrategyPage() {
               </div>
 
               <div className="not-prose mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link href="/neet-prep-app" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
+                <Link href="/exams/neet" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
                   Get NEET Prep App
                 </Link>
                 <Link href="/free-mock-test-app" className={`${MKT.btnOutlineLight} px-8 py-4 text-center text-base`}>

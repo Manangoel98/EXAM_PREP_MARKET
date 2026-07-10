@@ -116,9 +116,9 @@ export default function ComparePage() {
                 <Scale className="h-4 w-4 text-accent-lime" aria-hidden />
                 <span>Guides &amp; tradeoffs</span>
               </div>
-              <h1 className={`${MKT.h1Hero} mb-6`}>Compare exams &amp; prep platforms</h1>
+              <h1 className={`${MKT.h1Hero} mb-6`}>SAT vs ACT, GRE vs GMAT & Prep Platform Comparisons</h1>
               <p className={`${MKT.leadOnDark} mx-auto max-w-3xl`}>
-                Side-by-side comparisons to help you choose the right test and how Nomoexam fits your prep.
+                Which test should you take? How does NomoExam compare to Khan Academy and other prep platforms? Find answers with our detailed side-by-side guides.
               </p>
             </div>
           </div>

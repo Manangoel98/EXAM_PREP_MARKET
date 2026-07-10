@@ -129,7 +129,7 @@ function ExamBody({ exam }: { exam: MarketingExamDefinition }) {
               <p className={`${MKT.badgeLight} mb-3`}>
                 {exam.availability === "live" ? "Available now" : "On the roadmap"}
               </p>
-              <h1 className={MKT.h1OnLight}>NomoExam for {exam.shortName}</h1>
+              <h1 className={MKT.h1OnLight}>{exam.shortName} Prep Online — Practice Tests & AI Tutor</h1>
               <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-neutral-500">{exam.fullName}</p>
             </div>
           </div>

@@ -90,13 +90,12 @@ export default function ExamsPage() {
           <div className="mb-16 text-center">
             <p className={`${MKT.badgeLight} mx-auto mb-5`}>All Exams</p>
             <h1 className={`${MKT.h1OnLight} mb-6 max-w-4xl mx-auto`}>
-              Prepare for any exam
+              SAT, ACT, GRE, GMAT, MCAT & More
               <br />
-              <span className="text-neutral-600">with one platform</span>
+              <span className="text-neutral-600">Online Exam Prep with AI Tutor & Practice Tests</span>
             </h1>
             <p className="mx-auto max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
-              Deep pages per exam—what&apos;s live, what&apos;s next, and how NomoExam fits. Full practice and AI are included in your
-              subscription.
+              Comprehensive exam preparation for standardized tests. Practice tests, AI tutoring, flashcards, and personalized study plans included in your $4.99/month subscription.
             </p>
           </div>
 

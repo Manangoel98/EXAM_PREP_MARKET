@@ -152,7 +152,7 @@ export default function HowToPrepareForJEEPage() {
                       Get Personalized JEE Study Plan
                     </h3>
                     <p className="mb-3 text-sm font-medium leading-relaxed text-neutral-700">
-                      NomoExam's <Link href="/jee-prep-app" className="font-semibold text-primary hover:underline">JEE prep app</Link> provides AI-powered study plans tailored to your current level, weak topics, and exam date. Track progress across Physics, Chemistry, and Maths with detailed analytics.
+                      NomoExam's <Link href="/exams/jee" className="font-semibold text-primary hover:underline">JEE prep app</Link> provides AI-powered study plans tailored to your current level, weak topics, and exam date. Track progress across Physics, Chemistry, and Maths with detailed analytics.
                     </p>
                     <Link href="/download-exam-app" className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-neutral-800">
                       Download Free for Indian Students
@@ -275,7 +275,7 @@ export default function HowToPrepareForJEEPage() {
                 <li><strong>Physics:</strong> HC Verma, DC Pandey, Resnick Halliday (for Advanced)</li>
                 <li><strong>Chemistry:</strong> OP Tandon, MS Chauhan, JD Lee</li>
                 <li><strong>Mathematics:</strong> Cengage, Arihant Skills in Mathematics</li>
-                <li><strong>NomoExam JEE App:</strong> Personalized study plans, 5000+ practice questions, unlimited AI doubt solving. Designed specifically for Indian students preparing for JEE. <Link href="/jee-prep-app" className="font-semibold text-primary hover:underline">Download now</Link>.</li>
+                <li><strong>NomoExam JEE App:</strong> Personalized study plans, 5000+ practice questions, unlimited AI doubt solving. Designed specifically for Indian students preparing for JEE. <Link href="/exams/jee" className="font-semibold text-primary hover:underline">Download now</Link>.</li>
               </ul>
 
               <h2 className="font-barlow mt-12 text-2xl font-bold text-neutral-900">
@@ -308,7 +308,7 @@ export default function HowToPrepareForJEEPage() {
               </div>
 
               <div className="not-prose mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link href="/jee-prep-app" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
+                <Link href="/exams/jee" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
                   Get JEE Prep App
                 </Link>
                 <Link href="/free-mock-test-app" className={`${MKT.btnOutlineLight} px-8 py-4 text-center text-base`}>

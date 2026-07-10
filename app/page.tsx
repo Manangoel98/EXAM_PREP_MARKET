@@ -18,43 +18,61 @@ import { QuickLinksSection } from "@/components/landing/QuickLinksSection";
 const homeCanonical = getMarketingSiteOrigin();
 
 export const metadata: Metadata = {
-  title: "Nomoexam — SAT & ACT Prep | Practice Tests, Flashcards & AI Tutor",
+  title: "NomoExam — #1 SAT & ACT Prep App 2026 | AI Tutor, Practice Tests & Study Plans",
   description:
-    "Paid exam prep for SAT and ACT: full-length practice, flashcards, learning paths, and unlimited AI tutor—including help on your own uploads. Download on Android. GRE, AP, MCAT, and more coming soon.",
+    "Best SAT prep app with AI tutor, full-length practice tests, flashcards & personalized study plans. Improve your SAT score 200+ points. ACT, GRE, GMAT prep available. $4.99/month per exam. Try free.",
   keywords: [
-    "SAT prep",
-    "ACT prep",
-    "practice tests",
-    "exam flashcards",
-    "AI tutor SAT",
-    "AI tutor ACT",
-    "GRE prep",
-    "MCAT prep",
-    "NEET prep",
-    "JEE prep",
-    "online test prep",
-    "exam preparation app",
-    "study app for students",
+    // High-intent SAT keywords
+    "SAT prep app",
+    "best SAT prep app 2026",
+    "SAT practice test online free",
+    "SAT study app",
+    "how to prepare for SAT",
+    "SAT prep course online",
+    "SAT tutor online",
+    "improve SAT score",
+    "SAT prep free",
+    // High-intent ACT keywords
+    "ACT prep app",
+    "ACT practice test",
+    "ACT study guide",
+    "ACT prep course",
+    // Comparison keywords
+    "Khan Academy alternative",
+    "best test prep app",
+    "SAT prep app vs Khan Academy",
+    // Graduate exam keywords
+    "GRE prep app",
+    "GMAT prep app",
+    "MCAT prep course",
+    "LSAT study app",
+    // International exam keywords
+    "JEE preparation app",
+    "NEET prep online",
+    // Feature keywords
+    "AI tutor for exam prep",
+    "online practice tests",
+    "exam flashcards app",
+    "personalized study plan",
     "mock test app",
-    "exam prep app Android",
-    "test preparation platform",
+    // Android specific
+    "SAT prep app Android",
+    "exam preparation app download",
   ],
   alternates: { canonical: homeCanonical },
   openGraph: {
-    title: "Nomoexam — SAT & ACT Prep | Tests, Flashcards, AI Tutor",
+    title: "NomoExam — Best SAT & ACT Prep App 2026 | AI Tutor & Practice Tests",
     description:
-      "Structured practice, flashcards, paths, and unlimited AI help. Download on Android. Built for students and parents.",
+      "Improve your SAT score 200+ points with AI-powered practice tests, unlimited tutoring & personalized study plans. $4.99/month. Try free today.",
     url: homeCanonical,
     siteName: "Nomoexam",
     type: "website",
     locale: "en_US",
-    // Next.js will automatically use opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nomoexam — SAT & ACT Prep | Tests, Flashcards, AI Tutor",
-    description: "Practice, flashcards, learning paths, unlimited AI tutor. Download on Android.",
-    // Next.js will automatically use twitter-image.tsx
+    title: "NomoExam — Best SAT Prep App 2026 | AI Tutor & Practice Tests",
+    description: "Improve your SAT score 200+ points. AI tutor, practice tests, flashcards. $4.99/mo. Try free.",
   },
 };
 

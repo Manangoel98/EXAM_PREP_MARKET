@@ -138,7 +138,7 @@ export default function HowToPrepareForSATPage() {
                 </li>
                 <li>
                   <strong>Week 2-3:</strong> Focus on concept review. Study math fundamentals (algebra, geometry, data
-                  analysis) and grammar rules. Use quality prep materials or an <Link href="/sat-prep-app" className="font-semibold text-primary hover:underline">SAT prep app</Link> for
+                  analysis) and grammar rules. Use quality prep materials or an <Link href="/exams/sat" className="font-semibold text-primary hover:underline">SAT prep app</Link> for
                   structured lessons.
                 </li>
                 <li>
@@ -187,7 +187,7 @@ export default function HowToPrepareForSATPage() {
                       Accelerate Your Prep with NomoExam
                     </h3>
                     <p className="mb-3 text-sm font-medium leading-relaxed text-neutral-700">
-                      Our <Link href="/sat-prep-app" className="font-semibold text-primary hover:underline">SAT prep app</Link> provides personalized study plans, unlimited AI tutoring, and 1000+ practice
+                      Our <Link href="/exams/sat" className="font-semibold text-primary hover:underline">SAT prep app</Link> provides personalized study plans, unlimited AI tutoring, and 1000+ practice
                       questions. Students using NomoExam see an average 150-point score improvement in 3 months.
                     </p>
                     <Link href="/download-exam-app" className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-neutral-800">
@@ -305,7 +305,7 @@ export default function HowToPrepareForSATPage() {
                   accurate representation of the real exam.
                 </li>
                 <li>
-                  <strong>NomoExam SAT App:</strong> Get a <Link href="/sat-prep-app" className="font-semibold text-primary hover:underline">personalized study plan</Link>, unlimited AI
+                  <strong>NomoExam SAT App:</strong> Get a <Link href="/exams/sat" className="font-semibold text-primary hover:underline">personalized study plan</Link>, unlimited AI
                   tutoring, and detailed analytics. Best for students who want structured guidance.
                 </li>
                 <li>
@@ -343,7 +343,7 @@ export default function HowToPrepareForSATPage() {
               </p>
 
               <div className="not-prose mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link href="/sat-prep-app" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
+                <Link href="/exams/sat" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
                   Get SAT Prep App
                 </Link>
                 <Link href="/free-mock-test-app" className={`${MKT.btnOutlineLight} px-8 py-4 text-center text-base`}>

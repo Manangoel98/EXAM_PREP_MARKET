@@ -143,18 +143,18 @@ export default function PricingSection({ embedded = false }: { embedded?: boolea
           </p>
           {embedded ? (
             <h2 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-5xl md:leading-tight">
-              Plans &amp; checkout
+              SAT & ACT Prep Pricing
               <br />
               <span className="font-heading text-3xl font-normal italic text-neutral-700 md:text-5xl">
-                Same tools as the hero—one subscription per test.
+                $4.99/month — Full access per exam
               </span>
             </h2>
           ) : (
             <h1 className="mb-3 text-3xl font-semibold tracking-tight text-neutral-900 md:text-5xl md:leading-tight">
-              Pick your exam.
+              SAT & ACT Prep Pricing
               <br />
               <span className="font-heading text-3xl font-normal italic text-neutral-700 md:text-5xl">
-                Full access for that test.
+                $4.99/month per exam — AI Tutor & Practice Tests Included
               </span>
             </h1>
           )}

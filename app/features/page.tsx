@@ -179,9 +179,9 @@ export default function FeaturesPage() {
           <div className="mb-16 text-center">
             <p className={`${MKT.badgeLight} mx-auto mb-5`}>Platform Features</p>
             <h1 className={`${MKT.h1OnLight} mb-6 max-w-4xl mx-auto`}>
-              Everything you need
+              SAT & ACT Prep Features
               <br />
-              <span className="text-neutral-600">in one platform</span>
+              <span className="text-neutral-600">AI Tutor, Practice Tests, Flashcards & Study Plans</span>
             </h1>
             <p className="mx-auto max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
               NomoExam combines AI-powered tutoring, extensive practice materials, and performance

@@ -1,15 +1,15 @@
 import { ImageResponse } from '@vercel/og'
- 
+
 export const runtime = 'edge'
- 
-export const alt = 'NomoExam — AI-Powered Exam Prep Platform'
+
+export const alt = 'NomoExam — Best SAT & ACT Prep App 2026 | AI Tutor & Practice Tests | $4.99/month'
 export const size = {
   width: 1200,
   height: 630,
 }
- 
+
 export const contentType = 'image/png'
- 
+
 export default async function Image() {
   return new ImageResponse(
     (
@@ -21,94 +21,138 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          padding: '100px',
-          background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%)',
+          padding: '80px',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #171717 50%, #262626 100%)',
           fontFamily: 'system-ui, sans-serif',
+          position: 'relative',
         }}
       >
-        {/* Logo/Icon */}
+        {/* Accent gradient blob */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-100px',
+            right: '-100px',
+            width: '500px',
+            height: '500px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(163,230,53,0.3) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* Top badge */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.15)',
-            marginBottom: '40px',
+            gap: '12px',
+            padding: '12px 24px',
+            borderRadius: '50px',
+            background: 'rgba(163,230,53,0.15)',
+            border: '1px solid rgba(163,230,53,0.3)',
+            marginBottom: '30px',
+          }}
+        >
+          <div style={{ fontSize: '20px', color: '#a3e635', fontWeight: '600' }}>
+            #1 SAT Prep App 2026
+          </div>
+        </div>
+
+        {/* Logo + Name */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            marginBottom: '24px',
           }}
         >
           <div
             style={{
-              fontSize: '80px',
+              width: '80px',
+              height: '80px',
+              borderRadius: '20px',
+              background: 'linear-gradient(135deg, #a3e635 0%, #84cc16 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '48px',
               fontWeight: 'bold',
-              color: '#ffffff',
+              color: '#0a0a0a',
             }}
           >
             N
           </div>
+          <div style={{ fontSize: '56px', fontWeight: 'bold', color: '#ffffff' }}>
+            NomoExam
+          </div>
         </div>
 
-        {/* Main Title */}
+        {/* Main headline */}
         <div
           style={{
-            fontSize: '80px',
-            fontWeight: 'bold',
+            fontSize: '48px',
+            fontWeight: '600',
             color: '#ffffff',
             lineHeight: 1.2,
-            marginBottom: '20px',
+            marginBottom: '16px',
+            maxWidth: '800px',
           }}
         >
-          NomoExam
+          AI Tutor, Practice Tests & Study Plans
         </div>
 
         {/* Subtitle */}
         <div
           style={{
-            fontSize: '40px',
-            color: '#e0e7ff',
-            marginBottom: '50px',
-            opacity: 0.95,
-          }}
-        >
-          AI-Powered Exam Prep Platform
-        </div>
-
-        {/* Feature Badges */}
-        <div
-          style={{
-            display: 'flex',
-            gap: '15px',
+            fontSize: '28px',
+            color: '#a1a1aa',
             marginBottom: '40px',
           }}
         >
-          {['SAT', 'ACT', 'GRE', 'GMAT', 'JEE'].map((exam) => (
-            <div
-              key={exam}
-              style={{
-                padding: '15px 30px',
-                borderRadius: '25px',
-                background: 'rgba(255, 255, 255, 0.2)',
-                color: '#ffffff',
-                fontSize: '24px',
-                fontWeight: '600',
-              }}
-            >
-              {exam}
-            </div>
-          ))}
+          SAT • ACT • GRE • GMAT • MCAT • JEE • NEET
         </div>
 
-        {/* CTA Text */}
+        {/* Bottom row - Price + Features */}
         <div
           style={{
-            fontSize: '28px',
-            color: '#ffffff',
-            opacity: 0.9,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '30px',
           }}
         >
-          10,000+ Questions • AI Tutor • Free Trial
+          {/* Price badge */}
+          <div
+            style={{
+              padding: '16px 32px',
+              borderRadius: '16px',
+              background: '#a3e635',
+              color: '#0a0a0a',
+              fontSize: '28px',
+              fontWeight: 'bold',
+            }}
+          >
+            $4.99/month
+          </div>
+
+          {/* Features */}
+          <div style={{ display: 'flex', gap: '20px' }}>
+            {['Unlimited AI Help', 'Full Practice Tests', 'Study Plans'].map((feature) => (
+              <div
+                key={feature}
+                style={{
+                  padding: '12px 20px',
+                  borderRadius: '12px',
+                  background: 'rgba(255,255,255,0.1)',
+                  color: '#e4e4e7',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                }}
+              >
+                {feature}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     ),

@@ -31,19 +31,19 @@ const canonical = marketingAbsoluteUrl("/compare/sat-vs-act");
 const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
-  title: "SAT vs ACT: Which Test Should You Take? (2025 Comparison)",
-  description: "Detailed comparison of SAT vs ACT for college admissions. Compare test format, duration, scoring, difficulty, and which test is best for you. Updated for 2025 digital SAT.",
+  title: "SAT vs ACT: Which Test Should You Take? (2026 Comparison)",
+  description: "Detailed comparison of SAT vs ACT for college admissions. Compare test format, duration, scoring, difficulty, and which test is best for you. Updated for 2026 digital SAT.",
   alternates: { canonical },
   keywords: [
     "SAT vs ACT",
     "difference between SAT and ACT",
     "SAT or ACT which is easier",
-    "SAT vs ACT 2025",
+    "SAT vs ACT 2026",
     "digital SAT vs ACT",
     "college admission test comparison"
   ],
   openGraph: {
-    title: "SAT vs ACT: Complete Comparison for College Admissions (2025)",
+    title: "SAT vs ACT: Complete Comparison for College Admissions (2026)",
     description: "Compare SAT and ACT side-by-side. Test format, scoring, difficulty, and expert recommendations.",
     url: canonical,
     siteName: "NomoExam",

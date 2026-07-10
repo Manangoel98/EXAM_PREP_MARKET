@@ -27,7 +27,41 @@ export const MARKETING_EXAMS: MarketingExamDefinition[] = [
     fullName: "Scholastic Assessment Test",
     category: "Undergraduate admission",
     description: "College entrance exam covering Math, Reading, and Writing & Language",
-    longHtml: `<p>The SAT is a widely used college admissions test. NomoExam offers official-style practice, full-length tests, flashcards, and an AI tutor focused on the skills the SAT measures—so you can build pacing, accuracy, and confidence.</p>`,
+    longHtml: `
+      <p>The <strong>SAT</strong> is the most widely recognized college admissions test in the United States, accepted by virtually all U.S. colleges and universities. The digital SAT (introduced in 2024) takes 2 hours and 14 minutes and consists of two main sections: <strong>Reading & Writing</strong> (54 questions, 64 minutes) and <strong>Math</strong> (44 questions, 70 minutes).</p>
+
+      <h2>What NomoExam Offers for SAT Prep</h2>
+      <p>NomoExam provides comprehensive SAT preparation with features designed to maximize your score improvement:</p>
+      <ul>
+        <li><strong>Full-length practice tests</strong> that match the official digital SAT format and difficulty</li>
+        <li><strong>Unlimited AI tutoring</strong> — ask any question about any problem and get instant, step-by-step explanations</li>
+        <li><strong>Personalized study plans</strong> generated based on your diagnostic score, target score, and exam date</li>
+        <li><strong>Smart flashcards</strong> with spaced repetition for vocabulary and concept mastery</li>
+        <li><strong>Topic-wise practice</strong> to target your specific weak areas in algebra, geometry, grammar, and reading</li>
+        <li><strong>Progress analytics</strong> showing score trends, accuracy by topic, and time management insights</li>
+      </ul>
+
+      <h2>SAT Score Ranges & What Colleges Expect</h2>
+      <p>The SAT is scored on a scale of 400-1600, with each section (Reading & Writing and Math) scored 200-800. Here's what different score ranges typically mean for college admissions:</p>
+      <ul>
+        <li><strong>1500+:</strong> Competitive for Ivy League and top 20 universities</li>
+        <li><strong>1400-1500:</strong> Strong for most selective colleges (top 50)</li>
+        <li><strong>1200-1400:</strong> Competitive for many state universities and liberal arts colleges</li>
+        <li><strong>1000-1200:</strong> Meets requirements for most public universities</li>
+      </ul>
+
+      <h2>SAT Preparation Tips</h2>
+      <p>Students who see the biggest score improvements on the SAT follow these strategies:</p>
+      <ul>
+        <li><strong>Start with a diagnostic test</strong> to identify your baseline and weak areas</li>
+        <li><strong>Focus on high-frequency topics</strong>: linear equations, grammar rules, and evidence-based reading cover 70% of questions</li>
+        <li><strong>Take 6-8 full practice tests</strong> throughout your preparation to build stamina and pacing</li>
+        <li><strong>Review every mistake thoroughly</strong> — understanding why you got something wrong is more valuable than doing new problems</li>
+        <li><strong>Use AI tutoring</strong> to get explanations that match your learning style</li>
+      </ul>
+
+      <p>With NomoExam's AI-powered platform, students typically see 100-200 point improvements over 3 months of consistent preparation. Our $4.99/month subscription includes everything you need for SAT success.</p>
+    `,
     popular: true,
     icon: "GraduationCap",
     availability: "live",
@@ -38,7 +72,50 @@ export const MARKETING_EXAMS: MarketingExamDefinition[] = [
     fullName: "American College Testing",
     category: "Undergraduate admission",
     description: "College entrance exam with English, Math, Reading, Science, and optional Writing",
-    longHtml: `<p>The ACT covers English, mathematics, reading, science, and an optional writing section. Prepare with realistic timing, section drills, and explanations that mirror how the test flows on exam day.</p>`,
+    longHtml: `
+      <p>The <strong>ACT</strong> is one of the two major college admissions tests in the United States, accepted by all U.S. colleges and universities. The ACT takes 2 hours and 55 minutes (without the optional Writing section) and covers four subject areas: <strong>English</strong> (75 questions, 45 minutes), <strong>Math</strong> (60 questions, 60 minutes), <strong>Reading</strong> (40 questions, 35 minutes), and <strong>Science</strong> (40 questions, 35 minutes).</p>
+
+      <h2>What NomoExam Offers for ACT Prep</h2>
+      <p>NomoExam provides comprehensive ACT preparation designed to help you achieve your target score:</p>
+      <ul>
+        <li><strong>Full-length practice tests</strong> that accurately simulate the real ACT format and timing</li>
+        <li><strong>Unlimited AI tutoring</strong> — get instant help with any question across all four sections</li>
+        <li><strong>Personalized study plans</strong> that adapt to your schedule and target score</li>
+        <li><strong>Section-specific practice</strong> for English, Math, Reading, and Science</li>
+        <li><strong>Science reasoning drills</strong> to master data interpretation and experimental analysis</li>
+        <li><strong>Progress tracking</strong> with detailed analytics for each section</li>
+      </ul>
+
+      <h2>ACT Score Ranges & College Expectations</h2>
+      <p>The ACT is scored on a scale of 1-36, calculated as the average of your four section scores. Here's what different composite scores mean for college admissions:</p>
+      <ul>
+        <li><strong>34-36:</strong> Competitive for Ivy League and top 20 universities</li>
+        <li><strong>30-34:</strong> Strong for most selective colleges (top 50)</li>
+        <li><strong>24-30:</strong> Competitive for many state universities and liberal arts colleges</li>
+        <li><strong>20-24:</strong> Meets requirements for most public universities</li>
+      </ul>
+
+      <h2>ACT vs SAT: Which Should You Take?</h2>
+      <p>The ACT differs from the SAT in several key ways:</p>
+      <ul>
+        <li><strong>Speed vs. depth:</strong> ACT gives less time per question but questions are often more straightforward</li>
+        <li><strong>Science section:</strong> ACT includes a dedicated Science section (data interpretation and reasoning)</li>
+        <li><strong>Math coverage:</strong> ACT includes more geometry and trigonometry than the SAT</li>
+        <li><strong>Reading style:</strong> ACT reading is faster-paced with more straightforward questions</li>
+      </ul>
+      <p>We recommend taking a practice test of each to see which format suits your strengths. NomoExam offers preparation for both, and you can switch between them anytime.</p>
+
+      <h2>ACT Preparation Strategy</h2>
+      <p>Successful ACT preparation focuses on:</p>
+      <ul>
+        <li><strong>Building speed:</strong> Practice working quickly since ACT time pressure is significant</li>
+        <li><strong>Mastering the Science section:</strong> It's not about science knowledge — it's about reading graphs and data quickly</li>
+        <li><strong>Learning ACT-specific grammar rules:</strong> The English section tests predictable patterns</li>
+        <li><strong>Taking full practice tests weekly</strong> in the final month to build stamina</li>
+      </ul>
+
+      <p>With NomoExam's AI-powered platform at just $4.99/month, you get everything needed to improve your ACT score by 3-5 points over 2-3 months of focused preparation.</p>
+    `,
     popular: true,
     icon: "BookOpen",
     availability: "live",

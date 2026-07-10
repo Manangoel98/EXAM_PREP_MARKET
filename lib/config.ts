@@ -39,7 +39,7 @@ export const ANDROID_APP = {
 
 /** Pricing configuration (fallback for SSG pages) */
 export const PRICING = {
-  monthlyPrice: 9,
+  monthlyPrice: 4.99,
   currency: 'USD',
   currencySymbol: '$',
   interval: 'month',

@@ -153,7 +153,7 @@ export default function SATStudyPlanPage() {
                       Get Personalized SAT Study Plan
                     </h3>
                     <p className="mb-3 text-sm font-medium leading-relaxed text-neutral-700">
-                      NomoExam's <Link href="/sat-prep-app" className="font-semibold text-primary hover:underline">SAT prep app</Link> creates a custom study schedule based on your diagnostic score, target score, and exam date. Adjust weekly as you improve.
+                      NomoExam's <Link href="/exams/sat" className="font-semibold text-primary hover:underline">SAT prep app</Link> creates a custom study schedule based on your diagnostic score, target score, and exam date. Adjust weekly as you improve.
                     </p>
                     <Link href="/download-exam-app" className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-neutral-800">
                       Download Free App
@@ -308,7 +308,7 @@ export default function SATStudyPlanPage() {
               </div>
 
               <div className="not-prose mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link href="/sat-prep-app" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
+                <Link href="/exams/sat" className={`${MKT.btnPrimary} px-8 py-4 text-center text-base`}>
                   Get SAT Prep App
                 </Link>
                 <Link href="/how-to-prepare-for-sat" className={`${MKT.btnOutlineLight} px-8 py-4 text-center text-base`}>

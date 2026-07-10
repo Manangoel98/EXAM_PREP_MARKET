@@ -90,10 +90,10 @@ export function PremiumHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: LANDING_DURATION, delay: 0.06, ease: LANDING_EASE }}
           >
-            Serious prep, modern tools
+            #1 SAT & ACT Prep App
             <br />
             <span className="font-heading text-[2.35rem] italic sm:text-6xl md:text-7xl lg:text-[5.25rem] lg:leading-[0.95]">
-              for exams that matter
+              AI Tutor, Practice Tests & Study Plans
             </span>
           </motion.h1>
 
@@ -247,16 +247,16 @@ export function ExamsMarqueeStrip() {
           transition={{ duration: LANDING_DURATION, delay: 0.05, ease: LANDING_EASE }}
           className="font-heading mb-4 text-3xl italic tracking-tight text-neutral-900 md:text-4xl"
         >
-          The tests we&apos;re built for
+          Online prep for every major exam
         </motion.h2>
         <p className="mx-auto mb-10 max-w-2xl text-sm font-medium text-neutral-600 md:text-base">
-          Tap an exam for a full guide—format, prep tips, and how NomoExam fits.{" "}
+          SAT, ACT, GRE, GMAT, MCAT, LSAT, JEE, NEET — one platform for all your standardized test prep needs.{" "}
           <Link href="/exams" className="font-semibold text-neutral-900 underline decoration-accent-lime/70 underline-offset-4 hover:decoration-accent-lime">
-            Browse all exams
+            Free exam guides
           </Link>
           {" · "}
           <Link href="/compare" className="font-semibold text-neutral-900 underline decoration-accent-lime/70 underline-offset-4 hover:decoration-accent-lime">
-            Compare platforms
+            Compare prep platforms
           </Link>
         </p>
         <motion.div
@@ -285,18 +285,18 @@ export function ExamsMarqueeStrip() {
 const capabilityBlocks = [
   {
     icon: FileText,
-    title: "Practice tests & drills",
-    body: "Full-length and section work aligned to official-style frameworks—pace and format that feel like test day.",
+    title: "Full-Length SAT & ACT Practice Tests",
+    body: "Realistic practice tests with official-style questions, accurate timing, and instant scoring. Know exactly where you stand before test day.",
   },
   {
     icon: Layers,
-    title: "Flashcards",
-    body: "High-yield review between longer sessions—built for retention, not endless re-reads.",
+    title: "Smart Flashcards & Vocab Builder",
+    body: "Master SAT vocabulary and key concepts with spaced repetition flashcards. Built for long-term retention, not last-minute cramming.",
   },
   {
     icon: MessageSquare,
-    title: "Paths, tutor & uploads",
-    body: "A guided path from where you are to test day, plus unlimited AI help—including on your own pages and drills.",
+    title: "24/7 AI Tutor — Unlimited Help",
+    body: "Get instant explanations for any question. Upload your own practice problems. Your personal SAT tutor available anytime, any topic.",
   },
 ];
 
@@ -327,13 +327,12 @@ export function CapabilitiesSection() {
             What you get
           </motion.p>
           <h2 className="font-heading text-3xl italic tracking-tight text-neutral-900 md:text-5xl md:leading-[1.05]">
-            One subscription per exam.
+            Everything you need to ace your SAT.
             <br />
-            <span className="text-neutral-600">The whole product—not a stripped tier.</span>
+            <span className="text-neutral-600">$4.99/month — cancel anytime.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
-            Practice, flashcards, paths, and unlimited AI. <strong className="text-neutral-900">Affordable subscription per exam</strong>, cancel
-            anytime.
+            Full-length practice tests, AI tutoring, flashcards, and personalized study plans. <strong className="text-neutral-900">The complete SAT prep course</strong> for less than a coffee per week.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2 md:gap-3">
             <Link
@@ -384,32 +383,35 @@ export function CapabilitiesSection() {
         </div>
 
         <motion.article
-          className="landing-seo-article mx-auto mt-16 max-w-2xl rounded-2xl border border-black/[0.08] bg-white/85 px-6 py-9 text-center shadow-sm backdrop-blur-[2px] md:px-10 md:py-10"
+          className="landing-seo-article mx-auto mt-16 max-w-3xl rounded-2xl border border-black/[0.08] bg-white/85 px-6 py-9 shadow-sm backdrop-blur-[2px] md:px-10 md:py-10"
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={LANDING_VIEWPORT}
           transition={{ duration: LANDING_DURATION, delay: 0.06, ease: LANDING_EASE }}
         >
-          <h2 className="sr-only">Nomoexam SAT ACT GRE MCAT online exam preparation</h2>
+          <h3 className="font-barlow text-lg font-bold text-neutral-900 mb-3 md:text-xl">
+            Why students choose NomoExam for SAT prep
+          </h3>
+          <p className="text-sm font-medium leading-relaxed text-neutral-600 md:text-base mb-4">
+            NomoExam is the <strong className="text-neutral-900">best SAT prep app</strong> for students who want to improve their score without expensive tutors. Our AI tutor explains every question step-by-step, practice tests match the real SAT format, and personalized study plans tell you exactly what to focus on.
+          </p>
           <p className="text-sm font-medium leading-relaxed text-neutral-600 md:text-base">
-            Live for <strong className="text-neutral-900">SAT</strong> and <strong className="text-neutral-900">ACT</strong> today. More
-            exams are on the roadmap.{" "}
-            <Link href="/exams" className={linkUnderline}>
-              All exam guides
+            Currently available for <strong className="text-neutral-900">SAT</strong> and <strong className="text-neutral-900">ACT</strong>. GRE, GMAT, MCAT, LSAT, JEE, and NEET coming soon.{" "}
+            <Link href="/how-to-prepare-for-sat" className={linkUnderline}>
+              SAT prep guide
             </Link>
             {" · "}
-            <Link href="/compare" className={linkUnderline}>
-              Compare tests &amp; platforms
+            <Link href="/best-apps-for-sat-prep" className={linkUnderline}>
+              Best SAT apps 2026
             </Link>
             {" · "}
-            <Link href="/how-it-works" className={linkUnderline}>
-              How it works
+            <Link href="/compare/nomoexam-vs-khan-academy" className={linkUnderline}>
+              NomoExam vs Khan Academy
             </Link>
             {" · "}
             <Link href="/features/nomo-ai" className={linkUnderline}>
-              Nomo AI
+              AI Tutor features
             </Link>
-            .
           </p>
         </motion.article>
       </div>

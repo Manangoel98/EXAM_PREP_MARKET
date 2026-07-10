@@ -27,7 +27,7 @@ const canonical = marketingAbsoluteUrl("/compare/nomoexam-vs-khan-academy");
 const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
-  title: "NomoExam vs Khan Academy: Which Test Prep Platform is Better? (2025)",
+  title: "NomoExam vs Khan Academy: Which Test Prep Platform is Better? (2026)",
   description: "Honest comparison of NomoExam vs Khan Academy for SAT, ACT, and other exam prep. Compare AI features, question banks, pricing, and which platform is best for your needs.",
   alternates: { canonical },
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "test prep platform comparison"
   ],
   openGraph: {
-    title: "NomoExam vs Khan Academy: Complete Test Prep Comparison (2025)",
+    title: "NomoExam vs Khan Academy: Complete Test Prep Comparison (2026)",
     description: "Side-by-side comparison of NomoExam and Khan Academy. Features, pricing, and which is best for your exam prep goals.",
     url: canonical,
     siteName: "NomoExam",

@@ -31,7 +31,7 @@ const canonical = marketingAbsoluteUrl("/compare/gre-vs-gmat");
 const og = marketingAbsoluteUrl("/og-image.svg");
 
 export const metadata: Metadata = {
-  title: "GRE vs GMAT: Which Test for MBA & Graduate School? (2025 Guide)",
+  title: "GRE vs GMAT: Which Test for MBA & Graduate School? (2026 Guide)",
   description: "Complete comparison of GRE vs GMAT for MBA and graduate programs. Compare test format, scoring, difficulty, and which business schools accept each test. Expert recommendations included.",
   alternates: { canonical },
   keywords: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "MBA entrance exam comparison"
   ],
   openGraph: {
-    title: "GRE vs GMAT: Which Test Should You Take for MBA? (2025)",
+    title: "GRE vs GMAT: Which Test Should You Take for MBA? (2026)",
     description: "Expert comparison of GRE and GMAT for business school admissions. Test format, difficulty, and acceptance.",
     url: canonical,
     siteName: "NomoExam",
