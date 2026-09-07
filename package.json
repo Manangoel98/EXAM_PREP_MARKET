@@ -14,7 +14,6 @@
     "generate:web-bot-auth-jwks": "node scripts/generate-web-bot-auth-jwks.mjs"
   },
   "dependencies": {
-    "@0xlr/question-types": "^1.0.3",
     "@dicebear/collection": "^9.4.2",
     "@dicebear/core": "^9.4.2",
     "@google/generative-ai": "^0.24.1",
