@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ANDROID_APP } from "@/lib/config";
+import { useStripePublicPrice } from "@/lib/use-stripe-public-price";
 import { ArrowUpRight } from "lucide-react";
 
 const HERO_VIDEO_SRC =
@@ -23,6 +24,7 @@ const footerLinks = {
   guides: {
     title: "Free Study Guides",
     links: [
+      { label: "What Is a Good SAT Score?", href: "/what-is-a-good-sat-score" },
       { label: "How to Prepare for SAT", href: "/how-to-prepare-for-sat" },
       { label: "Best SAT Study Schedule", href: "/best-sat-study-schedule" },
       { label: "SAT Score Improvement Guide", href: "/how-to-improve-sat-score-200-points" },
@@ -38,7 +40,7 @@ const footerLinks = {
       { label: "Practice Tests Online", href: "/mock-test-app" },
       { label: "Study App for Android", href: "/study-app-for-students" },
       { label: "How NomoExam Works", href: "/how-it-works" },
-      { label: "Pricing — $4.99/month", href: "/pricing" },
+      { label: "Pricing", href: "/pricing" },
       { label: "Try Free Practice Test", href: "/try-free" },
     ],
   },
@@ -98,6 +100,7 @@ const socialLinks = [
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const price = useStripePublicPrice();
 
   return (
     <footer className="relative w-full overflow-hidden">
@@ -267,7 +270,7 @@ export const Footer = () => {
                 href="/pricing"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white/90 border border-black/10 px-8 py-4 text-base font-semibold text-neutral-900 transition-all hover:bg-white shadow-lg"
               >
-                View Pricing — $4.99/mo
+                {price ? `View Pricing — ${price.shortLabel}` : "View Pricing"}
               </Link>
             </div>
           </div>

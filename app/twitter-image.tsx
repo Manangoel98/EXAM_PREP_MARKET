@@ -1,8 +1,9 @@
 import { ImageResponse } from '@vercel/og'
+import { getPublicStripePrice } from '@/lib/stripe-public-price'
 
 export const runtime = 'edge'
 
-export const alt = 'NomoExam — Best SAT & ACT Prep App 2026 | AI Tutor & Practice Tests | $4.99/month'
+export const alt = 'NomoExam — Best SAT & ACT Prep App 2026 | AI Tutor & Practice Tests'
 export const size = {
   width: 1200,
   height: 630,
@@ -11,6 +12,8 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  const price = await getPublicStripePrice()
+  const badge = price?.shortLabel ?? 'Per exam'
   return new ImageResponse(
     (
       <div
@@ -132,7 +135,7 @@ export default async function Image() {
               fontWeight: 'bold',
             }}
           >
-            $4.99/month
+            {badge}
           </div>
 
           {/* Features */}

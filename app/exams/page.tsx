@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getAppUrl, marketingAbsoluteUrl } from "@/lib/config";
 import { BreadcrumbStructuredData } from "@/lib/schema";
 import { EXAM_HUB_CATEGORY_ORDER, MARKETING_EXAMS } from "@/lib/exams-marketing-data";
+import { getPublicStripePrice } from "@/lib/stripe-public-price";
 import { MKT } from "@/lib/marketing-ui";
 import {
   BookOpen,
@@ -76,7 +77,8 @@ const examsByCategory = EXAM_HUB_CATEGORY_ORDER.map((category) => ({
   exams: MARKETING_EXAMS.filter((e) => e.category === category),
 })).filter((g) => g.exams.length > 0);
 
-export default function ExamsPage() {
+export default async function ExamsPage() {
+  const priceLabel = (await getPublicStripePrice())?.label ?? "your per-exam subscription";
   return (
     <MarketingPageShell>
       <BreadcrumbStructuredData
@@ -95,7 +97,7 @@ export default function ExamsPage() {
               <span className="text-neutral-600">Online Exam Prep with AI Tutor & Practice Tests</span>
             </h1>
             <p className="mx-auto max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
-              Comprehensive exam preparation for standardized tests. Practice tests, AI tutoring, flashcards, and personalized study plans included in your $4.99/month subscription.
+              Comprehensive exam preparation for standardized tests. Practice tests, AI tutoring, flashcards, and personalized study plans included at {priceLabel}.
             </p>
           </div>
 

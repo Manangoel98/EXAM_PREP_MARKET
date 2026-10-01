@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MKT } from "@/lib/marketing-ui";
+import { useStripePublicPrice } from "@/lib/use-stripe-public-price";
 import {
   BarChart3,
   Brain,
@@ -134,6 +135,7 @@ const cardVariants = {
 };
 
 export function ProductShowcase() {
+  const price = useStripePublicPrice();
   return (
     <section
       id="product-tour"
@@ -241,7 +243,9 @@ export function ProductShowcase() {
             Try Free SAT Practice Test
           </a>
           <p className="mt-3 text-xs font-medium text-neutral-500">
-            No credit card required · $4.99/month after free trial · Cancel anytime
+            {price
+              ? `No credit card required · ${price.shortLabel} after you subscribe · Cancel anytime`
+              : "No credit card required · Cancel anytime"}
           </p>
         </motion.div>
       </div>

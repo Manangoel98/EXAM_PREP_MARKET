@@ -60,7 +60,7 @@ export const MARKETING_EXAMS: MarketingExamDefinition[] = [
         <li><strong>Use AI tutoring</strong> to get explanations that match your learning style</li>
       </ul>
 
-      <p>With NomoExam's AI-powered platform, students typically see 100-200 point improvements over 3 months of consistent preparation. Our $4.99/month subscription includes everything you need for SAT success.</p>
+      <p>With NomoExam's AI-powered platform, students typically see 100-200 point improvements over 3 months of consistent preparation. The <a href="/pricing">current per-exam price</a> includes everything you need for SAT success.</p>
     `,
     popular: true,
     icon: "GraduationCap",
@@ -114,7 +114,7 @@ export const MARKETING_EXAMS: MarketingExamDefinition[] = [
         <li><strong>Taking full practice tests weekly</strong> in the final month to build stamina</li>
       </ul>
 
-      <p>With NomoExam's AI-powered platform at just $4.99/month, you get everything needed to improve your ACT score by 3-5 points over 2-3 months of focused preparation.</p>
+      <p>With NomoExam's AI-powered platform at the <a href="/pricing">current per-exam price</a>, you get everything needed to improve your ACT score by 3-5 points over 2-3 months of focused preparation.</p>
     `,
     popular: true,
     icon: "BookOpen",

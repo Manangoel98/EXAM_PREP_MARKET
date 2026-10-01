@@ -6,10 +6,10 @@ import {
   AccordionItem,
   AccordionTrigger
 } from "../ui/accordion";
-import { LANDING_FAQS } from "@/lib/landing-faq-data";
+import { type LandingFaqItem } from "@/lib/landing-faq-data";
 import { LANDING_DURATION, LANDING_EASE, LANDING_VIEWPORT } from "@/lib/landing-motion";
 
-export function FAQ() {
+export function FAQ({ faqs }: { faqs: LandingFaqItem[] }) {
   return (
     <section id="faq" className="scroll-mt-44 bg-zinc-50 py-20 font-barlow md:scroll-mt-52 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
@@ -33,7 +33,7 @@ export function FAQ() {
         
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-            {LANDING_FAQS.map((faq, index) => (
+            {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 16 }}

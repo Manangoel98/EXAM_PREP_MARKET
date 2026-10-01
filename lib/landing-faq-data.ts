@@ -4,11 +4,13 @@ export interface LandingFaqItem {
   answer: string;
 }
 
-export const LANDING_FAQS: LandingFaqItem[] = [
+export function landingFaqs(priceLabel: string | null): LandingFaqItem[] {
+  const price = priceLabel ?? "the current price on our pricing page";
+  return [
   {
     question: "What is the best app for SAT prep in 2026?",
     answer:
-      "NomoExam is rated one of the best SAT prep apps in 2026. It combines AI-powered tutoring, full-length practice tests, smart flashcards, and personalized study plans in one platform. Unlike Khan Academy or Magoosh, NomoExam's AI tutor provides unlimited instant help on any question — like having a private tutor available 24/7 for just $4.99/month.",
+      `NomoExam is rated one of the best SAT prep apps in 2026. It combines AI-powered tutoring, full-length practice tests, smart flashcards, and personalized study plans in one platform. Unlike Khan Academy or Magoosh, NomoExam's AI tutor provides unlimited instant help on any question — like having a private tutor available 24/7 for ${price}.`,
   },
   {
     question: "How can I improve my SAT score by 200 points?",
@@ -18,12 +20,12 @@ export const LANDING_FAQS: LandingFaqItem[] = [
   {
     question: "Is NomoExam better than Khan Academy for SAT prep?",
     answer:
-      "NomoExam offers several advantages over Khan Academy: unlimited AI tutoring that explains any question step-by-step, personalized study plans that adapt to your progress, more practice questions with detailed analytics, and mobile-first design. Khan Academy is free but limited — NomoExam's premium features at $4.99/month help students improve faster with targeted practice.",
+      `NomoExam offers several advantages over Khan Academy: unlimited AI tutoring that explains any question step-by-step, personalized study plans that adapt to your progress, more practice questions with detailed analytics, and mobile-first design. Khan Academy is free but limited — NomoExam's premium features at ${price} help students improve faster with targeted practice.`,
   },
   {
     question: "How much does SAT prep cost with NomoExam?",
     answer:
-      "NomoExam costs $4.99/month per exam — that's less than one coffee per week. You get unlimited access to practice tests, AI tutoring, flashcards, study plans, and progress analytics. Compare that to private tutors ($50-150/hour) or courses like Kaplan ($199-599). Cancel anytime with no hidden fees.",
+      `NomoExam costs ${price} per exam. You get unlimited access to practice tests, AI tutoring, flashcards, study plans, and progress analytics. Compare that to private tutors ($50-150/hour) or courses like Kaplan ($199-599). Cancel anytime with no hidden fees.`,
   },
   {
     question: "Which exams does NomoExam support?",
@@ -53,6 +55,7 @@ export const LANDING_FAQS: LandingFaqItem[] = [
   {
     question: "Can I get a free SAT practice test?",
     answer:
-      "Yes! Visit our Try Free page to access sample SAT questions and see how NomoExam works — no account required. To access full-length practice tests with scoring and AI explanations, subscribe for $4.99/month. We don't offer extended free trials, but you can cancel anytime if it's not right for you.",
+      `Yes! Visit our Try Free page to access sample SAT questions and see how NomoExam works — no account required. To access full-length practice tests with scoring and AI explanations, subscribe at ${price}. We don't offer extended free trials, but you can cancel anytime if it's not right for you.`,
   },
-];
+  ];
+}

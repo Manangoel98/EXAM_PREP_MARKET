@@ -7,6 +7,7 @@ import { ArrowUpRight, Play, Layers, MessageSquare, FileText } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { LANDING_DURATION, LANDING_EASE, LANDING_VIEWPORT } from "@/lib/landing-motion";
 import { getAppUrl } from "@/lib/config";
+import { useStripePublicPrice } from "@/lib/use-stripe-public-price";
 
 const HERO_VIDEO_SRC =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4";
@@ -304,6 +305,7 @@ const linkUnderline =
   "font-semibold text-neutral-900 underline decoration-accent-lime/75 underline-offset-[5px] transition-colors hover:decoration-accent-lime";
 
 export function CapabilitiesSection() {
+  const price = useStripePublicPrice();
   return (
     <section
       id="capabilities"
@@ -329,7 +331,7 @@ export function CapabilitiesSection() {
           <h2 className="font-heading text-3xl italic tracking-tight text-neutral-900 md:text-5xl md:leading-[1.05]">
             Everything you need to ace your SAT.
             <br />
-            <span className="text-neutral-600">$4.99/month — cancel anytime.</span>
+            <span className="text-neutral-600">{price ? `${price.shortLabel} — cancel anytime.` : "Cancel anytime."}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
             Full-length practice tests, AI tutoring, flashcards, and personalized study plans. <strong className="text-neutral-900">The complete SAT prep course</strong> for less than a coffee per week.

@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     "SAT score ranges",
     "average SAT scores by section",
     "SAT target score",
-    "good SAT score",
     "SAT score percentile",
     "Class of 2025 SAT average",
     "SAT middle 50%",
@@ -198,7 +197,7 @@ export default function AverageSATScoresPage() {
               </h2>
 
               <p>
-                When students ask "what are average scores for SAT," there's usually a different question hiding underneath: "is my score good enough?" Here's the answer nobody puts in bold text: a good SAT score is one that's at or above the middle 50% of admitted students at the colleges you actually want to attend.
+                When students ask "what are average scores for SAT," there's usually a different question hiding underneath: "is my score good enough?" That question has its own answer: <Link href="/what-is-a-good-sat-score" className="font-semibold text-primary hover:underline">what is a good SAT score</Link> is the score at or above the middle 50% of enrolled students at the colleges you actually want to attend.
               </p>
 
               <p>
@@ -298,7 +297,7 @@ export default function AverageSATScoresPage() {
               </p>
 
               <p>
-                This is exactly the loop NomoExam is built around: full-length digital SAT practice tests, smart flashcards that drill your specific weak spots, and an <Link href="/ai-tutor-for-exam-prep" className="font-semibold text-primary hover:underline">AI tutor that explains every wrong answer on the spot</Link> instead of just flashing the correct letter. It costs $4.99/month per exam, a fraction of what a typical tutor or big prep course charges.
+                This is exactly the loop NomoExam is built around: full-length digital SAT practice tests, smart flashcards that drill your specific weak spots, and an <Link href="/ai-tutor-for-exam-prep" className="font-semibold text-primary hover:underline">AI tutor that explains every wrong answer on the spot</Link> instead of just flashing the correct letter. <Link href="/pricing" className="font-semibold text-primary hover:underline">Pricing</Link> is one plan per exam.
               </p>
 
               <h2 className="font-barlow mt-12 text-2xl font-bold text-neutral-900">
@@ -375,7 +374,7 @@ export default function AverageSATScoresPage() {
               </p>
 
               <p>
-                If you want a head start, <Link href="/" className="font-semibold text-primary hover:underline">NomoExam</Link> runs full digital SAT practice tests, then builds a personalized weekly plan from your misses, with the AI tutor explaining each error as you review. At $4.99/month per exam, it costs less than a single hour with most tutors. Either way, stop asking whether 1029 is "good" and start closing the distance to your number. That's the shift that actually moves admissions odds.
+                If you want a head start, <Link href="/" className="font-semibold text-primary hover:underline">NomoExam</Link> runs full digital SAT practice tests, then builds a personalized weekly plan from your misses, with the AI tutor explaining each error as you review. See <Link href="/pricing" className="font-semibold text-primary hover:underline">current pricing</Link>. Either way, stop asking whether 1029 is "good" and start closing the distance to your number. That's the shift that actually moves admissions odds.
               </p>
 
               <h2 className="font-barlow mt-12 text-2xl font-bold text-neutral-900">Why You Can Trust This Data</h2>

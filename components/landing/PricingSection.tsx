@@ -12,6 +12,7 @@ import {
 import { motion } from "framer-motion";
 import { LANDING_DURATION, LANDING_EASE, LANDING_VIEWPORT } from "@/lib/landing-motion";
 import { getAppUrl } from "@/lib/config";
+import { lowestStripePrice } from "@/lib/stripe-public-price";
 
 interface StripePrice {
   id: string;
@@ -116,14 +117,7 @@ export default function PricingSection({ embedded = false }: { embedded?: boolea
     }
   ];
 
-  const formatPrice = (price: StripePrice) => {
-    const amount = (price.unit_amount / 100).toFixed(2);
-    return {
-      amount,
-      interval: price.recurring.interval,
-      currency: price.currency.toUpperCase()
-    };
-  };
+  const livePrice = lowestStripePrice(products);
 
   return (
     <section
@@ -146,7 +140,7 @@ export default function PricingSection({ embedded = false }: { embedded?: boolea
               SAT & ACT Prep Pricing
               <br />
               <span className="font-heading text-3xl font-normal italic text-neutral-700 md:text-5xl">
-                $4.99/month — Full access per exam
+                {livePrice ? `${livePrice.shortLabel} — full access per exam` : "Full access per exam"}
               </span>
             </h2>
           ) : (
@@ -154,15 +148,17 @@ export default function PricingSection({ embedded = false }: { embedded?: boolea
               SAT & ACT Prep Pricing
               <br />
               <span className="font-heading text-3xl font-normal italic text-neutral-700 md:text-5xl">
-                $4.99/month per exam — AI Tutor & Practice Tests Included
+                {livePrice
+                  ? `${livePrice.label} — AI tutor and practice tests included`
+                  : "AI tutor and practice tests included"}
               </span>
             </h1>
           )}
           <p className="mx-auto max-w-xl text-base font-medium text-neutral-600 md:text-lg">
             {loading ? (
               "Loading pricing..."
-            ) : products.length > 0 ? (
-              <>From <strong className="text-neutral-900">${formatPrice(products[0].default_price).amount}/{formatPrice(products[0].default_price).interval}</strong> when billed monthly. Everything below is included for the exam you choose—practice, flashcards, paths, and unlimited AI help.</>
+            ) : products.length > 0 && livePrice ? (
+              <>From <strong className="text-neutral-900">{livePrice.label}</strong> when billed monthly. Everything below is included for the exam you choose—practice, flashcards, paths, and unlimited AI help.</>
             ) : (
               "Everything below is included for the exam you choose—practice, flashcards, paths, and unlimited AI help."
             )}
@@ -265,7 +261,11 @@ export default function PricingSection({ embedded = false }: { embedded?: boolea
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {products.map((product, index) => {
-                const priceInfo = formatPrice(product.default_price);
+                const unit = product.default_price.unit_amount / 100;
+                const priceInfo = {
+                  amount: Number.isInteger(unit) ? String(unit) : unit.toFixed(2),
+                  interval: product.default_price.recurring?.interval || "month",
+                };
                 return (
                   <motion.div
                     key={product.id}

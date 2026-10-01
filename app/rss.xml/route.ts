@@ -1,8 +1,11 @@
 import { config } from '@/lib/config';
+import { getPublicStripePrice } from '@/lib/stripe-public-price';
 
 export async function GET() {
   const baseUrl = config.app.url;
   const buildDate = new Date().toUTCString();
+  const price = await getPublicStripePrice();
+  const priceLabel = price?.label ?? "the live per-exam price";
 
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -21,6 +24,16 @@ export async function GET() {
       <title>${config.seo.siteName}</title>
       <link>${baseUrl}</link>
     </image>
+
+    <item>
+      <title>What Is a Good SAT Score in 2026?</title>
+      <description>A good SAT score is one at or above the middle 50% of enrolled students at your colleges. National average for the Class of 2025 is 1029. Score bands and how to set your target.</description>
+      <link>${baseUrl}/what-is-a-good-sat-score</link>
+      <guid isPermaLink="true">${baseUrl}/what-is-a-good-sat-score</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <category>SAT Preparation</category>
+      <category>SAT Scores</category>
+    </item>
 
     <item>
       <title>SAT 2026 Complete Guide - Format, Scoring, and Prep Strategies</title>
@@ -54,7 +67,7 @@ export async function GET() {
 
     <item>
       <title>ACT Prep Course - Practice Tests &amp; AI Tutor</title>
-      <description>Comprehensive ACT preparation with full-length practice tests, AI tutoring, and personalized study plans. $4.99/month.</description>
+      <description>Comprehensive ACT preparation with full-length practice tests, AI tutoring, and personalized study plans. ${priceLabel}.</description>
       <link>${baseUrl}/exams/act</link>
       <guid isPermaLink="true">${baseUrl}/exams/act</guid>
       <pubDate>Mon, 10 Feb 2026 12:00:00 GMT</pubDate>

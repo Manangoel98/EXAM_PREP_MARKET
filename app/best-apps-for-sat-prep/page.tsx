@@ -6,6 +6,7 @@ import { marketingAbsoluteUrl } from "@/lib/config";
 import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } from "@/lib/schema";
 import { Layers, Target, Brain, CheckCircle2, Clock, AlertTriangle } from "lucide-react";
 import { RelatedContent, RELATED_CONTENT_GROUPS } from "@/components/landing/RelatedContent";
+import { getPublicStripePrice } from "@/lib/stripe-public-price";
 
 const canonical = marketingAbsoluteUrl("/best-apps-for-sat-prep");
 const og = marketingAbsoluteUrl("/og-image.svg");
@@ -66,7 +67,8 @@ const faqs = [
   },
 ];
 
-export default function BestAppsForSATPage() {
+export default async function BestAppsForSATPage() {
+  const priceLabel = (await getPublicStripePrice())?.shortLabel ?? "see pricing";
   return (
     <MarketingPageShell>
       <BreadcrumbStructuredData
@@ -121,7 +123,7 @@ export default function BestAppsForSATPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-black/[0.04]">
-                    <tr className="bg-accent-lime/5"><td className="p-3 font-bold">NomoExam</td><td className="p-3">Unlimited AI</td><td className="p-3">1000+ questions</td><td className="p-3">AI-generated</td><td className="p-3">$4.99/mo</td><td className="p-3">AI-powered prep + Android</td></tr>
+                    <tr className="bg-accent-lime/5"><td className="p-3 font-bold">NomoExam</td><td className="p-3">Unlimited AI</td><td className="p-3">1000+ questions</td><td className="p-3">AI-generated</td><td className="p-3">{priceLabel}</td><td className="p-3">AI-powered prep + Android</td></tr>
                     <tr><td className="p-3 font-bold">Khan Academy</td><td className="p-3">Basic AI</td><td className="p-3">Official CB tests</td><td className="p-3">Basic</td><td className="p-3">Free</td><td className="p-3">Budget-conscious students</td></tr>
                     <tr><td className="p-3 font-bold">Magoosh</td><td className="p-3">No</td><td className="p-3">3 full tests</td><td className="p-3">Manual</td><td className="p-3">$99-149</td><td className="p-3">Video learners</td></tr>
                     <tr><td className="p-3 font-bold">UWorld</td><td className="p-3">No</td><td className="p-3">2000+ questions</td><td className="p-3">No</td><td className="p-3">$49-149</td><td className="p-3">Question bank drilling</td></tr>
@@ -149,7 +151,7 @@ export default function BestAppsForSATPage() {
                 <li>Flashcards with spaced repetition</li>
                 <li>Android app available</li>
               </ul>
-              <p><strong>Pricing:</strong> Free tier available. Premium from $4.99/month per exam.</p>
+              <p><strong>Pricing:</strong> Free tier available. Premium from {priceLabel} per exam.</p>
               <p><strong>Best for:</strong> Students who want a comprehensive, modern AI-first prep experience on mobile.</p>
 
               <h2 className="font-barlow mt-12 text-2xl font-bold text-neutral-900">
@@ -205,7 +207,7 @@ export default function BestAppsForSATPage() {
                 How to Choose the Right App
               </h2>
               <ul>
-                <li><strong>Budget under $10/month:</strong> NomoExam ($4.99/mo, best features/price) or Khan Academy (free)</li>
+                <li><strong>Budget under $10/month:</strong> NomoExam ({priceLabel}, best features/price) or Khan Academy (free)</li>
                 <li><strong>Want AI help anytime:</strong> NomoExam (unlimited AI tutor)</li>
                 <li><strong>Need massive question practice:</strong> UWorld (2000+ questions)</li>
                 <li><strong>Prefer video learning:</strong> Magoosh (200+ videos)</li>

@@ -74,10 +74,10 @@ export function RelatedContent({
 
 export const RELATED_CONTENT_GROUPS = {
   satPrep: [
+    { title: "What Is a Good SAT Score?", href: "/what-is-a-good-sat-score", description: "Score bands and how to set a college target" },
+    { title: "Average SAT Scores", href: "/average-sat-scores-percentiles", description: "Official average and percentile chart" },
     { title: "How to Prepare for SAT", href: "/how-to-prepare-for-sat", description: "Complete guide to SAT preparation strategies" },
     { title: "Best SAT Study Schedule", href: "/best-sat-study-schedule", description: "Optimize your study time with proven schedules" },
-    { title: "Best Apps for SAT Prep", href: "/best-apps-for-sat-prep", description: "Compare top SAT prep apps in 2026" },
-    { title: "Improve SAT Score 200 Points", href: "/how-to-improve-sat-score-200-points", description: "Proven strategies to boost your score" },
   ],
   examComparison: [
     { title: "SAT vs ACT", href: "/act-vs-sat-which-test-should-you-take", description: "Which test is right for you?" },

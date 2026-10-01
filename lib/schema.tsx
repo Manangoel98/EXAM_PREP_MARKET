@@ -5,6 +5,7 @@
 
 import { type ReactElement } from 'react';
 import { config, getMarketingSiteOrigin } from './config';
+import { getPublicStripePrice } from './stripe-public-price';
 
 interface BaseSchema {
   '@context': 'https://schema.org';
@@ -162,7 +163,8 @@ export function WebSiteStructuredData(): ReactElement {
  * Helps Google understand your main navigation structure
  * ONLY includes pages that exist on the marketing site
  */
-export function SiteNavigationStructuredData(): ReactElement {
+export async function SiteNavigationStructuredData(): Promise<ReactElement> {
+  const price = await getPublicStripePrice();
   const data = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -185,7 +187,9 @@ export function SiteNavigationStructuredData(): ReactElement {
         '@type': 'SiteNavigationElement',
         position: 3,
         name: 'Pricing',
-        description: '$4.99/month per exam - AI tutor, practice tests, study plans',
+        description: price
+          ? `${price.label} - AI tutor, practice tests, study plans`
+          : 'AI tutor, practice tests, study plans',
         url: `${baseUrl}/pricing`,
       },
       {
@@ -456,7 +460,8 @@ const homePageDescription =
 /**
  * Homepage WebPage + SoftwareApplication JSON-LD for search and AI citation (clear entities, speakable target).
  */
-export function HomePageWebStructuredData(): ReactElement {
+export async function HomePageWebStructuredData(): Promise<ReactElement> {
+  const price = await getPublicStripePrice();
   const data = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -503,12 +508,16 @@ export function HomePageWebStructuredData(): ReactElement {
           ratingCount: '2847',
           bestRating: '5',
         },
-        offers: {
-          '@type': 'Offer',
-          price: '4.99',
-          priceCurrency: 'USD',
-          description: 'Per exam per month (USD). Cancel anytime. No free trial.',
-        },
+        ...(price
+          ? {
+              offers: {
+                '@type': 'Offer',
+                price: price.amount,
+                priceCurrency: price.currency,
+                description: `${price.label}. Cancel anytime.`,
+              },
+            }
+          : {}),
         provider: {
           '@type': 'Organization',
           name: config.seo.siteName,
@@ -524,7 +533,8 @@ export function HomePageWebStructuredData(): ReactElement {
 /**
  * Android MobileApplication schema for Play Store app
  */
-export function AndroidAppStructuredData(): ReactElement {
+export async function AndroidAppStructuredData(): Promise<ReactElement> {
+  const price = await getPublicStripePrice();
   const ANDROID_APP = {
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.nomoexam.student",
     packageName: "com.nomoexam.student",
@@ -550,12 +560,16 @@ export function AndroidAppStructuredData(): ReactElement {
       bestRating: '5',
       worstRating: '1',
     },
-    offers: {
-      '@type': 'Offer',
-      price: '9',
-      priceCurrency: 'USD',
-      priceValidUntil: '2026-12-31',
-    },
+    ...(price
+      ? {
+          offers: {
+            '@type': 'Offer',
+            price: price.amount,
+            priceCurrency: price.currency,
+            description: price.label,
+          },
+        }
+      : {}),
     author: {
       '@type': 'Organization',
       name: config.seo.siteName,

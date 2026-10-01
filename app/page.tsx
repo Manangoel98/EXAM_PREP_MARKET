@@ -3,7 +3,8 @@ import { FAQ } from "@/components/landing/FAQ";
 import { MarketingPageShell } from "@/components/layout/MarketingPageShell";
 import { getMarketingSiteOrigin } from "@/lib/config";
 import PricingSection from "@/components/landing/PricingSection";
-import { LANDING_FAQS } from "@/lib/landing-faq-data";
+import { landingFaqs } from "@/lib/landing-faq-data";
+import { getPublicStripePrice } from "@/lib/stripe-public-price";
 import { FAQStructuredData, HomePageWebStructuredData, SiteNavigationStructuredData } from "@/lib/schema";
 import {
   PremiumHero,
@@ -17,10 +18,13 @@ import { QuickLinksSection } from "@/components/landing/QuickLinksSection";
 
 const homeCanonical = getMarketingSiteOrigin();
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const price = await getPublicStripePrice();
+  const priceBit = price ? ` ${price.label}.` : "";
+  return {
   title: "NomoExam — #1 SAT & ACT Prep App 2026 | AI Tutor, Practice Tests & Study Plans",
   description:
-    "Best SAT prep app with AI tutor, full-length practice tests, flashcards & personalized study plans. Improve your SAT score 200+ points. ACT, GRE, GMAT prep available. $4.99/month per exam. Try free.",
+    `Best SAT prep app with AI tutor, full-length practice tests, flashcards & personalized study plans. Improve your SAT score 200+ points. ACT, GRE, GMAT prep available.${priceBit} Try free.`,
   keywords: [
     // High-intent SAT keywords
     "SAT prep app",
@@ -63,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NomoExam — Best SAT & ACT Prep App 2026 | AI Tutor & Practice Tests",
     description:
-      "Improve your SAT score 200+ points with AI-powered practice tests, unlimited tutoring & personalized study plans. $4.99/month. Try free today.",
+      `Improve your SAT score 200+ points with AI-powered practice tests, unlimited tutoring & personalized study plans.${priceBit} Try free today.`,
     url: homeCanonical,
     siteName: "Nomoexam",
     type: "website",
@@ -72,17 +76,20 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NomoExam — Best SAT Prep App 2026 | AI Tutor & Practice Tests",
-    description: "Improve your SAT score 200+ points. AI tutor, practice tests, flashcards. $4.99/mo. Try free.",
+    description: `Improve your SAT score 200+ points. AI tutor, practice tests, flashcards.${priceBit} Try free.`,
   },
-};
+  };
+}
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const price = await getPublicStripePrice();
+  const faqs = landingFaqs(price?.label ?? null);
   return (
     <MarketingPageShell>
       <main>
         <HomePageWebStructuredData />
         <SiteNavigationStructuredData />
-        <FAQStructuredData faqs={LANDING_FAQS} />
+        <FAQStructuredData faqs={faqs} />
         <div className="bg-black">
           <PremiumHero />
         </div>
@@ -93,7 +100,7 @@ export default function LandingPage() {
         <QuickLinksSection />
         <AndroidAppSection />
         <PricingSection embedded />
-        <FAQ />
+        <FAQ faqs={faqs} />
       </main>
     </MarketingPageShell>
   );

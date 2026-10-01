@@ -37,25 +37,6 @@ export const ANDROID_APP = {
   version: "2.0",
 } as const;
 
-/** Pricing configuration (fallback for SSG pages) */
-export const PRICING = {
-  monthlyPrice: 4.99,
-  currency: 'USD',
-  currencySymbol: '$',
-  interval: 'month',
-  perExam: true,
-} as const;
-
-// Price formatting helpers
-export const formatPrice = (amount: number = PRICING.monthlyPrice) => 
-  `${PRICING.currencySymbol}${amount}`;
-
-export const getPriceText = () => 
-  `${formatPrice()}/${PRICING.interval}${PRICING.perExam ? ' per exam' : ''}`;
-
-export const getFullPriceText = () => 
-  `${formatPrice()}/${PRICING.interval}${PRICING.perExam ? ' per exam' : ''} (${PRICING.currency})`;
-
 export const config = {
   app: {
     name: 'NomoExam',

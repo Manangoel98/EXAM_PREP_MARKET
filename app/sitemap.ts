@@ -31,6 +31,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guidePages = [
     // SAT-focused guides
     '/how-to-prepare-for-sat',
+    '/what-is-a-good-sat-score',
+    '/average-sat-scores-percentiles',
     '/best-sat-study-schedule',
     '/sat-study-plan',
     '/best-apps-for-sat-prep',
