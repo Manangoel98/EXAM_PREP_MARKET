@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ANDROID_APP } from "@/lib/config";
+import { OTHER_GUIDES, SAT_GUIDES } from "@/lib/sat-guides";
 import { useStripePublicPrice } from "@/lib/use-stripe-public-price";
 import { ArrowUpRight } from "lucide-react";
 
@@ -19,18 +20,6 @@ const footerLinks = {
       { label: "GMAT Prep Course", href: "/exams/gmat" },
       { label: "MCAT Prep Course", href: "/exams/mcat" },
       { label: "LSAT Prep Course", href: "/exams/lsat" },
-    ],
-  },
-  guides: {
-    title: "Free Study Guides",
-    links: [
-      { label: "What Is a Good SAT Score?", href: "/what-is-a-good-sat-score" },
-      { label: "How to Prepare for SAT", href: "/how-to-prepare-for-sat" },
-      { label: "Best SAT Study Schedule", href: "/best-sat-study-schedule" },
-      { label: "SAT Score Improvement Guide", href: "/how-to-improve-sat-score-200-points" },
-      { label: "Best SAT Prep Apps 2026", href: "/best-apps-for-sat-prep" },
-      { label: "SAT vs ACT: Which Test?", href: "/act-vs-sat-which-test-should-you-take" },
-      { label: "GRE Preparation Guide", href: "/how-to-prepare-for-gre" },
     ],
   },
   product: {
@@ -145,22 +134,32 @@ export const Footer = () => {
               </ul>
             </div>
 
-            {/* Free Study Guides */}
+            {/* Free Study Guides — full SAT list from lib/sat-guides.ts */}
             <div>
               <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-900 mb-4">
-                {footerLinks.guides.title}
+                <Link href="/guides" className="hover:text-neutral-700">
+                  Free Study Guides
+                </Link>
               </h3>
               <ul className="space-y-2.5">
-                {footerLinks.guides.links.map((link) => (
+                {SAT_GUIDES.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-900"
                     >
-                      {link.label}
+                      {link.title}
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href={OTHER_GUIDES[0].href}
+                    className="text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-900"
+                  >
+                    {OTHER_GUIDES[0].title}
+                  </Link>
+                </li>
               </ul>
             </div>
 

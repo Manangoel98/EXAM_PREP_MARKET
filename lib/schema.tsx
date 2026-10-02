@@ -241,6 +241,13 @@ export async function SiteNavigationStructuredData(): Promise<ReactElement> {
         description: 'Free guide: How to prepare for SAT and improve your score',
         url: `${baseUrl}/how-to-prepare-for-sat`,
       },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 11,
+        name: 'SAT Study Guides',
+        description: 'SAT Math, Reading and Writing, digital format, test dates, and score guides',
+        url: `${baseUrl}/guides`,
+      },
     ],
   };
 

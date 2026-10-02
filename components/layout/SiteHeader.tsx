@@ -177,6 +177,21 @@ export function SiteHeader() {
             </motion.div>
             <motion.div style={{ color: labelColor }}>
               <Link
+                href="/guides"
+                className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 ${
+                  pathname.startsWith('/guides') ||
+                  pathname.startsWith('/sat-') ||
+                  pathname === '/digital-sat-format' ||
+                  pathname === '/what-is-a-good-sat-score'
+                    ? lightChrome ? 'bg-black/[0.08]' : 'bg-white/15'
+                    : linkHoverBg
+                }`}
+              >
+                Guides
+              </Link>
+            </motion.div>
+            <motion.div style={{ color: labelColor }}>
+              <Link
                 href="/compare"
                 className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                   pathname.startsWith('/compare')
@@ -308,6 +323,13 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
               >
                 How it works
+              </Link>
+              <Link
+                href="/guides"
+                className="rounded-lg px-3 py-3 text-base font-semibold text-neutral-900"
+                onClick={() => setOpen(false)}
+              >
+                SAT study guides
               </Link>
               <Link
                 href="/pricing"

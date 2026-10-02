@@ -96,6 +96,18 @@ export async function GET() {
   lines.push("Allow: /");
   lines.push("");
 
+  lines.push("User-Agent: GoogleOther");
+  lines.push("Allow: /");
+  lines.push("");
+
+  lines.push("User-Agent: Amazonbot");
+  lines.push("Allow: /");
+  lines.push("");
+
+  lines.push("User-Agent: Bytespider");
+  lines.push("Allow: /");
+  lines.push("");
+
   // Sitemap and AI-friendly files
   lines.push(`Sitemap: ${base}/sitemap.xml`);
   lines.push("");
@@ -103,6 +115,7 @@ export async function GET() {
   lines.push(`# LLMs.txt: ${base}/llms.txt`);
   lines.push(`# AI Info (JSON): ${base}/ai.txt`);
   lines.push(`# RSS Feed: ${base}/rss.xml`);
+  lines.push(`# SAT study guides: ${base}/guides`);
 
   const body = lines.join("\n") + "\n";
 

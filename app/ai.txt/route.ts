@@ -58,7 +58,41 @@ export async function GET() {
       ai_tutor: `${base}/features/nomo-ai`,
       try_free: `${base}/try-free`,
       sat_prep: `${base}/exams/sat`,
-      act_prep: `${base}/exams/act`
+      act_prep: `${base}/exams/act`,
+      sat_guides: `${base}/guides`
+    },
+    study_guides: {
+      index: `${base}/guides`,
+      sat_math: `${base}/sat-math`,
+      sat_reading_and_writing: `${base}/sat-reading-and-writing`,
+      digital_sat_format: `${base}/digital-sat-format`,
+      sat_test_dates: `${base}/sat-test-dates`,
+      good_sat_score: `${base}/what-is-a-good-sat-score`,
+      average_sat_scores: `${base}/average-sat-scores-percentiles`,
+      how_to_prepare: `${base}/how-to-prepare-for-sat`,
+      study_plan: `${base}/sat-study-plan`
+    },
+    sat_facts: {
+      testing_time: "2 hours 14 minutes",
+      questions: 98,
+      reading_and_writing: "54 questions, 64 minutes, two modules of 27 questions and 32 minutes",
+      math: "44 questions, 70 minutes, two modules of 22 questions and 35 minutes",
+      score_scale: "400-1600 total; 200-800 per section",
+      calculator: "Allowed on every Math question, including built-in Desmos",
+      adaptive: "Module 2 difficulty depends on Module 1. A harder Module 2 does not lower the 200-800 scale.",
+      us_weekend_dates_2026_27: [
+        { test: "2026-08-22", scores: "2026-09-04", registration: "closed" },
+        { test: "2026-09-12", scores: "2026-09-25", registration: "closed" },
+        { test: "2026-10-03", scores: "2026-10-16", registration: "closed" },
+        { test: "2026-11-07", scores: "2026-11-20", registration: "open", deadline: "2026-10-23" },
+        { test: "2026-12-05", scores: "2026-12-18", registration: "open", deadline: "2026-11-20" },
+        { test: "2027-03-06", scores: "2027-03-19", registration: "open", deadline: "2027-02-19" },
+        { test: "2027-05-01", scores: "2027-05-14", registration: "open", deadline: "2027-04-16" },
+        { test: "2027-06-05", scores: "2027-06-21", registration: "open", deadline: "2027-05-21" }
+      ],
+      early_action: "October 3, 2026 releases scores October 16, before a November 1 deadline, but registration for October 3 is closed as of October 1, 2026. November 7 releases November 20, after most November 1 deadlines. The next open registration deadline is October 23 for the November 7 test.",
+      applies_to: "College Board lists these weekend dates for all students, U.S. and international.",
+      official_source: "https://satsuite.collegeboard.org/sat/dates-deadlines"
     },
     contact: {
       email: "support@nomoexam.com",

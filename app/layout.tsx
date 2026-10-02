@@ -52,6 +52,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   alternates: {
     canonical: siteOrigin,
+    types: {
+      "application/rss+xml": `${siteOrigin}/rss.xml`,
+      "text/plain": `${siteOrigin}/llms.txt`,
+      "application/json": `${siteOrigin}/ai.txt`,
+    },
   },
   icons: {
     icon: [
@@ -148,6 +153,8 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="googlebot" content="max-image-preview:large" />
         <link rel="alternate" type="application/rss+xml" title={`${config.seo.siteName} RSS Feed`} href="/rss.xml" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="application/json" href="/ai.txt" title="AI site information" />
         <OrganizationStructuredData />
         <WebSiteStructuredData />
         <SiteNavigationStructuredData />

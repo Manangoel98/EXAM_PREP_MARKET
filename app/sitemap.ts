@@ -30,6 +30,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Informational/guide pages (traffic layer) - comprehensive list
   const guidePages = [
     // SAT-focused guides
+    '/guides',
+    '/sat-math',
+    '/sat-reading-and-writing',
+    '/digital-sat-format',
+    '/sat-test-dates',
     '/how-to-prepare-for-sat',
     '/what-is-a-good-sat-score',
     '/average-sat-scores-percentiles',

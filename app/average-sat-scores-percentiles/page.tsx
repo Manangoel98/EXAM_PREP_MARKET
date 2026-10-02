@@ -197,7 +197,7 @@ export default function AverageSATScoresPage() {
               </h2>
 
               <p>
-                When students ask "what are average scores for SAT," there's usually a different question hiding underneath: "is my score good enough?" That question has its own answer: <Link href="/what-is-a-good-sat-score" className="font-semibold text-primary hover:underline">what is a good SAT score</Link> is the score at or above the middle 50% of enrolled students at the colleges you actually want to attend.
+                When students ask "what are average scores for SAT," there's usually a different question hiding underneath: "is my score good enough?" That question has its own answer: <Link href="/what-is-a-good-sat-score" className="font-semibold text-primary hover:underline">what is a good SAT score</Link> is the score at or above the middle 50% of enrolled students at the colleges you actually want to attend. The test those colleges are looking at is described in the <Link href="/digital-sat-format" className="font-semibold text-primary hover:underline">digital SAT format</Link> guide, and every SAT article on this site is listed under <Link href="/guides" className="font-semibold text-primary hover:underline">SAT study guides</Link>.
               </p>
 
               <p>

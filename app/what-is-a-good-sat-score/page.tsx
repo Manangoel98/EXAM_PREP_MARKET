@@ -268,11 +268,23 @@ export default function GoodSatScorePage() {
               </p>
 
               <p>
-                If the target is higher than today&apos;s score,{" "}
-                <Link href="/exams/sat" className="font-semibold text-primary hover:underline">
-                  SAT prep
-                </Link>{" "}
-                on NomoExam is full-length digital practice plus an explanation for each miss. The live plan price is on{" "}
+                If the target is higher than today&apos;s score, the next reads are the{" "}
+                <Link href="/digital-sat-format" className="font-semibold text-primary hover:underline">
+                  digital SAT format
+                </Link>
+                ,{" "}
+                <Link href="/sat-math" className="font-semibold text-primary hover:underline">
+                  SAT Math
+                </Link>
+                , and{" "}
+                <Link href="/sat-reading-and-writing" className="font-semibold text-primary hover:underline">
+                  SAT Reading and Writing
+                </Link>
+                . The full list is on{" "}
+                <Link href="/guides" className="font-semibold text-primary hover:underline">
+                  SAT study guides
+                </Link>
+                . Timed practice is on{" "}
                 <Link href="/pricing" className="font-semibold text-primary hover:underline">
                   pricing
                 </Link>

@@ -74,6 +74,10 @@ export function RelatedContent({
 
 export const RELATED_CONTENT_GROUPS = {
   satPrep: [
+    { title: "SAT Math", href: "/sat-math", description: "Four domains, Desmos, and pacing for both modules" },
+    { title: "SAT Reading and Writing", href: "/sat-reading-and-writing", description: "Every question type on the digital section" },
+    { title: "Digital SAT Format", href: "/digital-sat-format", description: "Modules, timing, and adaptive scoring" },
+    { title: "SAT Test Dates 2026–27", href: "/sat-test-dates", description: "Deadlines, score release, and when to sit" },
     { title: "What Is a Good SAT Score?", href: "/what-is-a-good-sat-score", description: "Score bands and how to set a college target" },
     { title: "Average SAT Scores", href: "/average-sat-scores-percentiles", description: "Official average and percentile chart" },
     { title: "How to Prepare for SAT", href: "/how-to-prepare-for-sat", description: "Complete guide to SAT preparation strategies" },
