@@ -112,7 +112,13 @@ export default function GuidesPage() {
             </ul>
 
             <p className="mt-10 text-base font-medium leading-relaxed text-neutral-700">
-              When you want timed practice in the same format, the live plan is on{" "}
+              Want strategy and analysis instead of reference guides? The{" "}
+              <Link href="/blog" className="font-semibold text-primary hover:underline">
+                NomoExam blog
+              </Link>{" "}
+              covers the score-gap between practice and test day, hard Math Module 2 questions,
+              one-month study plans, and Desmos technique. When you want timed practice in the
+              same format, the live plan is on{" "}
               <Link href="/pricing" className="font-semibold text-primary hover:underline">
                 pricing
               </Link>

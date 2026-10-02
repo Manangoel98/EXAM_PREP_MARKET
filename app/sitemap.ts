@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getMarketingSiteOrigin } from '@/lib/config';
 import { MARKETING_EXAMS } from '@/lib/exams-marketing-data';
+import { BLOG_POSTS } from '@/lib/blog-posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
@@ -57,6 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/', changeFrequency: 'weekly', priority: 1.0 },
     { url: '/pricing', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/features', changeFrequency: 'monthly', priority: 0.9 },
+    { url: '/blog', changeFrequency: 'weekly', priority: 0.9 },
     { url: '/exams', changeFrequency: 'monthly', priority: 0.95 },
     { url: '/how-it-works', changeFrequency: 'monthly', priority: 0.85 },
     { url: '/features/nomo-ai', changeFrequency: 'monthly', priority: 0.85 },
@@ -119,6 +121,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.87,
   }));
 
+  // Blog posts (weekly cadence, high priority — primary content layer)
+  const blogPostUrls = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.updated ? new Date(post.updated) : lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
   return [
     ...staticPages,
     ...examLandingPages,
@@ -127,5 +137,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...appPageUrls,
     ...downloadPageUrls,
     ...guidePageUrls,
+    ...blogPostUrls,
   ];
 }

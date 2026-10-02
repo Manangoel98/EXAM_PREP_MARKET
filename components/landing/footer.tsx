@@ -29,6 +29,8 @@ const footerLinks = {
       { label: "Practice Tests Online", href: "/mock-test-app" },
       { label: "Study App for Android", href: "/study-app-for-students" },
       { label: "How NomoExam Works", href: "/how-it-works" },
+      { label: "Parent & Teacher Support", href: "/features/#parent-teacher-support" },
+      { label: "SAT Prep Blog", href: "/blog" },
       { label: "Pricing", href: "/pricing" },
       { label: "Try Free Practice Test", href: "/try-free" },
     ],

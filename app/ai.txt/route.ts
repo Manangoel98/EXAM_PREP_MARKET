@@ -1,5 +1,6 @@
 import { getMarketingSiteOrigin } from "@/lib/config";
 import { getPublicStripePrice } from "@/lib/stripe-public-price";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 
 /**
  * AI instructions file for AI crawlers and assistants.
@@ -60,6 +61,20 @@ export async function GET() {
       sat_prep: `${base}/exams/sat`,
       act_prep: `${base}/exams/act`,
       sat_guides: `${base}/guides`
+    },
+    parent_teacher_support: {
+      overview: `${base}/features#parent-teacher-support`,
+      summary:
+        "Linked parent and teacher accounts: parents get a dedicated dashboard with their student's test scores, practice activity, and study-plan progress; teachers and tutors can track multiple students' practice and weak areas."
+    },
+    blog: {
+      index: `${base}/blog`,
+      posts: BLOG_POSTS.map((post) => ({
+        title: post.title,
+        url: `${base}/blog/${post.slug}`,
+        category: post.category,
+        published: post.date
+      }))
     },
     study_guides: {
       index: `${base}/guides`,

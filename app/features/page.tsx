@@ -13,6 +13,8 @@ import {
   Clock,
   Award,
   ChevronRight,
+  Users,
+  GraduationCap,
 } from "lucide-react";
 import Link from "next/link";
 import { BreadcrumbStructuredData } from "@/lib/schema";
@@ -164,6 +166,27 @@ const additionalFeatures = [
   },
 ];
 
+const parentTeacherFeatures = [
+  {
+    title: "A dedicated parent dashboard",
+    description:
+      "Parents get their own dashboard: recent test scores, practice activity, and study progress for every linked student — at a glance, in plain language.",
+    icon: Users,
+  },
+  {
+    title: "Progress you can actually see",
+    description:
+      "See which practice tests were completed, where scores are trending, and which topics are improving or slipping — so conversations about prep are grounded in facts.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Teacher and tutor visibility",
+    description:
+      "Teachers and tutors supporting multiple students can track who is practicing, who is stuck, and where to focus the next session — no more guessing.",
+    icon: GraduationCap,
+  },
+];
+
 export default function FeaturesPage() {
   return (
     <MarketingPageShell>
@@ -267,6 +290,48 @@ export default function FeaturesPage() {
                 );
               })}
             </div>
+          </div>
+
+          {/* Parent & Teacher Support */}
+          <div className="mb-20" id="parent-teacher-support">
+            <div className="mb-8 text-center">
+              <p className={`${MKT.badgeLight} mx-auto mb-5`}>
+                <Users className="h-4 w-4" />
+                <span>For families &amp; teachers</span>
+              </p>
+              <h2 className="font-barlow mb-4 text-3xl font-semibold text-neutral-900">
+                Parent &amp; Teacher Support — keep an eye on your student&apos;s prep
+              </h2>
+              <p className="mx-auto max-w-2xl text-base font-medium text-neutral-600 md:text-lg">
+                Students study better when the adults supporting them can actually see the work.
+                Link a parent or teacher account and the whole support team stays in the loop.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {parentTeacherFeatures.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className={`${MKT.card}`}>
+                    <div className={`${MKT.iconTile} ${MKT.iconTileSm} mb-4`}>
+                      <Icon className="h-6 w-6" strokeWidth={2} />
+                    </div>
+                    <h3 className="font-barlow mb-2 text-lg font-semibold text-neutral-900">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm font-medium leading-relaxed text-neutral-600">
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="mt-6 text-center text-sm font-medium text-neutral-600">
+              Parents create a free account, link their student, and get a dedicated dashboard —
+              no account switching, no peeking over shoulders.{" "}
+              <a href={getAppUrl("/auth")} className="font-semibold text-neutral-900 underline underline-offset-4">
+                Set up parent access
+              </a>
+            </p>
           </div>
 
           {/* CTA Section */}

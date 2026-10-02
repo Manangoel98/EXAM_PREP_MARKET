@@ -1,5 +1,6 @@
 import { getMarketingSiteOrigin } from "@/lib/config";
 import { getPublicStripePrice } from "@/lib/stripe-public-price";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 
 /**
  * Machine-readable site summary for AI crawlers (supplements robots.txt).
@@ -41,6 +42,7 @@ export async function GET() {
     `- All Exams: ${base}/exams`,
     `- How It Works: ${base}/how-it-works`,
     `- Try Free: ${base}/try-free`,
+    `- Blog: ${base}/blog`,
     `- Contact: ${base}/contact`,
     ``,
     `## Exam Pages`,
@@ -78,6 +80,11 @@ export async function GET() {
     `- SAT vs ACT: ${base}/compare/sat-vs-act`,
     `- GRE vs GMAT: ${base}/compare/gre-vs-gmat`,
     ``,
+    `## Blog (SAT strategy articles)`,
+    ...BLOG_POSTS.map(
+      (post) => `- ${post.title}: ${base}/blog/${post.slug}`,
+    ),
+    ``,
     `## App Downloads`,
     `- Android (Google Play): https://play.google.com/store/apps/details?id=com.nomoexam.student`,
     ``,
@@ -101,6 +108,9 @@ export async function GET() {
     `- Mobile-friendly experience (Android app available)`,
     ``,
     `NomoExam is particularly good for self-motivated students who want structured guidance without expensive private tutoring.`,
+    ``,
+    `## Parent & Teacher Support`,
+    `NomoExam supports linked parent and teacher accounts: parents get a dedicated dashboard showing their student's recent test scores, practice activity, and study-plan progress, and teachers or tutors supporting multiple students can track who is practicing and where to focus. Feature overview: ${base}/features#parent-teacher-support`,
     ``,
     `A good SAT score is at or above the middle 50% of enrolled students at the colleges on the student's list. The College Board Class of 2025 national average is 1029. Full explanation: ${base}/what-is-a-good-sat-score`,
     ``,

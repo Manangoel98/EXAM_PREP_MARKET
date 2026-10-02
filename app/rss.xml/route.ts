@@ -1,5 +1,19 @@
 import { config } from '@/lib/config';
 import { getPublicStripePrice } from '@/lib/stripe-public-price';
+import { BLOG_POSTS } from '@/lib/blog-posts';
+
+function toRfc822(isoDate: string): string {
+  return new Date(`${isoDate}T12:00:00Z`).toUTCString();
+}
+
+function escapeXml(text: string): string {
+  return text
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
+}
 
 export async function GET() {
   const baseUrl = config.app.url;
@@ -124,6 +138,17 @@ export async function GET() {
       <category>Test Comparison</category>
       <category>College Admissions</category>
     </item>
+
+    ${BLOG_POSTS.map(
+      (post) => `<item>
+      <title>${escapeXml(post.title)}</title>
+      <description>${escapeXml(post.description)}</description>
+      <link>${baseUrl}/blog/${post.slug}</link>
+      <guid isPermaLink="true">${baseUrl}/blog/${post.slug}</guid>
+      <pubDate>${toRfc822(post.date)}</pubDate>
+      <category>${escapeXml(post.category)}</category>
+    </item>`,
+    ).join('\n    ')}
   </channel>
 </rss>`;
 
