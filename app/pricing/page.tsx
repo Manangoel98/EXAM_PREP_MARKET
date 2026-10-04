@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const priceLabel = price?.label ?? "per exam";
   return {
     title: `Pricing — ${priceLabel} | NomoExam`,
-    description: `Simple, transparent pricing for exam prep. ${priceLabel} with full access to practice tests, flashcards, AI tutor, and personalized study plans. Cancel anytime.`,
+    description: `Simple, transparent SAT & ACT prep pricing. ${priceLabel} with full access to practice tests, AI tutor, and study plans. Cancel anytime.`,
     alternates: { canonical },
     keywords: [
       "NomoExam pricing",

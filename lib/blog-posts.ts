@@ -45,7 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "why-bluebook-practice-scores-are-higher-than-real-sat",
     title: "Why Your Bluebook Practice Score Is Higher Than Your Real SAT Score",
-    metaTitle: "Bluebook Practice Test vs Real SAT: Why Scores Drop 50–120 Points (2026)",
+    metaTitle: "Bluebook vs Real SAT: Why Practice Scores Run High (2026)",
     description:
       "Scoring high on Bluebook practice tests but lower on the real SAT? Learn why practice scores run 50–120 points above test day and the fixes that close the gap.",
     excerpt:
@@ -177,7 +177,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "hardest-digital-sat-math-module-2-questions",
     title: "The Hardest Digital SAT Math Module 2 Questions — and How to Attack Them",
-    metaTitle: "Hardest Digital SAT Math Module 2 Questions: The Last 5, Solved (2026)",
+    metaTitle: "Hardest Digital SAT Math Module 2 Questions (2026)",
     description:
       "The final questions of SAT Math Module 2 are built to be missed. See the hardest question types on the digital SAT, worked strategies, and how to drill them.",
     excerpt:
@@ -301,7 +301,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "one-month-digital-sat-study-plan",
     title: "The One-Month Digital SAT Study Plan That Actually Works",
-    metaTitle: "One-Month Digital SAT Study Plan (2026): Week-by-Week Schedule That Works",
+    metaTitle: "One-Month Digital SAT Study Plan That Works (2026)",
     description:
       "A realistic 4-week digital SAT study plan built from what 1550+ scorers actually did: baseline testing, grammar and Desmos fast wins, weak-point drilling, and full-length tests.",
     excerpt:
@@ -421,7 +421,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "does-the-digital-sat-have-vocabulary",
     title: "Do You Still Need to Study Vocabulary for the Digital SAT?",
-    metaTitle: "Does the Digital SAT Have Vocabulary? What to Study in 2026 (Words-in-Context)",
+    metaTitle: "Does the Digital SAT Have Vocabulary? (2026 Guide)",
     description:
       "The digital SAT dropped obscure vocabulary lists but still tests words in context. Here's what changed, which words still matter, and how to study vocab efficiently.",
     excerpt:
@@ -508,7 +508,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "where-to-find-sat-practice-questions-harder-than-bluebook",
     title: "Where to Find SAT Practice Questions Harder Than Bluebook",
-    metaTitle: "SAT Practice Questions Harder Than Bluebook: 6 Sources That Work (2026)",
+    metaTitle: "SAT Practice Questions Harder Than Bluebook (2026)",
     description:
       "Ran out of Bluebook tests or finding them too easy? The six best sources of harder-than-real digital SAT practice questions, and how to use each one.",
     excerpt:
@@ -610,7 +610,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "desmos-calculator-tricks-for-sat-math",
     title: "Desmos Calculator Tricks That Save Minutes on SAT Math",
-    metaTitle: "Desmos SAT Math Tricks: 8 Techniques That Save Minutes (2026 Digital SAT)",
+    metaTitle: "Desmos SAT Math Tricks That Save Minutes (2026)",
     description:
       "Most students barely use the Desmos calculator built into the digital SAT. These 8 techniques turn slow algebra questions into 10-second graphing questions.",
     excerpt:

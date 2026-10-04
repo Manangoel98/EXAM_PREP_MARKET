@@ -24,9 +24,9 @@ const canonical = marketingAbsoluteUrl("/features");
 const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
-  title: "Features — AI Tutor, Practice Tests, Flashcards & More | NomoExam",
+  title: "Features — AI Tutor, Practice Tests & More | NomoExam",
   description:
-    "Explore NomoExam's powerful features: 24/7 AI tutor, unlimited practice tests, smart flashcards, personalized study plans, performance analytics, and more. Everything you need to ace your exam.",
+    "24/7 AI tutor, unlimited practice tests, smart flashcards, study plans, and parent & teacher progress tracking. Everything you need to ace your exam.",
   alternates: { canonical },
   keywords: [
     "AI tutor",

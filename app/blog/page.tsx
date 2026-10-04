@@ -13,7 +13,7 @@ const og = marketingAbsoluteUrl("/opengraph-image");
 export const metadata: Metadata = {
   title: "SAT Prep Blog — Strategy, Scores & Study Plans | NomoExam",
   description:
-    "Research-backed SAT blog: why Bluebook scores run high, the hardest Math Module 2 questions, one-month study plans, Desmos tricks, and where to find hard practice questions.",
+    "Research-backed SAT blog: Bluebook score gaps, hard Math Module 2 questions, one-month study plans, and Desmos tricks that save minutes.",
   alternates: { canonical },
   keywords: [
     "SAT blog",
