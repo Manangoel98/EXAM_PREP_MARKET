@@ -5,7 +5,7 @@ import { marketingAbsoluteUrl } from "@/lib/config";
 import { getPublicStripePrice } from "@/lib/stripe-public-price";
 
 const canonical = marketingAbsoluteUrl("/pricing");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export async function generateMetadata(): Promise<Metadata> {
   const price = await getPublicStripePrice();

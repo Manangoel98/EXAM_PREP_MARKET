@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { TrendingUp, Target, AlertTriangle, CheckCircle2, BookOpen } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/average-sat-scores-percentiles");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "What Are Average Scores for SAT? Percentiles & Targets | NomoExam",

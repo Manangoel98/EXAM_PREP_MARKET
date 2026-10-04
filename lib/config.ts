@@ -55,7 +55,7 @@ export const config = {
     tagline: 'Simple Exam Prep – Ace Tests Without Stress',
     description: 'AI-powered exam prep platform with practice tests, study plans, and AI doubt-clearing. Prepare for SAT, ACT, GRE, GMAT, and more.',
     socialHandles: {
-      twitter: '@nomoexam',
+      twitter: '@nomoexams',
       facebook: 'https://www.facebook.com/nomoexam',
       linkedin: 'https://www.linkedin.com/company/nomoexam',
     },

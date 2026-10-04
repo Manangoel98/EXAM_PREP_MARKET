@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Target, AlertTriangle, CheckCircle2, Brain, BookOpen, TrendingUp } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/how-to-improve-sat-score-200-points");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "How to Improve SAT Score by 200 Points: Proven Strategies (2026) | NomoExam",

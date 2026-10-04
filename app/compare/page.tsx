@@ -7,7 +7,7 @@ import { marketingAbsoluteUrl } from "@/lib/config";
 import { BreadcrumbStructuredData } from "@/lib/schema";
 
 const canonical = marketingAbsoluteUrl("/compare");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Compare Exams & Test Prep Platforms | NomoExam",

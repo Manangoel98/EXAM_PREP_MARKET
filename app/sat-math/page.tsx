@@ -10,7 +10,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Calculator } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/sat-math");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "SAT Math: Topics, Desmos, and Pacing (2026) | NomoExam",

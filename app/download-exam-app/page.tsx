@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, AndroidAppStructuredData } from "@/lib/schema
 import { Download, Smartphone, CheckCircle2, Star, Zap, Shield } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/download-exam-app");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Download Exam Preparation App — Free on Android | NomoExam",

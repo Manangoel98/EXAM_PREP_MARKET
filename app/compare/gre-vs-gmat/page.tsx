@@ -28,7 +28,7 @@ import { BreadcrumbStructuredData, FAQStructuredData } from "@/lib/schema";
 import { marketingAbsoluteUrl } from "@/lib/config";
 
 const canonical = marketingAbsoluteUrl("/compare/gre-vs-gmat");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "GRE vs GMAT: Which Test for MBA & Graduate School? (2026 Guide)",

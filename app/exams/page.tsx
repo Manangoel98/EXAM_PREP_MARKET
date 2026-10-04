@@ -32,7 +32,7 @@ const iconMap = {
 } as const;
 
 const canonical = marketingAbsoluteUrl("/exams");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Exam Prep for SAT, ACT, GRE, GMAT, MCAT, LSAT & More | NomoExam",

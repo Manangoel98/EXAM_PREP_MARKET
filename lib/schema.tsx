@@ -505,7 +505,7 @@ export async function HomePageWebStructuredData(): Promise<ReactElement> {
         },
         primaryImageOfPage: {
           '@type': 'ImageObject',
-          url: `${baseUrl}/og-image.svg`,
+          url: `${baseUrl}/opengraph-image`,
         },
       },
       {

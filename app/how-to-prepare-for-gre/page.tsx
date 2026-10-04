@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Brain, Target, BookOpen, Clock, AlertTriangle, CheckCircle2 } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/how-to-prepare-for-gre");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "How to Prepare for GRE 2026: Complete Study Guide & Strategy | NomoExam",

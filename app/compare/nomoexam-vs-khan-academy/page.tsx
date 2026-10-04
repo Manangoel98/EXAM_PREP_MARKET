@@ -24,7 +24,7 @@ import { BreadcrumbStructuredData, FAQStructuredData } from "@/lib/schema";
 import { marketingAbsoluteUrl } from "@/lib/config";
 
 const canonical = marketingAbsoluteUrl("/compare/nomoexam-vs-khan-academy");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "NomoExam vs Khan Academy: Which Test Prep Platform is Better? (2026)",

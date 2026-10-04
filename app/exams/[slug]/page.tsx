@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = `${exam.shortName} Prep Online | Practice Tests & AI Tutor | NomoExam`;
   const description = `${exam.description} Prepare with NomoExam—practice tests, flashcards, study paths, and AI help.`;
   const canonical = marketingAbsoluteUrl(`/exams/${exam.slug}`);
-  const og = marketingAbsoluteUrl("/og-image.svg");
+  const og = marketingAbsoluteUrl("/opengraph-image");
 
   return {
     title,

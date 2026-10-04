@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { marketingAbsoluteUrl } from "@/lib/config";
 
 const canonical = marketingAbsoluteUrl("/terms-of-service");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Terms of Service | NomoExam",

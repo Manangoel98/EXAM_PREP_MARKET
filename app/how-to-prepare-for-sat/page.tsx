@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { CheckCircle2, AlertTriangle, Clock, Target, BookOpen, Smartphone } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/how-to-prepare-for-sat");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "How to Prepare for SAT: Complete 2026 Guide with Study Plan | NomoExam",

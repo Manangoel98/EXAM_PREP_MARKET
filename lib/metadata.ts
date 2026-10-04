@@ -37,7 +37,7 @@ export function marketingSeo(opts: {
   ogType?: 'website' | 'article'
   noIndex?: boolean
 }): Metadata {
-  const ogPath = opts.ogImagePath ?? '/og-image.svg'
+  const ogPath = opts.ogImagePath ?? '/opengraph-image'
   const ogUrl = ogPath.startsWith('http') ? ogPath : marketingAbsoluteUrl(ogPath.startsWith('/') ? ogPath : `/${ogPath}`)
   const canonical = marketingAbsoluteUrl(opts.path)
   const fullTitle = opts.title.includes(siteName) ? opts.title : `${opts.title} | ${siteName}`
@@ -63,7 +63,7 @@ export function marketingSeo(opts: {
           width: 1200,
           height: 630,
           alt: `${siteName} — ${opts.title}`,
-          type: 'image/svg+xml',
+          type: 'image/png',
         },
       ],
     },
@@ -96,7 +96,7 @@ export function generatePageMetadata({
   title,
   description,
   path = '',
-  image = '/og-image.svg',
+  image = '/opengraph-image',
   type = 'website',
   keywords = [],
   noIndex = false,
@@ -136,7 +136,7 @@ export function generatePageMetadata({
           width: 1200,
           height: 630,
           alt: `${siteName} - ${title}`,
-          type: 'image/svg+xml',
+          type: 'image/png',
         },
       ],
     },

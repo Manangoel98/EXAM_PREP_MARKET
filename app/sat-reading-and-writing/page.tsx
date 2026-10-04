@@ -9,7 +9,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { BookOpen } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/sat-reading-and-writing");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "SAT Reading and Writing: Every Question Type (2026) | NomoExam",

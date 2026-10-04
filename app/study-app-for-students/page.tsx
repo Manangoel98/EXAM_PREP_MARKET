@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, AndroidAppStructuredData } from "@/lib/schema
 import { Download, Smartphone, BookOpen, Brain, Target, Zap } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/study-app-for-students");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Study App for Students — SAT, ACT, GRE Prep on Android | NomoExam",

@@ -8,7 +8,7 @@ import { BreadcrumbStructuredData, CustomStructuredData } from "@/lib/schema";
 import { Newspaper, CalendarDays, Clock } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/blog");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "SAT Prep Blog — Strategy, Scores & Study Plans | NomoExam",

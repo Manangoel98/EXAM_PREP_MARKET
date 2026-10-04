@@ -8,7 +8,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Target } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/what-is-a-good-sat-score");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "What Is a Good SAT Score in 2026? | NomoExam",

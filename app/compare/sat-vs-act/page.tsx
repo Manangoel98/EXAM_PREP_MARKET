@@ -28,7 +28,7 @@ import { BreadcrumbStructuredData, FAQStructuredData } from "@/lib/schema";
 import { marketingAbsoluteUrl } from "@/lib/config";
 
 const canonical = marketingAbsoluteUrl("/compare/sat-vs-act");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "SAT vs ACT: Which Test Should You Take? (2026 Comparison)",

@@ -9,7 +9,7 @@ import { RelatedContent, RELATED_CONTENT_GROUPS } from "@/components/landing/Rel
 import { getPublicStripePrice } from "@/lib/stripe-public-price";
 
 const canonical = marketingAbsoluteUrl("/best-apps-for-sat-prep");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "7 Best Apps for SAT Prep in 2026 (Expert Reviewed & Compared) | NomoExam",

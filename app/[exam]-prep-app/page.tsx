@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ exam: str
   const title = `${exam.shortName} Prep App for Android — Practice Tests & AI Tutor | NomoExam`;
   const description = `Download the best ${exam.shortName} prep app for Android. Full-length practice tests, AI tutor, flashcards, personalized study plans. ${exam.description}. Free to try.`;
   const canonical = marketingAbsoluteUrl(`/${examSlug}-prep-app`);
-  const og = marketingAbsoluteUrl("/og-image.svg");
+  const og = marketingAbsoluteUrl("/opengraph-image");
 
   return {
     title,

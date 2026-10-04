@@ -107,8 +107,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    site: '@nomoexam',
-    creator: '@nomoexam',
+    site: '@nomoexams',
+    creator: '@nomoexams',
     title: 'Nomoexam — SAT & ACT Prep | Practice, Flashcards, AI Tutor',
     description: 'Exam prep with practice tests, flashcards, learning paths, and AI tutor. Available per exam.',
   },

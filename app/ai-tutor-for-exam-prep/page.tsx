@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Brain, Target, CheckCircle2, AlertTriangle, Sparkles, BookOpen } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/ai-tutor-for-exam-prep");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "AI Tutor for Exam Prep: How AI Is Changing Test Preparation in 2026 | NomoExam",

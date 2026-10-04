@@ -21,7 +21,7 @@ import { BreadcrumbStructuredData } from "@/lib/schema";
 import { MKT } from "@/lib/marketing-ui";
 
 const canonical = marketingAbsoluteUrl("/features");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Features — AI Tutor, Practice Tests, Flashcards & More | NomoExam",

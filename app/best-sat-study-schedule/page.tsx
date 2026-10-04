@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Clock, Target, Calendar, BookOpen, Brain, CheckCircle2, AlertTriangle } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/best-sat-study-schedule");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Best SAT Study Schedule 2026: 1-Month, 3-Month & 6-Month Plans | NomoExam",

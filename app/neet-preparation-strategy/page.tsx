@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { CheckCircle2, AlertTriangle, BookOpen, Smartphone } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/neet-preparation-strategy");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "NEET Preparation Strategy 2026: Complete Guide for Medical Students",

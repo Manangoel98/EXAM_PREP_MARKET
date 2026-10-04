@@ -2,7 +2,7 @@
 
 import { MKT } from "@/lib/marketing-ui";
 import Link from "next/link";
-import { BookOpen, DollarSign, Sparkles, GitCompare, HelpCircle, MousePointerClick, FileText, Calendar, Target } from "lucide-react";
+import { BookOpen, DollarSign, Sparkles, GitCompare, HelpCircle, MousePointerClick, FileText, Calendar, Target, Newspaper } from "lucide-react";
 
 const quickLinks = [
   {
@@ -42,10 +42,22 @@ const quickLinks = [
     icon: HelpCircle,
   },
   {
+    href: "/blog",
+    label: "SAT Prep Blog",
+    description: "Score gaps, hard questions, study plans",
+    icon: Newspaper,
+  },
+  {
+    href: "/guides",
+    label: "Free Study Guides",
+    description: "Math, Reading & Writing, format, dates",
+    icon: FileText,
+  },
+  {
     href: "/how-to-prepare-for-sat",
     label: "SAT Prep Guide",
     description: "Complete preparation strategy",
-    icon: FileText,
+    icon: BookOpen,
   },
   {
     href: "/sat-study-plan",

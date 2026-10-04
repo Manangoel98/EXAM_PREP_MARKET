@@ -44,20 +44,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: post.updated ?? post.date,
       authors: [post.author],
       locale: "en_US",
-      images: [
-        {
-          url: marketingAbsoluteUrl("/og-image.svg"),
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.metaTitle,
       description: post.description,
-      images: [marketingAbsoluteUrl("/og-image.svg")],
     },
   };
 }
@@ -148,7 +139,7 @@ export default async function BlogPostPage({ params }: Props) {
         datePublished={post.date}
         dateModified={post.updated ?? post.date}
         authorName={post.author}
-        image="/og-image.svg"
+        image="/opengraph-image"
       />
       <BreadcrumbStructuredData
         items={[

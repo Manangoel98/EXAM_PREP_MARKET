@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, AndroidAppStructuredData } from "@/lib/schema
 import { Download, CheckCircle2, Clock, FileText, BarChart } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/mock-test-app");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Mock Test App for SAT, ACT, GRE — Full-Length Practice Tests | NomoExam",

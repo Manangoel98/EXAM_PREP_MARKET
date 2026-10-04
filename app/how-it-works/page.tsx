@@ -6,7 +6,7 @@ import { marketingAbsoluteUrl } from "@/lib/config";
 import { BreadcrumbStructuredData } from "@/lib/schema";
 
 const canonical = marketingAbsoluteUrl("/how-it-works");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "How NomoExam Works: AI-Powered Test Prep in 4 Simple Steps",

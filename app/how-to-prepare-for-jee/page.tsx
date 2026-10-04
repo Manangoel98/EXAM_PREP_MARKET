@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { CheckCircle2, AlertTriangle, Clock, BookOpen, Smartphone } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/how-to-prepare-for-jee");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "How to Prepare for JEE: Complete Strategy for JEE Main & Advanced 2026",

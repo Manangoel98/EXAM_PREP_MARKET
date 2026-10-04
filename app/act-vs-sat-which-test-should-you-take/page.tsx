@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { BookOpen, Clock, Target, Brain, CheckCircle2, AlertTriangle } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/act-vs-sat-which-test-should-you-take");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "ACT vs SAT 2026: Which Test Should You Take? Complete Comparison | NomoExam",

@@ -7,7 +7,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { CheckCircle2, Clock, Calendar, BookOpen, Smartphone } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/sat-study-plan");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "SAT Study Plan: 3-Month Schedule for 1500+ Score | NomoExam",

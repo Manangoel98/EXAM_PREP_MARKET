@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/exam-preparation-app");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Exam Preparation App for Android — SAT, ACT, GRE & More | NomoExam",

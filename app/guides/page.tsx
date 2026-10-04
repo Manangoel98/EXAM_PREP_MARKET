@@ -8,7 +8,7 @@ import { BreadcrumbStructuredData, CustomStructuredData } from "@/lib/schema";
 import { BookOpen } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/guides");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "SAT Study Guides (2026) | NomoExam",

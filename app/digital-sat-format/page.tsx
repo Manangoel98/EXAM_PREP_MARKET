@@ -9,7 +9,7 @@ import { BreadcrumbStructuredData, ArticleStructuredData, FAQStructuredData } fr
 import { Timer } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/digital-sat-format");
-const og = marketingAbsoluteUrl("/og-image.svg");
+const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
   title: "Digital SAT Format: Modules, Timing, and Scoring (2026) | NomoExam",
