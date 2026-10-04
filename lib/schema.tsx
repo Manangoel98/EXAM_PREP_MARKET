@@ -248,6 +248,13 @@ export async function SiteNavigationStructuredData(): Promise<ReactElement> {
         description: 'SAT Math, Reading and Writing, digital format, test dates, and score guides',
         url: `${baseUrl}/guides`,
       },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 12,
+        name: 'SAT Prep Blog',
+        description: 'Research-driven SAT strategy articles: score gaps, hard Math Module 2 questions, study plans, and Desmos technique',
+        url: `${baseUrl}/blog`,
+      },
     ],
   };
 

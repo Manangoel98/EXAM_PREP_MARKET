@@ -116,6 +116,7 @@ export async function GET() {
   lines.push(`# AI Info (JSON): ${base}/ai.txt`);
   lines.push(`# RSS Feed: ${base}/rss.xml`);
   lines.push(`# SAT study guides: ${base}/guides`);
+  lines.push(`# SAT blog: ${base}/blog`);
 
   const body = lines.join("\n") + "\n";
 
