@@ -74,6 +74,18 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
             <motion.div style={{ color: labelColor }}>
               <Link
+                href="/ap-cybersecurity-prep-app"
+                className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 ${
+                  pathname.startsWith('/ap-cybersecurity')
+                    ? lightChrome ? 'bg-black/[0.08]' : 'bg-white/15'
+                    : linkHoverBg
+                }`}
+              >
+                AP Cyber
+              </Link>
+            </motion.div>
+            <motion.div style={{ color: labelColor }}>
+              <Link
                 href="/blog"
                 className={`flex min-h-10 items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                   pathname.startsWith('/blog')
@@ -199,6 +211,13 @@ export function SiteHeader() {
             className="fixed inset-x-3 top-[4.75rem] z-[99] max-h-[min(70vh,calc(100dvh-6rem))] overflow-y-auto rounded-2xl border border-black/10 bg-white/95 p-4 shadow-xl backdrop-blur-xl sm:inset-x-4 sm:top-[5.25rem] lg:hidden"
           >
             <div className="flex flex-col gap-1 font-barlow">
+              <Link
+                href="/ap-cybersecurity-prep-app"
+                className="rounded-lg px-3 py-3 text-base text-neutral-800"
+                onClick={() => setOpen(false)}
+              >
+                AP Cybersecurity
+              </Link>
               <Link
                 href="/blog"
                 className="rounded-lg px-3 py-3 text-base font-semibold text-neutral-900"

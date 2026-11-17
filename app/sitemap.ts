@@ -60,6 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/features', changeFrequency: 'monthly', priority: 0.9 },
     { url: '/blog', changeFrequency: 'weekly', priority: 0.9 },
     { url: '/exams', changeFrequency: 'monthly', priority: 0.95 },
+    { url: '/ap-cybersecurity-prep-app', changeFrequency: 'weekly', priority: 0.95 },
     { url: '/how-it-works', changeFrequency: 'monthly', priority: 0.85 },
     { url: '/features/nomo-ai', changeFrequency: 'monthly', priority: 0.85 },
     { url: '/try-free', changeFrequency: 'monthly', priority: 0.85 },
@@ -125,8 +126,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPostUrls = BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.updated ? new Date(post.updated) : lastModified,
-    changeFrequency: 'monthly' as const,
-    priority: 0.85,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
   }));
 
   return [

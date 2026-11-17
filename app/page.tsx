@@ -22,10 +22,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const price = await getPublicStripePrice();
   const priceBit = price ? ` ${price.label}.` : "";
   return {
-  title: "NomoExam — SAT & ACT Prep App | AI Tutor & Practice Tests",
+  title: "NomoExam — AP Cybersecurity, SAT & ACT Prep App | AI Tutor & Practice Tests",
   description:
-    `Best SAT prep app with an AI tutor, full-length practice tests, flashcards & study plans. Improve your score 200+ points.${priceBit} Try free.`,
+    `Best exam prep app with an AI tutor, full-length practice tests for College Board AP Cybersecurity, SAT & ACT. Score higher with personalized study plans.${priceBit} Try free.`,
   keywords: [
+    // High-intent AP Cybersecurity keywords
+    "AP Cybersecurity prep app",
+    "AP Cybersecurity practice test",
+    "College Board AP Cybersecurity",
+    "AP Cybersecurity study guide 2026",
+    "AP Cybersecurity syllabus",
+    "AP Cyber mock exam",
+    "how to score 5 AP Cybersecurity",
     // High-intent SAT keywords
     "SAT prep app",
     "best SAT prep app 2026",
@@ -65,9 +73,9 @@ export async function generateMetadata(): Promise<Metadata> {
   ],
   alternates: { canonical: homeCanonical },
   openGraph: {
-    title: "NomoExam — Best SAT & ACT Prep App 2026",
+    title: "NomoExam — AP Cybersecurity, SAT & ACT Prep App 2026",
     description:
-      `Improve your SAT score 200+ points with AI practice tests, unlimited tutoring & study plans.${priceBit} Try free.`,
+      `Master AP Cybersecurity, SAT & ACT with AI practice tests, unlimited tutoring & study plans.${priceBit} Try free.`,
     url: homeCanonical,
     siteName: "Nomoexam",
     type: "website",
@@ -75,8 +83,8 @@ export async function generateMetadata(): Promise<Metadata> {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NomoExam — Best SAT Prep App 2026",
-    description: `Improve your SAT score 200+ points. AI tutor, practice tests, flashcards.${priceBit} Try free.`,
+    title: "NomoExam — AP Cybersecurity, SAT & ACT Prep App 2026",
+    description: `Master AP Cybersecurity, SAT & ACT. AI tutor, practice tests, flashcards.${priceBit} Try free.`,
   },
   };
 }

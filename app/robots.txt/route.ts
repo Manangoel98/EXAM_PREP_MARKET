@@ -115,8 +115,10 @@ export async function GET() {
   lines.push(`# LLMs.txt: ${base}/llms.txt`);
   lines.push(`# AI Info (JSON): ${base}/ai.txt`);
   lines.push(`# RSS Feed: ${base}/rss.xml`);
+  lines.push(`# AP Cybersecurity Prep: ${base}/ap-cybersecurity-prep-app`);
+  lines.push(`# AP Cybersecurity Guide: ${base}/exams/ap-cybersecurity`);
+  lines.push(`# Exam Strategy Blog: ${base}/blog`);
   lines.push(`# SAT study guides: ${base}/guides`);
-  lines.push(`# SAT blog: ${base}/blog`);
 
   const body = lines.join("\n") + "\n";
 

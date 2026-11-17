@@ -6,9 +6,15 @@ import { BookOpen, DollarSign, Sparkles, GitCompare, HelpCircle, MousePointerCli
 
 const quickLinks = [
   {
+    href: "/ap-cybersecurity-prep-app",
+    label: "AP Cybersecurity",
+    description: "Full-length 63-item exams & AI tutor",
+    icon: Target,
+  },
+  {
     href: "/exams",
     label: "Exam Preparation",
-    description: "SAT, ACT, GRE, GMAT & more",
+    description: "AP, SAT, ACT, GRE & more",
     icon: BookOpen,
   },
   {
@@ -43,8 +49,8 @@ const quickLinks = [
   },
   {
     href: "/blog",
-    label: "SAT Prep Blog",
-    description: "Score gaps, hard questions, study plans",
+    label: "Exam Strategy Blog",
+    description: "AP Cyber, score gaps, study plans",
     icon: Newspaper,
   },
   {

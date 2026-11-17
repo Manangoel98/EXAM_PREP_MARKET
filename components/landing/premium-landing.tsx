@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Play, Layers, MessageSquare, FileText } from "lucide-react";
+import { ArrowUpRight, Play, Layers, MessageSquare, FileText, Shield, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LANDING_DURATION, LANDING_EASE, LANDING_VIEWPORT } from "@/lib/landing-motion";
 import { getAppUrl } from "@/lib/config";
@@ -30,6 +30,7 @@ const chipItemVariants = {
 
 /** Marketing routes for SEO; app entry remains getAppUrl("/auth") and hero CTAs. */
 const examChips = [
+  { label: "AP Cybersecurity", href: "/ap-cybersecurity-prep-app", status: "live" as const },
   { label: "SAT", href: "/exams/sat", status: "live" as const },
   { label: "ACT", href: "/exams/act", status: "live" as const },
   { label: "AP", href: "/exams/ap", status: "soon" as const },
@@ -74,7 +75,7 @@ export function PremiumHero() {
           <div className="liquid-glass inline-flex items-center gap-2 rounded-full px-2 py-1.5 pr-4">
             <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-neutral-900">Live</span>
             <span className="text-sm text-white/90">
-              SAT & ACT — Official-style prep — Fresh drops every 2 weeks
+              AP Cybersecurity, SAT & ACT — Official-style prep — Fresh drops every 2 weeks
             </span>
           </div>
         </motion.div>
@@ -91,7 +92,7 @@ export function PremiumHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: LANDING_DURATION, delay: 0.06, ease: LANDING_EASE }}
           >
-            #1 SAT & ACT Prep App
+            #1 SAT, ACT & AP Prep App
             <br />
             <span className="font-heading text-[2.35rem] italic sm:text-6xl md:text-7xl lg:text-[5.25rem] lg:leading-[0.95]">
               AI Tutor, Practice Tests & Study Plans
@@ -211,6 +212,7 @@ const examMarqueeItem = {
 
 /** Order matches marketing exam guides; every label links to `/exams/{slug}`. */
 const MARQUEE_EXAMS: { label: string; slug: string }[] = [
+  { label: "AP Cybersecurity", slug: "ap-cybersecurity" },
   { label: "SAT", slug: "sat" },
   { label: "ACT", slug: "act" },
   { label: "AP", slug: "ap" },

@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: { params: Promise<{ exam: str
   };
 }
 
-function ExamPrepAppPage({ exam }: { exam: MarketingExamDefinition }) {
+export function ExamPrepAppPage({ exam }: { exam: MarketingExamDefinition }) {
   const appExamUrl = getAppUrl(`/exams/${exam.slug}`);
   const isIndianExam = ["jee", "neet", "cat"].includes(exam.slug);
 

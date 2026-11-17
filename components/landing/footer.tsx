@@ -14,8 +14,10 @@ const footerLinks = {
   exams: {
     title: "Exam Prep Courses",
     links: [
+      { label: "AP Cybersecurity Prep", href: "/ap-cybersecurity-prep-app" },
       { label: "SAT Prep Course", href: "/exams/sat" },
       { label: "ACT Prep Course", href: "/exams/act" },
+      { label: "AP Exam Courses", href: "/exams/ap" },
       { label: "GRE Prep Course", href: "/exams/gre" },
       { label: "GMAT Prep Course", href: "/exams/gmat" },
       { label: "MCAT Prep Course", href: "/exams/mcat" },
@@ -27,10 +29,11 @@ const footerLinks = {
     links: [
       { label: "AI Tutor for Students", href: "/features/nomo-ai" },
       { label: "Practice Tests Online", href: "/mock-test-app" },
+      { label: "AP Cyber Practice Tests", href: "/blog/where-to-find-ap-cybersecurity-practice-questions-tests" },
       { label: "Study App for Android", href: "/study-app-for-students" },
       { label: "How NomoExam Works", href: "/how-it-works" },
       { label: "Parent & Teacher Support", href: "/features/#parent-teacher-support" },
-      { label: "SAT Prep Blog", href: "/blog" },
+      { label: "Exam Prep & Strategy Blog", href: "/blog" },
       { label: "Pricing", href: "/pricing" },
       { label: "Try Free Practice Test", href: "/try-free" },
     ],

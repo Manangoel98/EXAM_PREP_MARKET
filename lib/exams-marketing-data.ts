@@ -176,6 +176,17 @@ export const MARKETING_EXAMS: MarketingExamDefinition[] = [
     availability: "soon",
   },
   {
+    slug: "ap-cybersecurity",
+    shortName: "AP Cybersecurity",
+    fullName: "Advanced Placement Cybersecurity",
+    category: "Undergraduate admission",
+    description: "College Board AP Cybersecurity: Defense-in-depth, threat analysis, network security, device protection, and cryptography",
+    longHtml: `<p>College Board's newest STEM course prepares students for high-demand cybersecurity careers. NomoExam delivers 100% syllabus-aligned full-length practice exams (60 MCQs + 3 FRQs), AI tutor explanations, and interactive log analysis drills.</p>`,
+    popular: true,
+    icon: "Brain",
+    availability: "available",
+  },
+  {
     slug: "toefl",
     shortName: "TOEFL",
     fullName: "Test of English as a Foreign Language",

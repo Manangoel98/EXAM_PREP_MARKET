@@ -5,49 +5,54 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { marketingAbsoluteUrl } from "@/lib/config";
 import { BreadcrumbStructuredData, CustomStructuredData } from "@/lib/schema";
-import { Newspaper, CalendarDays, Clock } from "lucide-react";
+import { Newspaper, CalendarDays, Clock, ShieldCheck, Sparkles } from "lucide-react";
 
 const canonical = marketingAbsoluteUrl("/blog");
 const og = marketingAbsoluteUrl("/opengraph-image");
 
 export const metadata: Metadata = {
-  title: "SAT Prep Blog — Strategy, Scores & Study Plans | NomoExam",
+  title: "Exam Strategy & Prep Blog — AP Cybersecurity, SAT & Study Plans | NomoExam",
   description:
-    "Research-backed SAT blog: Bluebook score gaps, hard Math Module 2 questions, one-month study plans, and Desmos tricks that save minutes.",
+    "Research-backed exam prep articles: College Board AP Cybersecurity syllabus guides, full-length practice tests, Digital SAT score gaps, Math Module 2 attacks, and study plans.",
   alternates: { canonical },
   keywords: [
+    "exam prep blog",
+    "AP Cybersecurity blog",
+    "AP Cybersecurity exam guide",
+    "AP Cybersecurity practice test",
     "SAT blog",
-    "SAT prep tips",
     "digital SAT strategy",
     "SAT study advice",
     "SAT score improvement",
+    "AP Cybersecurity study plan",
   ],
   openGraph: {
-    title: "The NomoExam SAT Blog",
+    title: "The NomoExam Prep & Strategy Blog",
     description:
-      "Research-backed SAT strategy: score gaps, hard Math questions, study plans, and calculator technique.",
+      "Research-backed exam strategy: AP Cybersecurity guides, Digital SAT score gaps, hard Math questions, and study plans.",
     url: canonical,
     siteName: "NomoExam",
     type: "website",
-    images: [{ url: og, width: 1200, height: 630, alt: "NomoExam SAT blog" }],
+    images: [{ url: og, width: 1200, height: 630, alt: "NomoExam prep blog" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The NomoExam SAT Blog",
-    description: "SAT strategy, scores, study plans, and calculator technique.",
+    title: "The NomoExam Prep & Strategy Blog",
+    description: "AP Cybersecurity & SAT strategy, scores, study plans, and tactical guides.",
     images: [og],
   },
 };
 
 export default function BlogPage() {
+  // Sort posts with most recent / high-impact first
   const [featured, ...rest] = BLOG_POSTS;
   const itemList = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "NomoExam SAT Blog",
+    name: "NomoExam Prep & Strategy Blog",
     url: canonical,
     description:
-      "Research-backed articles on digital SAT preparation: score gaps, hard Math Module 2 questions, study plans, vocabulary, practice resources, and Desmos technique.",
+      "Research-backed articles on AP Cybersecurity and digital SAT preparation: syllabus overviews, scoring breakdowns, FRQ log analysis, hard Math Module 2 questions, study plans, and practice resources.",
     mainEntity: {
       "@type": "ItemList",
       itemListElement: BLOG_POSTS.map((post, index) => ({
@@ -73,16 +78,16 @@ export default function BlogPage() {
         <section className={`${MKT.pageSection} pb-20 pt-28 md:pb-24 md:pt-36`}>
           <div className={`${MKT.container} mx-auto max-w-5xl`}>
             <div className="mb-12 max-w-3xl">
-              <div className={`${MKT.badgeLight} mb-4`}>
+              <div className={`${MKT.badgeLight} mb-4 inline-flex items-center gap-2`}>
                 <Newspaper className="h-4 w-4" />
-                <span>SAT blog</span>
+                <span>Exam Prep & Strategy Blog</span>
               </div>
-              <h1 className={`${MKT.h1OnLight} mb-4`}>The SAT Prep Blog</h1>
+              <h1 className={`${MKT.h1OnLight} mb-4`}>The NomoExam Prep Blog</h1>
               <p className="text-base font-medium leading-relaxed text-neutral-700 md:text-lg">
-                Articles built from what students actually ask — the Bluebook score gap, the
-                brutal end of Math Module 2, one-month plans that work, and the calculator
-                techniques that save real minutes. Every post ends with answers to the
-                follow-up questions we see most.
+                Articles built from what students actually ask — mastering the new College Board{" "}
+                <span className="font-semibold text-neutral-900">AP Cybersecurity</span> syllabus,
+                closing the Digital SAT practice-to-real score gap, cracking hard Math Module 2
+                questions, and executing realistic study plans that earn top scores.
               </p>
             </div>
 
@@ -92,10 +97,13 @@ export default function BlogPage() {
               className="group mb-12 block rounded-2xl border border-black/[0.08] bg-white/90 p-6 shadow-sm transition-shadow hover:shadow-md md:p-8"
             >
               <div className="mb-3 flex flex-wrap items-center gap-3 text-xs font-medium text-neutral-500">
-                <span className="rounded-full bg-accent-lime/20 px-3 py-1 font-semibold text-neutral-900">
+                <span className="inline-flex items-center gap-1 rounded-full bg-accent-lime/25 px-3 py-1 font-semibold text-neutral-900">
+                  <Sparkles className="h-3 w-3" />
                   Featured
                 </span>
-                <span>{featured.category}</span>
+                <span className="rounded-full bg-neutral-100 px-2.5 py-0.5 font-semibold text-neutral-800">
+                  {featured.category}
+                </span>
                 <span aria-hidden>·</span>
                 <span className="inline-flex items-center gap-1">
                   <CalendarDays className="h-3.5 w-3.5" />
@@ -151,17 +159,26 @@ export default function BlogPage() {
               ))}
             </div>
 
-            <p className="mt-12 text-base font-medium leading-relaxed text-neutral-700">
-              Looking for reference guides instead of strategy? The full list lives on{" "}
-              <Link href="/guides" className="font-semibold text-primary hover:underline">
-                SAT study guides
-              </Link>
-              . When you want timed practice in the same format, the live plan is on{" "}
-              <Link href="/pricing" className="font-semibold text-primary hover:underline">
-                pricing
-              </Link>
-              .
-            </p>
+            <div className="mt-12 rounded-2xl border border-black/[0.08] bg-neutral-50 p-6 md:p-8">
+              <h3 className="font-barlow mb-2 text-lg font-bold text-neutral-900">
+                Looking for Exam Practice & Reference Materials?
+              </h3>
+              <p className="text-sm font-medium leading-relaxed text-neutral-700">
+                Explore our full-length simulated testing for the{" "}
+                <Link href="/ap-cybersecurity-prep-app" className="font-semibold text-primary hover:underline">
+                  AP Cybersecurity Prep App
+                </Link>{" "}
+                or browse our comprehensive{" "}
+                <Link href="/guides" className="font-semibold text-primary hover:underline">
+                  Digital SAT study guides
+                </Link>
+                . When you are ready for timed, realistic practice papers, explore the live plans on{" "}
+                <Link href="/pricing" className="font-semibold text-primary hover:underline">
+                  pricing
+                </Link>
+                .
+              </p>
+            </div>
           </div>
         </section>
       </main>
